@@ -1,0 +1,8 @@
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=gnosia,tag=!dead] actionbar [{"color":"#e60039","text":"You are the Gnosia"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=acfollower,tag=!dead] actionbar [{"color":"#c60080","text":"You are the AC Follower"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=bug,tag=!dead] actionbar [{"color":"#253636","text":"You are the Bug"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=doctor,tag=!dead] actionbar [{"color":"#8376b5","text":"You are the Doctor"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=engineer,tag=!dead] actionbar [{"color":"#187fc4","text":"You are the Engineer"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=angel,tag=!dead] actionbar [{"color":"#f6ad3c","text":"You are the Guardian Angel"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=guard,tag=!dead] actionbar [{"color":"#46b035","text":"You were on Guard Duty"}]
+execute if score showRoleActionbar gameStatus matches 1 run title @a[tag=crewmate,tag=!dead] actionbar [{"color":"#6eba2b","text":"You are a Crew Member"}]

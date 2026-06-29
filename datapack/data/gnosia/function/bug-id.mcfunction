@@ -1,0 +1,15 @@
+execute as @a[tag=c1,tag=bug] run scoreboard players set bugID gnosiaKillChoose 1
+execute as @a[tag=c2,tag=bug] run scoreboard players set bugID gnosiaKillChoose 2
+execute as @a[tag=c3,tag=bug] run scoreboard players set bugID gnosiaKillChoose 3
+execute as @a[tag=c4,tag=bug] run scoreboard players set bugID gnosiaKillChoose 4
+execute as @a[tag=c5,tag=bug] run scoreboard players set bugID gnosiaKillChoose 5
+execute as @a[tag=c6,tag=bug] run scoreboard players set bugID gnosiaKillChoose 6
+execute as @a[tag=c7,tag=bug] run scoreboard players set bugID gnosiaKillChoose 7
+execute as @a[tag=c8,tag=bug] run scoreboard players set bugID gnosiaKillChoose 8
+execute as @a[tag=c9,tag=bug] run scoreboard players set bugID gnosiaKillChoose 9
+execute as @a[tag=c10,tag=bug] run scoreboard players set bugID gnosiaKillChoose 10
+execute as @a[tag=c11,tag=bug] run scoreboard players set bugID gnosiaKillChoose 11
+execute as @a[tag=c12,tag=bug] run scoreboard players set bugID gnosiaKillChoose 12
+execute as @a[tag=c13,tag=bug] run scoreboard players set bugID gnosiaKillChoose 13
+execute as @a[tag=c14,tag=bug] run scoreboard players set bugID gnosiaKillChoose 14
+execute as @a[tag=c15,tag=bug] run scoreboard players set bugID gnosiaKillChoose 15

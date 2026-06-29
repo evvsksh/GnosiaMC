@@ -1,0 +1,8 @@
+tellraw @s[tag=gnosia] [{"color":"white","text":"You are the "},{"bold":true,"color":"red","text":"Gnosia"}]
+tellraw @s[tag=acfollower] [{"color":"white","text":"You are the "},{"bold":true,"color":"light_purple","text":"AC Follower"}]
+tellraw @s[tag=bug] [{"color":"white","text":"You are the "},{"bold":true,"color":"gray","text":"Bug"}]
+tellraw @s[tag=doctor] [{"color":"white","text":"You are the "},{"bold":true,"color":"blue","text":"Doctor"}]
+tellraw @s[tag=engineer] [{"color":"white","text":"You are the "},{"bold":true,"color":"aqua","text":"Engineer"}]
+tellraw @s[tag=angel] [{"color":"white","text":"You are the "},{"bold":true,"color":"gold","text":"Guardian Angel"}]
+tellraw @s[tag=guard] [{"color":"white","text":"You were on "},{"bold":true,"color":"dark_green","text":"Guard Duty"}]
+tellraw @s[tag=crewmate] [{"color":"white","text":"You are a "},{"bold":true,"color":"green","text":"Crew Member"}]
