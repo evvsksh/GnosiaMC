@@ -1,0 +1,2 @@
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages insert 1 value {raw:{text:"Investigation Reports:\n\n",color:blue,bold:true,extra:["",""]}}
+scoreboard players set reportPage logState 1
