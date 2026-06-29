@@ -1,2 +1,1 @@
 data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages append from block -300 88 -1610 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0]
-function gnosia:log/generate_day
