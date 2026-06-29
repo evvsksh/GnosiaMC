@@ -1,0 +1,2 @@
+scoreboard players set gnosiaKillChoose gnosiaKillChoose 0
+scoreboard players set angelSave gnosiaKillChoose 0

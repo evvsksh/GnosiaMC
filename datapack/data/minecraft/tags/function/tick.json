@@ -1,0 +1,13 @@
+{
+    "values": [
+        "gnosia:tick",
+        "gnosia:voting_system_tick",
+        "gnosia:text-vote-update",
+        "gnosia:trigger-tick",
+        "gnosia:lore-sequence",
+        "gnosia:voting/led-animation/ledanim-off",
+        "gnosia:voting/led-animation/ledanim-on-green",
+        "gnosia:voting/led-animation/ledanim-on-red",
+        "gnosia:role-actionbar"
+    ]
+}

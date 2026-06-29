@@ -1,0 +1,1 @@
+scoreboard players set gnosiaCanKill gnosiaKillChoose 1

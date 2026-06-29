@@ -1,0 +1,15 @@
+execute at @a[tag=c1,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp1","tpback"]}
+execute at @a[tag=c2,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp2","tpback"]}
+execute at @a[tag=c3,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp3","tpback"]}
+execute at @a[tag=c4,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp4","tpback"]}
+execute at @a[tag=c5,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp5","tpback"]}
+execute at @a[tag=c6,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp6","tpback"]}
+execute at @a[tag=c7,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp7","tpback"]}
+execute at @a[tag=c8,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp8","tpback"]}
+execute at @a[tag=c9,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp9","tpback"]}
+execute at @a[tag=c10,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp10","tpback"]}
+execute at @a[tag=c11,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp11","tpback"]}
+execute at @a[tag=c12,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp12","tpback"]}
+execute at @a[tag=c13,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp13","tpback"]}
+execute at @a[tag=c14,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp14","tpback"]}
+execute at @a[tag=c15,tag=!gnosia,tag=!dead] run summon armor_stand ~ ~ ~ {NoGravity:1b,Silent:1b,Invulnerable:1b,Small:1b,Invisible:1b,Tags:["warptp15","tpback"]}
