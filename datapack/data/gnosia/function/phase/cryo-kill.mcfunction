@@ -16,6 +16,8 @@ execute as @a[tag=cryoVote,tag=c13] run execute at @s run summon text_display ~ 
 execute as @a[tag=cryoVote,tag=c14] run execute at @s run summon text_display ~ ~.5 ~-2.51 {Rotation:[180F,0F],Tags:["cryoroomName"],text:[{"color":"aqua","text":"❄ "},{"selector":"@a[tag=c14,tag=cryoVote]"}]}
 execute as @a[tag=cryoVote,tag=c15] run execute at @s run summon text_display ~ ~.5 ~-2.51 {Rotation:[180F,0F],Tags:["cryoroomName"],text:[{"color":"aqua","text":"❄ "},{"selector":"@a[tag=c15,tag=cryoVote]"}]}
 
+execute as @a[tag=cryoVote] run function gnosia:log/event/frozen
+
 gamemode spectator @a[tag=cryoVote]
 tag @a[tag=cryoVote] add cryoSleep
 tag @a[tag=cryoVote] add docSearch

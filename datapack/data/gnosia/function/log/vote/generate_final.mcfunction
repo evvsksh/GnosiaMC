@@ -1,0 +1,1 @@
+item replace block -300 88 -1610 container.2 with minecraft:written_book[written_book_content={title:"generate_final",author:"",pages:[{raw:{text:"\n[Suspension Results]",color:"blue",bold:false,hover_event:{action:show_text,value:{text:"Suspension Results:",extra:[""]}}}}]}]

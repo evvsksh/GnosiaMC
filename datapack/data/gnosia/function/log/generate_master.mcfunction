@@ -1,4 +1,4 @@
-item replace block -300 88 -1610 container.0 with minecraft:written_book[written_book_content={title:"Logs",author:"",pages:[{raw:{text:"Settings:",bold:true,color:blue,extra:[""]}}]}]
+item replace block -300 88 -1610 container.0 with minecraft:written_book[minecraft:custom_data={masterLogs:1b},minecraft:written_book_content={title:"Logs",author:"",pages:[{raw:{text:"Settings:",bold:true,color:blue,extra:[""]}}]}]
 setblock -299 88 -1610 oak_wall_sign[facing=east]{front_text:{messages:[[{text:"\n\n",bold:false,color:"#6eba2b",extra:[{score:{name:"playersAmountStart",objective:"rolesCheck"}},{text:" Crew"}]},{text:"\n",bold:false,color:"#e60039",extra:[{score:{name:"maxGnosia",objective:"rolesCheck"}},{text:" Gnosia"}]}],"","",""]}}
 data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra append from block -299 88 -1610 front_text.messages[0]
 setblock -299 88 -1610 minecraft:air

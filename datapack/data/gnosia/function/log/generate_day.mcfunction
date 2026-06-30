@@ -1,4 +1,4 @@
-item replace block -300 88 -1610 container.1 with minecraft:written_book[written_book_content={title:"generate_day",author:"",pages:[{raw:{text:"Day ",color:"blue",bold:true,extra:[{text:"\n\n[Events]",color:"gold",bold:false,hover_event:{action:show_text,value:{text:"Events:",extra:[""]}}},{text:"\n\n[Voting Results]",color:"aqua",bold:false,hover_event:{action:show_text,value:{text:"Voting Results:",extra:[""]}}}]}}]}]
+item replace block -300 88 -1610 container.1 with minecraft:written_book[written_book_content={title:"generate_day",author:"",pages:[{raw:{text:"Day ",color:"blue",bold:true,extra:[{text:"\n\n[Events]",color:"gold",bold:false,hover_event:{action:show_text,value:{text:"Events:",extra:[""]}}},{text:"\n\n[Voting Results]\n",color:"aqua",bold:false,hover_event:{action:show_text,value:{text:"Voting Results:",extra:[""]}}}]}}]}]
 setblock -299 88 -1610 oak_wall_sign[facing=east]{front_text:{messages:[{score:{name:"day",objective:"days"}},"","",""]}}
 data modify block -300 88 -1610 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0].raw.extra prepend from block -299 88 -1610 front_text.messages[0]
 setblock -299 88 -1610 minecraft:air
