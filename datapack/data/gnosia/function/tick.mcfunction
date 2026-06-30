@@ -184,57 +184,57 @@ scoreboard players set @a spectatorOnDeath 0
 
 # Selection Actionbar Title: Engineer
 
-execute if score engSearch gnosiaKillChoose matches 1 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c1]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 2 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c2]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 3 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c3]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 4 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c4]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 5 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c5]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 6 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c6]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 7 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c7]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 8 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c8]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 9 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c9]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 10 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c10]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 11 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c11]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 12 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c12]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 13 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c13]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 14 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c14]","color":"aqua"}]
-execute if score engSearch gnosiaKillChoose matches 15 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c15]","color":"aqua"}]
+execute if score engSearch gnosiaKillChoose matches 1 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c1]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 2 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c2]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 3 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c3]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 4 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c4]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 5 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c5]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 6 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c6]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 7 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c7]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 8 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c8]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 9 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c9]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 10 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c10]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 11 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c11]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 12 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c12]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 13 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c13]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 14 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c14]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 15 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c15]","color":"#187fc4"}]
 
 # Selection Actionbar Title: Angel
 
-execute if score angelSave gnosiaKillChoose matches 1 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c1]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 2 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c2]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 3 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c3]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 4 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c4]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 5 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c5]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 6 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c6]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 7 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c7]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 8 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c8]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 9 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c9]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 10 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c10]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 11 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c11]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 12 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c12]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 13 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c13]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 14 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c14]","color":"gold"}]
-execute if score angelSave gnosiaKillChoose matches 15 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c15]","color":"gold"}]
+execute if score angelSave gnosiaKillChoose matches 1 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c1]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 2 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c2]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 3 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c3]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 4 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c4]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 5 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c5]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 6 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c6]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 7 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c7]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 8 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c8]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 9 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c9]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 10 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c10]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 11 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c11]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 12 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c12]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 13 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c13]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 14 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c14]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 15 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c15]","color":"#f6ad3c"}]
 
 # Selection Actionbar Title: Gnosia
 
-execute if score gnosiaKillChoose gnosiaKillChoose matches 1 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c1]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 2 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c2]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 3 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c3]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 4 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c4]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 5 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c5]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 6 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c6]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 7 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c7]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 8 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c8]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 9 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c9]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 10 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c10]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 11 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c11]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 12 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c12]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 13 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c13]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 14 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c14]","color":"red"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c15]","color":"red"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 1 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c1]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 2 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c2]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 3 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c3]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 4 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c4]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 5 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c5]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 6 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c6]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 7 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c7]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 8 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c8]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 9 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c9]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 10 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c10]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 11 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c11]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 12 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c12]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 13 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c13]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 14 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c14]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c15]","color":"#e60039"}]
 
 # Door Lock OLD
 
@@ -364,35 +364,35 @@ execute as @a[tag=!dead] if score revoteAmount voteCheck matches 1.. if score @s
 execute if score whoisthegnosia titleAnimation matches 0.. run scoreboard players add whoisthegnosia titleAnimation 1
 execute if score whoisthegnosia titleAnimation matches 50.. run scoreboard players set whoisthegnosia titleAnimation -1
 
-execute if score whoisthegnosia titleAnimation matches 2 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"W"}
+execute if score whoisthegnosia titleAnimation matches 2 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"W"}
 execute if score whoisthegnosia titleAnimation matches 2 run effect give @a[tag=c1] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 4 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Wh"}
+execute if score whoisthegnosia titleAnimation matches 4 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Wh"}
 execute if score whoisthegnosia titleAnimation matches 4 run effect give @a[tag=c2] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 6 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who"}
+execute if score whoisthegnosia titleAnimation matches 6 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who"}
 execute if score whoisthegnosia titleAnimation matches 6 run effect give @a[tag=c3] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 8 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who i"}
+execute if score whoisthegnosia titleAnimation matches 8 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who i"}
 execute if score whoisthegnosia titleAnimation matches 8 run effect give @a[tag=c4] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 10 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is"}
+execute if score whoisthegnosia titleAnimation matches 10 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is"}
 execute if score whoisthegnosia titleAnimation matches 10 run effect give @a[tag=c5] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 12 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is t"}
+execute if score whoisthegnosia titleAnimation matches 12 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is t"}
 execute if score whoisthegnosia titleAnimation matches 12 run effect give @a[tag=c6] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 14 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is th"}
+execute if score whoisthegnosia titleAnimation matches 14 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is th"}
 execute if score whoisthegnosia titleAnimation matches 14 run effect give @a[tag=c7] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 16 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the "}
+execute if score whoisthegnosia titleAnimation matches 16 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the "}
 execute if score whoisthegnosia titleAnimation matches 16 run effect give @a[tag=c8] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 18 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the G"}
+execute if score whoisthegnosia titleAnimation matches 18 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the G"}
 execute if score whoisthegnosia titleAnimation matches 18 run effect give @a[tag=c9] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 20 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the Gn"}
+execute if score whoisthegnosia titleAnimation matches 20 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gn"}
 execute if score whoisthegnosia titleAnimation matches 20 run effect give @a[tag=c10] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 22 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the Gno"}
+execute if score whoisthegnosia titleAnimation matches 22 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gno"}
 execute if score whoisthegnosia titleAnimation matches 22 run effect give @a[tag=c11] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 24 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the Gnos"}
+execute if score whoisthegnosia titleAnimation matches 24 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnos"}
 execute if score whoisthegnosia titleAnimation matches 24 run effect give @a[tag=c12] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 26 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the Gnosi"}
+execute if score whoisthegnosia titleAnimation matches 26 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosi"}
 execute if score whoisthegnosia titleAnimation matches 26 run effect give @a[tag=c13] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 28 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the Gnosia"}
+execute if score whoisthegnosia titleAnimation matches 28 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosia"}
 execute if score whoisthegnosia titleAnimation matches 28 run effect give @a[tag=c14] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 30 run title @a[tag=crew] subtitle {"bold":true,"color":"red","text":"Who is the Gnosia?"}
+execute if score whoisthegnosia titleAnimation matches 30 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosia?"}
 execute if score whoisthegnosia titleAnimation matches 30 run effect give @a[tag=c15] glowing 1 10 true
 
 effect give @a[tag=cryoVote] glowing 2 10 true

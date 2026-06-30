@@ -14,8 +14,7 @@ title @a times 0 120 40
 scoreboard players set whoisthegnosia titleAnimation 0
 title @a[tag=crew] title {"bold":true,"color":"red","text":"Voting"}
 execute if score revoteAmount voteCheck matches 0 run function gnosia:voting/startvote
-execute if score playersAlive rolesCheck matches 4.. if score revoteAmount voteCheck matches 1.. run function gnosia:voting/start-revote
-execute if score playersAlive rolesCheck matches ..3 if score revoteAmount voteCheck matches 1.. run function gnosia:voting/startvote
+execute if score revoteAmount voteCheck matches 1.. run function gnosia:voting/start-revote
 function gnosia:ship-lights/ship-light-red
 
 #function gnosia:light-vote-red

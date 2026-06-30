@@ -14,6 +14,9 @@ title @a times 30 10 30
 title @a title {"text":"█","font":"gnosia:blackfade"}
 schedule function gnosia:phase/warp-drive-randomtp 35t
 
+function gnosia:log/publish_day
+function gnosia:log/distribute_master
+
 ## Roles Power
 
 # Gnosia

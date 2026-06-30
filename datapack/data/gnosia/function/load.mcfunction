@@ -65,6 +65,7 @@ scoreboard players set discussion-music music 1
 scoreboard players set voting-music music 1
 scoreboard players set cryoAnnouncement delay 40
 scoreboard players set voteCheck voteCheck 0
+scoreboard players set cryoPhase voteCheck 0
 scoreboard players set two temp 2
 scoreboard players set alarm temp 0
 scoreboard players set startLore loreSequence -1

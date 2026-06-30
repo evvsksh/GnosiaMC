@@ -17,6 +17,26 @@ effect give @a[tag=crew] minecraft:blindness 2 1 true
 schedule function gnosia:phase/clear-spawned-tag 10s
 gamemode adventure @a[tag=crew,tag=!dead]
 
+function gnosia:log/generate_day
+execute as @a[tag=c1,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c2,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c3,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c4,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c5,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c6,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c7,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c8,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c9,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c10,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c11,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c12,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c13,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c14,tag=deathReport] run function gnosia:log/event/death
+execute as @a[tag=c15,tag=deathReport] run function gnosia:log/event/death
+execute unless entity @a[tag=deathReport] run function gnosia:log/event/no_death
+
+tag @a[tag=deathReport] remove deathReport
+
 # Engineer Check
 
 function gnosia:engineer-result
