@@ -251,3 +251,6 @@ execute if score endGameReload gameStatus matches 1 run scoreboard players set e
 schedule clear gnosia:phase/discussion-start
 function gnosia:replace-trapdoors-cryoroom
 kill @e[type=minecraft:text_display,tag=cryoroomName]
+
+setblock -300 88 -1610 minecraft:air
+setblock -300 88 -1610 minecraft:barrel
