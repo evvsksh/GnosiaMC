@@ -3,7 +3,8 @@ execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft r
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 1.. run schedule function gnosia:phase/winning-conditions-night/bug-win-night 5s
 
 title @a times 0 30 5
-title @a title {"text":"█","font":"gnosia:blackfade"}
+title @a[tag=!deathReport] title {"text":"█","font":"gnosia:blackfade",color:black}
+title @a[tag=deathReport] title {"text":"█","font":"gnosia:blackfade",color:dark_red}
 schedule function gnosia:phase/day-title 3s
 tag @a remove warpdrive
 team modify crew nametagVisibility never

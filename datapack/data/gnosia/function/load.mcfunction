@@ -21,7 +21,6 @@ scoreboard objectives add rolesLeft dummy
 scoreboard objectives add winning-conditions dummy
 scoreboard objectives add areaCafeCheck dummy
 scoreboard objectives add timers dummy
-#scoreboard objectives remove playersID
 scoreboard objectives add playersID dummy
 scoreboard objectives add playersIDrevote dummy
 scoreboard objectives add revoteCryo dummy
@@ -35,6 +34,11 @@ scoreboard objectives add whitelist dummy
 scoreboard objectives add playersOn dummy
 scoreboard objectives add votedFor dummy
 scoreboard objectives add claimStatus dummy
+scoreboard objectives add engineerID dummy
+scoreboard objectives add doctorID dummy
+scoreboard objectives add logState dummy
+scoreboard objectives add logReportIndexEngineer dummy
+scoreboard objectives add logReportIndexDoctor dummy
 
 scoreboard players set whoisthegnosia titleAnimation -1
 scoreboard players set endScreen gameStatus 1
@@ -75,6 +79,13 @@ scoreboard players set engineer claimStatus 0
 scoreboard players set doctor claimStatus 0
 scoreboard players set guardDuty claimStatus 0
 scoreboard players set canLie claimStatus 1
+scoreboard players reset * engineerID
+scoreboard players reset * doctorID
+scoreboard players set reportPage logState 0
+scoreboard players set engineerHover logState 0
+scoreboard players set doctorHover logState 0
+scoreboard players reset * logReportIndexEngineer
+scoreboard players reset * logReportIndexDoctor
 
 # GAME STATUS
 scoreboard players set tabHidden gameStatus 0

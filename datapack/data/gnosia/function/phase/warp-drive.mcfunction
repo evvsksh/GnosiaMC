@@ -11,7 +11,7 @@ schedule clear gnosia:music/discussion-music
 schedule clear gnosia:music/voting-music
 schedule clear gnosia:music/free-time-music
 title @a times 30 10 30
-title @a title {"text":"█","font":"gnosia:blackfade"}
+title @a title {"text":"█","font":"gnosia:blackfade",color:black}
 schedule function gnosia:phase/warp-drive-randomtp 35t
 
 function gnosia:log/publish_day

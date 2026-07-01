@@ -18,6 +18,9 @@ execute as @a[tag=cryoVote,tag=c15] run execute at @s run summon text_display ~ 
 
 execute as @a[tag=cryoVote] run function gnosia:log/event/frozen
 
+title @a[tag=cryoVote] times 0 30 5
+title @a[tag=cryoVote] title {"text":"█","font":"gnosia:blackfade",color:dark_blue}
+
 gamemode spectator @a[tag=cryoVote]
 tag @a[tag=cryoVote] add cryoSleep
 tag @a[tag=cryoVote] add docSearch
