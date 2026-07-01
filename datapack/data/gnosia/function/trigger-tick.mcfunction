@@ -5,9 +5,9 @@
 #scoreboard players set @a[scores={TRIGGER=1..}] TRIGGER 0
 
 scoreboard players enable @a vote_select
-execute as @a[scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 unless score @s vote_select = @s playersID run function gnosia:voting/voteselect/select
 execute as @a[scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 if score @s vote_select = @s playersID run tellraw @s {"color":"dark_red","text":"You can't vote for yourself!"}
 execute as @a[scores={vote_select=1..},tag=!dead] unless score @s alreadyVoted matches 0 run tellraw @s {"color":"dark_red","text":"You already voted!"}
+execute as @a[scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 unless score @s vote_select = @s playersID run function gnosia:voting/voteselect/select
 scoreboard players set @a[scores={vote_select=1..}] vote_select 0
 
 ### ENGINEER SELECT
