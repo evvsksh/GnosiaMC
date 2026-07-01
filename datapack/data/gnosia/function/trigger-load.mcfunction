@@ -1,4 +1,4 @@
-scoreboard objectives add select trigger
+scoreboard objectives add vote_select trigger
 
 scoreboard objectives add gnos_select trigger
 
