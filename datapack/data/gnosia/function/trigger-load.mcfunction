@@ -6,10 +6,15 @@ scoreboard objectives add eng_select trigger
 
 scoreboard objectives add ang_select trigger
 
+scoreboard objectives add doc_fake_human trigger
+scoreboard objectives add doc_fake_gnosia trigger
+
 scoreboard objectives add both_cryo trigger
 scoreboard objectives add no_cryo trigger
 
 scoreboard objectives add role trigger
+
+scoreboard objectives add fakeCheckResult trigger
 
 scoreboard objectives add claim_engineer trigger
 scoreboard objectives add claim_doctor trigger

@@ -28,6 +28,10 @@ scoreboard players enable @a ang_select
 execute as @a[scores={ang_select=1..},tag=angel,tag=!dead] run scoreboard players operation angelSave gnosiaKillChoose = @s ang_select
 scoreboard players set @a[scores={ang_select=1..}] ang_select 0
 
+# Fake Doctor Select
+scoreboard players enable @a doc_fake_human
+scoreboard players enable @a doc_fake_gnosia
+
 
 
 scoreboard players enable @a both_cryo
@@ -42,6 +46,8 @@ scoreboard players set @a[scores={no_cryo=1..}] no_cryo 0
 scoreboard players enable @a role
 execute as @a[scores={role=1..}] run function gnosia:role-tell
 scoreboard players set @a[scores={role=1..}] role 0
+
+scoreboard players enable @a fakeCheckResult
 
 scoreboard players enable @a claim_engineer
 execute as @a[scores={claim_engineer=1..},tag=!dead] if score engineer claimStatus matches ..1 unless entity @s[tag=!gnosia,tag=!acfollower,tag=!bug,tag=!engineer] run function gnosia:role-claim-engineer
