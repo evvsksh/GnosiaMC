@@ -16,9 +16,8 @@ execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run tag @a[tag=c15
 
 tag @a[tag=gnosiaEliminationTemp] add deathReport
 tag @a[tag=gnosiaEliminationTemp] add gnosiaElimination
+tag @a[tag=gnosiaEliminationTemp] add dead
 tag @a[tag=gnosiaEliminationTemp] remove gnosiaEliminationTemp
-
-kill @a[tag=gnosiaElimination,tag=!dead]
 
 schedule function gnosia:kill-glitch-sfx 5.5s
 #function gnosia:phase/count-alive

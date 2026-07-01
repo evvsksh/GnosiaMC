@@ -193,6 +193,8 @@ schedule clear gnosia:phase/tp-to-cryosleep
 schedule clear gnosia:voting/start-revote-cryo
 schedule clear gnosia:voting/start-revote
 schedule clear gnosia:phase/warp-drive
+schedule clear gnosia:phase/discussion-start
+schedule clear gnosia:phase/discussion-timer
 
 # mostra i players nella tab
 scoreboard players set tabHidden gameStatus 0

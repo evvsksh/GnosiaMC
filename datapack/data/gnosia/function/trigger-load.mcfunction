@@ -1,71 +1,20 @@
-scoreboard objectives add select_c1 trigger
-scoreboard objectives add select_c2 trigger
-scoreboard objectives add select_c3 trigger
-scoreboard objectives add select_c4 trigger
-scoreboard objectives add select_c5 trigger
-scoreboard objectives add select_c6 trigger
-scoreboard objectives add select_c7 trigger
-scoreboard objectives add select_c8 trigger
-scoreboard objectives add select_c9 trigger
-scoreboard objectives add select_c10 trigger
-scoreboard objectives add select_c11 trigger
-scoreboard objectives add select_c12 trigger
-scoreboard objectives add select_c13 trigger
-scoreboard objectives add select_c14 trigger
-scoreboard objectives add select_c15 trigger
+scoreboard objectives add vote_select trigger
 
-scoreboard objectives add gnos_select_c1 trigger
-scoreboard objectives add gnos_select_c2 trigger
-scoreboard objectives add gnos_select_c3 trigger
-scoreboard objectives add gnos_select_c4 trigger
-scoreboard objectives add gnos_select_c5 trigger
-scoreboard objectives add gnos_select_c6 trigger
-scoreboard objectives add gnos_select_c7 trigger
-scoreboard objectives add gnos_select_c8 trigger
-scoreboard objectives add gnos_select_c9 trigger
-scoreboard objectives add gnos_select_c10 trigger
-scoreboard objectives add gnos_select_c11 trigger
-scoreboard objectives add gnos_select_c12 trigger
-scoreboard objectives add gnos_select_c13 trigger
-scoreboard objectives add gnos_select_c14 trigger
-scoreboard objectives add gnos_select_c15 trigger
+scoreboard objectives add gnos_select trigger
 
-scoreboard objectives add eng_select_c1 trigger
-scoreboard objectives add eng_select_c2 trigger
-scoreboard objectives add eng_select_c3 trigger
-scoreboard objectives add eng_select_c4 trigger
-scoreboard objectives add eng_select_c5 trigger
-scoreboard objectives add eng_select_c6 trigger
-scoreboard objectives add eng_select_c7 trigger
-scoreboard objectives add eng_select_c8 trigger
-scoreboard objectives add eng_select_c9 trigger
-scoreboard objectives add eng_select_c10 trigger
-scoreboard objectives add eng_select_c11 trigger
-scoreboard objectives add eng_select_c12 trigger
-scoreboard objectives add eng_select_c13 trigger
-scoreboard objectives add eng_select_c14 trigger
-scoreboard objectives add eng_select_c15 trigger
+scoreboard objectives add eng_select trigger
 
-scoreboard objectives add ang_select_c1 trigger
-scoreboard objectives add ang_select_c2 trigger
-scoreboard objectives add ang_select_c3 trigger
-scoreboard objectives add ang_select_c4 trigger
-scoreboard objectives add ang_select_c5 trigger
-scoreboard objectives add ang_select_c6 trigger
-scoreboard objectives add ang_select_c7 trigger
-scoreboard objectives add ang_select_c8 trigger
-scoreboard objectives add ang_select_c9 trigger
-scoreboard objectives add ang_select_c10 trigger
-scoreboard objectives add ang_select_c11 trigger
-scoreboard objectives add ang_select_c12 trigger
-scoreboard objectives add ang_select_c13 trigger
-scoreboard objectives add ang_select_c14 trigger
-scoreboard objectives add ang_select_c15 trigger
+scoreboard objectives add ang_select trigger
+
+scoreboard objectives add doc_fake_human trigger
+scoreboard objectives add doc_fake_gnosia trigger
 
 scoreboard objectives add both_cryo trigger
 scoreboard objectives add no_cryo trigger
 
 scoreboard objectives add role trigger
+
+scoreboard objectives add fakeCheckResult trigger
 
 scoreboard objectives add claim_engineer trigger
 scoreboard objectives add claim_doctor trigger

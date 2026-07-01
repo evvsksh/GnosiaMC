@@ -19,13 +19,18 @@ scoreboard players operation bugLeft rolesLeft = enableBug rolesCheck
 scoreboard players operation playersAlive rolesCheck = playersAmount rolesCheck
 scoreboard players set humansLeft rolesLeft 0
 scoreboard players set revoteAmount voteCheck 0
-schedule function gnosia:assign-roles 2t
+function gnosia:assign-roles
+execute if score enableEngineer rolesCheck matches 0 run scoreboard players set engineer claimStatus 2
+execute if score enableDoctor rolesCheck matches 0 run scoreboard players set doctor claimStatus 2
+execute if score enableGuard rolesCheck matches 0 run scoreboard players set guardDuty claimStatus 2
+execute if score engineer claimStatus matches 2 if score doctor claimStatus matches 2 run scoreboard players set canLie claimStatus 0
 #schedule function gnosia:phase/discussion-start 30s
 scoreboard players operation playersAlive rolesCheck = playersAmount rolesCheck
 schedule function gnosia:enable-voicechat 3s
 schedule function gnosia:remove-placeholderstands 5s
-schedule function gnosia:ship-lights/alarm-toggle 30s
+#schedule function gnosia:ship-lights/alarm-toggle 30s
 
 function gnosia:log/generate_master
 function gnosia:log/generate_day
-schedule function gnosia:log/distribute_master 6t
+function gnosia:log/event/redacted_death
+function gnosia:log/distribute_master
