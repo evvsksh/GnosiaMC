@@ -15,5 +15,6 @@ execute if score engSearch gnosiaKillChoose matches 14 as @a[tag=c14,tag=bug,tag
 execute if score engSearch gnosiaKillChoose matches 15 as @a[tag=c15,tag=bug,tag=!dead] run tag @s add engBugTemp
 
 tag @a[tag=engBugTemp] add deathReport
-kill @a[tag=engBugTemp]
+tag @a[tag=engBugTemp] add gnosiaElimination
+tag @a[tag=engBugTemp] add dead
 tag @a[tag=engBugTemp] remove engBugTemp

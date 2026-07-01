@@ -352,13 +352,7 @@ scoreboard players add playerThreshold rolesCheck 1
 
 # AUTOVOTE
 
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 0 if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run scoreboard players add @e[tag=!dead,limit=1,sort=random,type=armor_stand,tag=disconnect] voteSub 1
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 0 if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run playsound gnosia:select player @s ~ ~ ~ 1 1 1
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 0 if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run tellraw @s {"color":"aqua","italic":true,"text":"You failed to vote on time, a random vote has been assigned."}
-
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 1.. if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run scoreboard players add @e[tag=!dead,tag=cryoVote,type=armor_stand,limit=1,sort=random,tag=disconnect] voteSub 1
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 1.. if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run playsound gnosia:select player @s ~ ~ ~ 1 1 1
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 1.. if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run tellraw @s {"color":"aqua","italic":true,"text":"You failed to vote on time, a random vote has been assigned."}
+execute as @a[tag=!dead] if score revoteAmount voteCheck matches 0 if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run function gnosia:voting/voteselect/random
 
 ## TITLE ANIMATION
 execute if score whoisthegnosia titleAnimation matches 0.. run scoreboard players add whoisthegnosia titleAnimation 1

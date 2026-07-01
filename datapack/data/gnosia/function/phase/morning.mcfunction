@@ -11,7 +11,7 @@ team modify engineer_claim nametagVisibility never
 team modify doctor_claim nametagVisibility never
 team modify guard_duty nametagVisibility never
 scoreboard players add day days 1
-scoreboard players set .spawnSequence delay 15
+scoreboard players set .spawnSequence delay 16
 #schedule function gnosia:phase/warp-drive-tpback 1t
 effect give @a[tag=crew] minecraft:blindness 2 1 true
 schedule function gnosia:phase/clear-spawned-tag 10s
