@@ -1,1 +1,1 @@
-data modify block -300 88 -1610 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0].raw.extra[1].hover_event.value.extra append value {text:"\n",color:aqua,extra:[{text:"The vote was tied."}]}
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[-1].raw.extra[1].hover_event.value.extra append value {text:"\n",color:aqua,extra:[{text:"The vote was tied."}]}

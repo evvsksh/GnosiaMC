@@ -23,7 +23,7 @@ execute if score resetAnimation delay matches 130.. run execute at @e[limit=1,ta
 execute if score resetAnimation delay matches 140.. run execute at @e[limit=1,tag=resetParticlesOrigin] run particle enchant ~11 ~ ~.5 1 1 1 3 200 normal
 execute if score resetAnimation delay matches 150.. run execute at @e[limit=1,tag=resetParticlesOrigin] run particle enchant ~11 ~ ~.5 1 1 1 5 300 normal
 execute if score resetAnimation delay matches 176 run title @a times 0 2 3
-execute if score resetAnimation delay matches 176 run title @a title {"text":"█","font":"gnosia:blackfade"}
+execute if score resetAnimation delay matches 176 run title @a title {"text":"█","font":"gnosia:blackfade",color:black}
 
 execute if score resetAnimation delay matches 177 run function gnosia:start-game
 #execute if score resetAnimation delay matches 177 run tellraw @a "SOS"
@@ -33,7 +33,7 @@ execute if score resetAnimation delay matches 15 run effect give @a[tag=resetani
 execute if score resetAnimation delay matches 0.. run scoreboard players add resetAnimation delay 1
 
 execute if score resetAnimation delay matches 1 run title @a times 10 10 0
-execute if score resetAnimation delay matches 1 run title @a title {"text":"█","font":"gnosia:blackfade"}
+execute if score resetAnimation delay matches 1 run title @a title {"text":"█","font":"gnosia:blackfade",color:black}
 execute if score resetAnimation delay matches 11 run gamemode spectator @a[tag=resetanim]
 execute if score resetAnimation delay matches 20 run execute at @e[tag=resetParticlesOrigin] run tp @a[tag=resetanim] ~10 ~-1.6 ~.5 180 0
 execute if score resetAnimation delay matches 21..70 run execute as @a[tag=resetanim] run execute at @s run tp @s ~-.01 ~ ~

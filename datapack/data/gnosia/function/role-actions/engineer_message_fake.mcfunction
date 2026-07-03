@@ -1,5 +1,6 @@
 tag @s add exclude
-execute if entity @a[tag=!dead,tag=!exclude] run tellraw @s {bold:true,color:"#187fc4",text:"Who are you pretending to investigate?"}
+function gnosia:log/reports/establish_exclusions
+execute if entity @a[tag=!dead,tag=!exclude] run tellraw @s {bold:true,color:"#187fc4",text:"Disguise Yourself & Lie"}
 
 execute if entity @a[tag=c1,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 1"},color:"#187fc4",selector:"@a[tag=c1,tag=!dead,tag=!exclude]"}
 execute if entity @a[tag=c2,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 2"},color:"#187fc4",selector:"@a[tag=c2,tag=!dead,tag=!exclude]"}
@@ -17,5 +18,8 @@ execute if entity @a[tag=c13,tag=!dead,tag=!exclude] run tellraw @s {click_event
 execute if entity @a[tag=c14,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 14"},color:"#187fc4",selector:"@a[tag=c14,tag=!dead,tag=!exclude]"}
 execute if entity @a[tag=c15,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 15"},color:"#187fc4",selector:"@a[tag=c15,tag=!dead,tag=!exclude]"}
 
+scoreboard players operation @s reportTarget = @r[tag=!dead,tag=!exclude] playersID
+scoreboard players set @s reportRole 1
+
 tellraw @s [{bold:true,color:"#187fc4",text:"\nInvestigate your target as:"},{text:"\n"},{bold:false,click_event:{action:"run_command","command":"/trigger fakeCheckResult set 1"},color:"#6eba2b",text:"Human"},{text:"\n"},{bold:false,click_event:{action:"run_command","command":"/trigger fakeCheckResult set 2"},color:"#e60039",text:"Gnosia"}]
-tag @s remove exclude
+tag @a remove exclude

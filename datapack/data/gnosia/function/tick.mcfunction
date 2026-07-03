@@ -63,7 +63,7 @@ execute if score warpdriveTimer timers matches 20 run title @a[tag=crew] actionb
 execute if score warpdriveTimer timers matches 19 run function gnosia:disable-voicechat
 execute at @e[tag=warpdriveParticles,limit=1] run tp @a[tag=!gnosia,tag=!dead,tag=warpdrive] ~ ~-10 ~ 0 -90
 execute as @a[tag=!gnosia,tag=!dead,tag=warpdrive] run gamemode spectator @s
-effect give @a[tag=!gnosia,tag=warpdrive,tag=!dead] minecraft:blindness 3 1 true
+effect give @a[tag=!gnosia,tag=warpdrive] minecraft:blindness 3 1 true
 execute as @a if score @s spectatorOnDeath matches 1 run tag @s remove alive
 
 # Gnosia Dead Check
@@ -352,7 +352,7 @@ scoreboard players add playerThreshold rolesCheck 1
 
 # AUTOVOTE
 
-execute as @a[tag=!dead] if score revoteAmount voteCheck matches 0 if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run function gnosia:voting/voteselect/random
+execute as @a[tag=!dead] if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run function gnosia:voting/voteselect/random
 
 ## TITLE ANIMATION
 execute if score whoisthegnosia titleAnimation matches 0.. run scoreboard players add whoisthegnosia titleAnimation 1

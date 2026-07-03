@@ -11,10 +11,11 @@ schedule clear gnosia:music/discussion-music
 schedule clear gnosia:music/voting-music
 schedule clear gnosia:music/free-time-music
 title @a times 30 10 30
-title @a title {"text":"█","font":"gnosia:blackfade"}
+title @a title {"text":"█","font":"gnosia:blackfade",color:black}
 schedule function gnosia:phase/warp-drive-randomtp 35t
 
-function gnosia:log/publish_day
+execute unless score engineer claimStatus matches 1.. run function gnosia:log/reports/generate/retroactive/engineer_day
+
 function gnosia:log/distribute_master
 
 ## Roles Power
@@ -30,3 +31,8 @@ execute as @a[tag=engineer,tag=!dead] run function gnosia:role-actions/engineer_
 # Angel
 
 execute as @a[tag=angel,tag=!dead] run function gnosia:role-actions/angel_message
+
+# Liars
+
+execute as @a[tag=!engineer,scores={engineerID=1..}] run function gnosia:role-actions/engineer_message_fake
+execute as @a[tag=!doctor,scores={doctorID=1..}] run function gnosia:role-actions/doctor_message_fake

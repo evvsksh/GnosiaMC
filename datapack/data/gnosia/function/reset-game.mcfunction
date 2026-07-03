@@ -5,7 +5,7 @@ gamemode adventure @a
 #playsound gnosia:loop player @a ~ ~ ~ 1 1 1
 scoreboard players set win winning-conditions 0
 title @a times 10 167 3
-title @a title {"text":"█","font":"gnosia:blackfade"}
+title @a title {"text":"█","font":"gnosia:blackfade",color:black}
 #schedule function gnosia:start-game 167
 tag @a add resetanim
 function gnosia:reset-animation

@@ -7,6 +7,5 @@ schedule function gnosia:voting/vote-result-tie2 2t
 function gnosia:light-vote-red
 function gnosia:voting/voteselect/display-votes
 function gnosia:log/event/tied_vote
-execute if score revoteAmount voteCheck matches 0 run function gnosia:log/vote/generate_vote
-execute if score revoteAmount voteCheck matches 1.. run function gnosia:log/vote/generate_revote
 
+function gnosia:log/distribute_master

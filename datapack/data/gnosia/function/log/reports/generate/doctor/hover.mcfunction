@@ -1,0 +1,2 @@
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[1].raw.extra[1] set value {"color":"#8376b5",text:"\n\n[Doctor]",hover_event:{action:show_text,value:{text:"",extra:[{text:"Claimants:",extra:[""]},{text:"\nReports:",extra:[""]}]}}}
+scoreboard players set doctorHover logState 1

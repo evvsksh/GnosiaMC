@@ -1,0 +1,2 @@
+item replace block -300 88 -1610 container.1 with minecraft:written_book[minecraft:written_book_content={title:"Engineer Report",author:"",pages:[{raw:{text:""}}]},minecraft:custom_data={engineerList:[],checkedAlready:[[],[],[],[],[],[],[],[],[],[]],retroactiveReportBook:1b}]
+item replace block -300 88 -1610 container.2 with minecraft:written_book[minecraft:written_book_content={title:"Doctor Report",author:"",pages:[{raw:{text:""}}]},minecraft:custom_data={doctorList:[],retroactiveReportBook:1b}]

@@ -1,0 +1,9 @@
+execute if score @s doctorID matches 1 run function gnosia:log/reports/retroactive/doctor/id_1
+execute if score @s doctorID matches 2 run function gnosia:log/reports/retroactive/doctor/id_2
+execute if score @s doctorID matches 3 run function gnosia:log/reports/retroactive/doctor/id_3
+execute if score @s doctorID matches 4 run function gnosia:log/reports/retroactive/doctor/id_4
+execute if score @s doctorID matches 5 run function gnosia:log/reports/retroactive/doctor/id_5
+execute if score @s doctorID matches 6 run function gnosia:log/reports/retroactive/doctor/id_6
+execute if score @s doctorID matches 7 run function gnosia:log/reports/retroactive/doctor/id_7
+execute if score @s doctorID matches 8 run function gnosia:log/reports/retroactive/doctor/id_8
+execute if score @s doctorID matches 9 run function gnosia:log/reports/retroactive/doctor/id_9
