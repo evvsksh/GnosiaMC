@@ -1,4 +1,5 @@
 # Teleport everyone back (it does spawning again but this should change with the addition of rooms)
+execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft run scoreboard players set win winning-conditions 1
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 0.. run schedule function gnosia:phase/winning-conditions-night/gnosia-win-night 5s
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 1.. run schedule function gnosia:phase/winning-conditions-night/bug-win-night 5s
 
@@ -52,4 +53,4 @@ function gnosia:enable-voicechat
 scoreboard players set tabHidden gameStatus 1
 
 schedule clear gnosia:phase/discussion-timer
-schedule function gnosia:phase/discussion-start 10s
+execute unless score win winning-conditions matches 1 run schedule function gnosia:phase/discussion-start 10s

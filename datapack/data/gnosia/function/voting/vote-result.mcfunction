@@ -7,7 +7,7 @@ schedule function gnosia:voting/vote-result-2 2t
 function gnosia:light-vote-blue
 particle minecraft:snowflake -269 86 -1610 0 0 0 .5 300 force
 function gnosia:voting/voteselect/display-votes
-execute if score revoteAmount voteCheck matches 0 run function gnosia:log/vote/generate_vote
-execute if score revoteAmount voteCheck matches 1.. run function gnosia:log/vote/generate_revote
+
+function gnosia:log/distribute_master
 
 scoreboard players set speakEnabled gameStatus 1

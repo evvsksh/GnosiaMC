@@ -1,0 +1,9 @@
+execute if score @s doctorID matches 1 run item replace block -300 88 -1610 container.18 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 2 run item replace block -300 88 -1610 container.19 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 3 run item replace block -300 88 -1610 container.20 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 4 run item replace block -300 88 -1610 container.21 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 5 run item replace block -300 88 -1610 container.22 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 6 run item replace block -300 88 -1610 container.23 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 7 run item replace block -300 88 -1610 container.24 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 8 run item replace block -300 88 -1610 container.25 from block -300 88 -1610 container.2
+execute if score @s doctorID matches 9 run item replace block -300 88 -1610 container.26 from block -300 88 -1610 container.2

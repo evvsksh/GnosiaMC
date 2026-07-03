@@ -1,4 +1,4 @@
-execute if entity @a[tag=docSearch] run tellraw @s {bold:true,color:"#8376b5",text:"How are you pretending to investigate?"}
+execute if entity @a[tag=docSearch] run tellraw @s {bold:true,color:"#8376b5",text:"Disguise Yourself & Lie"}
 
 execute if entity @a[tag=c1,tag=docSearch] run tellraw @s [{click_event:{action:"run_command","command":""},color:"#8376b5",selector:"@a[tag=c1,tag=docSearch]"},{color:"#8376b5",text:":"},{click_event:{action:"run_command","command":"/trigger doc_fake_human set 1"},color:"#6eba2b",text:" Human"},{bold:false,click_event:{action:"run_command","command":"/trigger doc_fake_gnosia set 1"},color:"#e60039",text:" Gnosia"}]
 execute if entity @a[tag=c2,tag=docSearch] run tellraw @s [{click_event:{action:"run_command","command":""},color:"#8376b5",selector:"@a[tag=c2,tag=docSearch]"},{color:"#8376b5",text:":"},{click_event:{action:"run_command","command":"/trigger doc_fake_human set 2"},color:"#6eba2b",text:" Human"},{bold:false,click_event:{action:"run_command","command":"/trigger doc_fake_gnosia set 2"},color:"#e60039",text:" Gnosia"}]
@@ -15,3 +15,19 @@ execute if entity @a[tag=c12,tag=docSearch] run tellraw @s [{click_event:{action
 execute if entity @a[tag=c13,tag=docSearch] run tellraw @s [{click_event:{action:"run_command","command":""},color:"#8376b5",selector:"@a[tag=c13,tag=docSearch]"},{color:"#8376b5",text:":"},{click_event:{action:"run_command","command":"/trigger doc_fake_human set 13"},color:"#6eba2b",text:" Human"},{bold:false,click_event:{action:"run_command","command":"/trigger doc_fake_gnosia set 13"},color:"#e60039",text:" Gnosia"}]
 execute if entity @a[tag=c14,tag=docSearch] run tellraw @s [{click_event:{action:"run_command","command":""},color:"#8376b5",selector:"@a[tag=c14,tag=docSearch]"},{color:"#8376b5",text:":"},{click_event:{action:"run_command","command":"/trigger doc_fake_human set 14"},color:"#6eba2b",text:" Human"},{bold:false,click_event:{action:"run_command","command":"/trigger doc_fake_gnosia set 14"},color:"#e60039",text:" Gnosia"}]
 execute if entity @a[tag=c15,tag=docSearch] run tellraw @s [{click_event:{action:"run_command","command":""},color:"#8376b5",selector:"@a[tag=c15,tag=docSearch]"},{color:"#8376b5",text:":"},{click_event:{action:"run_command","command":"/trigger doc_fake_human set 15"},color:"#6eba2b",text:" Human"},{bold:false,click_event:{action:"run_command","command":"/trigger doc_fake_gnosia set 15"},color:"#e60039",text:" Gnosia"}]
+
+execute if entity @a[tag=c1,tag=docSearch] run scoreboard players set @s doctorReport_c1 1
+execute if entity @a[tag=c2,tag=docSearch] run scoreboard players set @s doctorReport_c2 1
+execute if entity @a[tag=c3,tag=docSearch] run scoreboard players set @s doctorReport_c3 1
+execute if entity @a[tag=c4,tag=docSearch] run scoreboard players set @s doctorReport_c4 1
+execute if entity @a[tag=c5,tag=docSearch] run scoreboard players set @s doctorReport_c5 1
+execute if entity @a[tag=c6,tag=docSearch] run scoreboard players set @s doctorReport_c6 1
+execute if entity @a[tag=c7,tag=docSearch] run scoreboard players set @s doctorReport_c7 1
+execute if entity @a[tag=c8,tag=docSearch] run scoreboard players set @s doctorReport_c8 1
+execute if entity @a[tag=c9,tag=docSearch] run scoreboard players set @s doctorReport_c9 1
+execute if entity @a[tag=c10,tag=docSearch] run scoreboard players set @s doctorReport_c10 1
+execute if entity @a[tag=c11,tag=docSearch] run scoreboard players set @s doctorReport_c11 1
+execute if entity @a[tag=c12,tag=docSearch] run scoreboard players set @s doctorReport_c12 1
+execute if entity @a[tag=c13,tag=docSearch] run scoreboard players set @s doctorReport_c13 1
+execute if entity @a[tag=c14,tag=docSearch] run scoreboard players set @s doctorReport_c14 1
+execute if entity @a[tag=c15,tag=docSearch] run scoreboard players set @s doctorReport_c15 1

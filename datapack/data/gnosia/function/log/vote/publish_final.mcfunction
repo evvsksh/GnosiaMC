@@ -1,2 +1,0 @@
-data modify block -300 88 -1610 Items[{Slot:1b}].components."minecraft:written_book_content".pages[0].raw.extra append from block -300 88 -1610 Items[{Slot:2b}].components."minecraft:written_book_content".pages[0].raw
-item replace block -300 88 -1610 container.2 with minecraft:air

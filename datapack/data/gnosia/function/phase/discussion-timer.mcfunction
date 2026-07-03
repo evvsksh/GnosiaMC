@@ -1,5 +1,6 @@
 scoreboard players set tabHidden gameStatus 0
 tag @a remove spawned
+tag @a remove reportMade
 stopsound @a record
 function gnosia:music/discussion-music
 team modify crew nametagVisibility always
@@ -20,5 +21,10 @@ execute if score doctor claimStatus matches 1 run scoreboard players set doctor 
 execute if score guardDuty claimStatus matches 1 run scoreboard players set guardDuty claimStatus 2
 execute if score engineer claimStatus matches 2 if score doctor claimStatus matches 2 run scoreboard players set canLie claimStatus 0
 scoreboard players set showRoleActionbar gameStatus 1
+function gnosia:log/distribute_master
 function gnosia:step-forward-message
+
+tellraw @a[tag=!dead,scores={engineerID=1..}] {bold:true,color:"#187fc4",text:"Make Your Report",click_event:{action:run_command,command:"trigger makeReport set 1"}}
+tellraw @a[tag=!dead,scores={doctorID=1..}] {bold:true,color:"#8376b5",text:"Make Your Report",click_event:{action:run_command,command:"trigger makeReport set 1"}}
+
 scoreboard players reset * votedFor

@@ -8,3 +8,7 @@ execute if score enableAngel rolesCheck matches 1 run data modify block -300 88 
 execute if score enableGuard rolesCheck matches 1 run data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra append value {text:"\nGuard Duty",bold:false,color:"#46b035"}
 execute if score enableAC rolesCheck matches 1 run data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra append value {text:"\nAC Follower",bold:false,color:"#c60080"}
 execute if score enableBug rolesCheck matches 1 run data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra append value {text:"\nBug",bold:false,color:"#253636"}
+
+scoreboard players set reportPage logState 0
+scoreboard players set engineerHover logState 0
+scoreboard players set doctorHover logState 0

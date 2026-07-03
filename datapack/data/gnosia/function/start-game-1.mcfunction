@@ -30,7 +30,10 @@ schedule function gnosia:enable-voicechat 3s
 schedule function gnosia:remove-placeholderstands 5s
 #schedule function gnosia:ship-lights/alarm-toggle 30s
 
+setblock -300 88 -1610 minecraft:air
+setblock -300 88 -1610 minecraft:barrel
 function gnosia:log/generate_master
 function gnosia:log/generate_day
 function gnosia:log/event/redacted_death
 function gnosia:log/distribute_master
+function gnosia:log/reports/generate/retroactive/storage

@@ -1,4 +1,4 @@
-function gnosia:log/vote/publish_final
+function gnosia:log/distribute_master
 scoreboard players set cryoPhase voteCheck 0
 execute if score bothCryo revoteCryo > noCryo revoteCryo run function gnosia:voting/both-cryo
 execute if score bothCryo revoteCryo <= noCryo revoteCryo run function gnosia:voting/no-cryo

@@ -1,1 +1,1 @@
-item replace block -300 88 -1610 container.2 with minecraft:written_book[written_book_content={title:"generate_final",author:"",pages:[{raw:{text:"\n[Suspension Results]",color:"blue",bold:false,hover_event:{action:show_text,value:{text:"Suspension Results:",extra:[""]}}}}]}]
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[-1].raw.extra append value {text:"\n[Suspension Results]",color:"blue",bold:false,hover_event:{action:show_text,value:{text:"Suspension Results:",extra:[""]}}}
