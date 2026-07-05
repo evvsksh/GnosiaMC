@@ -3,9 +3,6 @@ team modify crew color white
 team modify engineer_claim color white
 team modify doctor_claim color white
 team modify guard_duty color white
-
-function gnosia:log/event/generate_results
-
 team join res_frozen @a[tag=cryoSleep]
 team join res_dead @a[tag=gnosiaElimination]
 

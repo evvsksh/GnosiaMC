@@ -16,8 +16,7 @@ data modify block -299 88 -1610 front_text.messages[0].extra[1].extra append fro
 execute if entity @s[tag=gnosiaElimination] run data modify block -299 88 -1610 front_text.messages[0].extra[1].color set value dark_red
 execute if entity @s[tag=cryoSleep] run data modify block -299 88 -1610 front_text.messages[0].extra[1].color set value dark_aqua
 
-data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[-1].raw.extra[-1].hover_event.value.extra append from block -299 88 -1610 front_text.messages[0]
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append from block -299 88 -1610 front_text.messages[0]
 
 setblock -299 88 -1610 minecraft:air
-scoreboard players set tempVoteCount logState 0
 tag @s remove log_event_role_reveal

@@ -219,6 +219,7 @@ time set 22000
 gamerule keep_inventory true
 gamerule pvp false
 function gnosia:remove-c-roles
+function gnosia:remove-all-roles
 
 
 effect clear @a

@@ -5,5 +5,5 @@ execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus match
 execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus matches 1 run team join doctor_claim
 execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus matches 1 run playsound gnosia:reveal-role player @a ~ ~ ~ 1 1 1
 execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus matches 1 run scoreboard players set doctor claimStatus 1
-execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus matches 1 if score @s logReportIndexEngineer matches 1.. run function gnosia:log/reports/index_update_role_doctor
+execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus matches 1 run function gnosia:log/reports/index_update_role_doctor
 execute if entity @s[tag=!cantClaim] if score showRoleActionbar gameStatus matches 1 run tag @s add cantClaim

@@ -15,4 +15,5 @@ team modify doctor_claim friendlyFire true
 team modify guard_duty friendlyFire true
 gamerule pvp true
 difficulty easy
-function gnosia:log/event/gnosia_win
+scoreboard players set winRole logState 2
+function gnosia:log/status/generate_results

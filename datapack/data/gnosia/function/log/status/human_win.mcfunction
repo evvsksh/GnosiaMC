@@ -1,0 +1,3 @@
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[-1].raw.extra[1].hover_event.value.extra append value {text:"\n",color:"#6eba2b",extra:[{text:"All Gnosia have been eliminated"}]}
+
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append value {color:"#6eba2b",text:"\nThe threat of the Gnosia has passed.\nNow, to celebrate this victory."}

@@ -99,3 +99,8 @@ scoreboard players enable @a makeReport
 execute if score discussionTimer timers matches 1.. as @a[tag=!dead,tag=!reportMade,scores={engineerID=1..,makeReport=1..}] run function gnosia:log/reports/make_engineer
 execute if score discussionTimer timers matches 1.. as @a[tag=!dead,tag=!reportMade,scores={doctorID=1..,makeReport=1..}] run function gnosia:log/reports/make_doctor
 scoreboard players set @a[scores={makeReport=1..}] makeReport 0
+
+scoreboard players enable @a checkTeam
+execute as @a[tag=gnosia,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#e60039",text:"Gnosia: "},{bold:false,selector:"@a[tag=gnosia]"}]
+execute as @a[tag=guard,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#46b035",text:"Guard Duty: "},{bold:false,selector:"@a[tag=guard]"}]
+scoreboard players set @a[scores={checkTeam=1..}] checkTeam 0

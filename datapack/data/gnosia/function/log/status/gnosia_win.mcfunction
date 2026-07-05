@@ -1,0 +1,3 @@
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[-1].raw.extra[1].hover_event.value.extra append value {text:"\n",color:"#e60039",extra:[{text:"The Gnosia have taken over the ship"}]}
+
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append value {color:"#e60039",text:"\nThis ship now belongs to the Gnosia. They will seek out\nnew victims at their next port of landing."}
