@@ -1,3 +1,5 @@
+scoreboard players set winRole logState 2
+function gnosia:log/status/generate_results
 #playsound gnosia:gnosiawin player @a ~ ~ ~ 1 1 1
 playsound gnosia:ost.wind-blows record @a ~ ~ ~ .4 1 .4
 item replace entity @a[tag=gnosia] hotbar.4 with netherite_sword[enchantments={"unbreaking":3}] 1
@@ -15,5 +17,3 @@ team modify doctor_claim friendlyFire true
 team modify guard_duty friendlyFire true
 gamerule pvp true
 difficulty easy
-scoreboard players set winRole logState 2
-function gnosia:log/status/generate_results

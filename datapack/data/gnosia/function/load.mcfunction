@@ -22,7 +22,6 @@ scoreboard objectives add winning-conditions dummy
 scoreboard objectives add areaCafeCheck dummy
 scoreboard objectives add timers dummy
 scoreboard objectives add playersID dummy
-scoreboard objectives add playersIDrevote dummy
 scoreboard objectives add revoteCryo dummy
 scoreboard objectives add music dummy
 scoreboard objectives add nightTime dummy
@@ -61,6 +60,8 @@ scoreboard objectives add logReportIndexEngineer dummy
 scoreboard objectives add logReportIndexDoctor dummy
 scoreboard objectives add correctReportID dummy
 scoreboard objectives add correctReportResult dummy
+
+scoreboard objectives add consecutiveGamesSpectated dummy
 
 scoreboard players set whoisthegnosia titleAnimation -1
 scoreboard players set endScreen gameStatus 1
@@ -119,7 +120,7 @@ scoreboard players set showRoleActionbar gameStatus 0
 scoreboard players set gameStarted gameStatus 0
 function gnosia:enable-voicechat
 
-#scoreboard players reset @a playersID
+#scoreboard players reset * playersID
 
 # Set BOSSBAR
 
@@ -161,7 +162,7 @@ bossbar set cryovoting visible false
 
 # Add TAGS
 
-tag @a add crew
+tag @a remove crew
 tag @a remove gnosiaElimination
 tag @a remove cryoSleep
 tag @a remove docSearch

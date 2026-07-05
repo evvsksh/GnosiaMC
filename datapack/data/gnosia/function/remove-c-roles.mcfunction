@@ -1,3 +1,5 @@
+scoreboard players reset * playersID
+
 tag @a remove c1
 tag @a remove c2
 tag @a remove c3

@@ -13,11 +13,11 @@ team modify engineer_claim nametagVisibility never
 team modify doctor_claim nametagVisibility never
 team modify guard_duty nametagVisibility never
 scoreboard players add day days 1
-scoreboard players set .spawnSequence delay 16
-#schedule function gnosia:phase/warp-drive-tpback 1t
-effect give @a[tag=crew] minecraft:blindness 2 1 true
-schedule function gnosia:phase/clear-spawned-tag 10s
+execute as @a[tag=crew,tag=!dead] run function gnosia:phase/random_spawn
+tag @e[tag=randomSpawnTaken] remove randomSpawnTaken
 gamemode adventure @a[tag=crew,tag=!dead]
+tp @a[gamemode=spectator] @r[tag=crew,tag=!dead]
+effect give @a[tag=crew,tag=!dead] minecraft:blindness 2 1 true
 
 function gnosia:log/generate_day
 execute as @a[tag=c1,tag=deathReport] run function gnosia:log/event/death

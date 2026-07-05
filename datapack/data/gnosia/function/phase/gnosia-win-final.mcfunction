@@ -1,6 +1,8 @@
+scoreboard players set winRole logState 2
+function gnosia:log/status/generate_results
 #playsound gnosia:gnosiawin player @a ~ ~ ~ 1 1 1
 item replace entity @a[tag=gnosia] hotbar.4 with netherite_sword[enchantments={"unbreaking":3}] 1
-effect give @a[tag=!gnosia] glowing infinite 1 true
+effect give @a[tag=crew,tag=!dead,tag=!gnosia] glowing infinite 1 true
 effect give @a[tag=gnosia] speed infinite 2 true
 effect give @a[tag=gnosia] resistance infinite 10 true
 team modify crew color red
@@ -13,5 +15,3 @@ team modify doctor_claim friendlyFire true
 team modify guard_duty friendlyFire true
 gamerule pvp true
 difficulty easy
-scoreboard players set winRole logState 2
-function gnosia:log/status/generate_results

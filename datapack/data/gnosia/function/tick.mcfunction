@@ -1,3 +1,5 @@
+execute as @a[tag=crew] unless score @s playersID matches 1..15 run function gnosia:spectate_bad_id
+
 execute if score discussionTimer timers matches 0.. run scoreboard players remove discussionTimer timers 1
 execute if score revoteTimer timers matches 0.. run scoreboard players remove revoteTimer timers 1
 execute if score votingTimer timers matches 0.. run scoreboard players remove votingTimer timers 1
@@ -48,23 +50,22 @@ execute if score gnosiaCanKill gnosiaKillChoose matches 1 if score gnosiaKillCho
 
 # Warp Drive Countdown
 
-execute if score warpdriveTimer timers matches 200 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"10"}
-execute if score warpdriveTimer timers matches 180 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"9"}
-execute if score warpdriveTimer timers matches 160 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"8"}
-execute if score warpdriveTimer timers matches 140 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"7"}
-execute if score warpdriveTimer timers matches 120 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"6"}
-execute if score warpdriveTimer timers matches 100 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"5"}
-execute if score warpdriveTimer timers matches 80 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"4"}
+execute if score warpdriveTimer timers matches 200 run title @a actionbar {"bold":true,"color":"aqua","text":"10"}
+execute if score warpdriveTimer timers matches 180 run title @a actionbar {"bold":true,"color":"aqua","text":"9"}
+execute if score warpdriveTimer timers matches 160 run title @a actionbar {"bold":true,"color":"aqua","text":"8"}
+execute if score warpdriveTimer timers matches 140 run title @a actionbar {"bold":true,"color":"aqua","text":"7"}
+execute if score warpdriveTimer timers matches 120 run title @a actionbar {"bold":true,"color":"aqua","text":"6"}
+execute if score warpdriveTimer timers matches 100 run title @a actionbar {"bold":true,"color":"aqua","text":"5"}
+execute if score warpdriveTimer timers matches 80 run title @a actionbar {"bold":true,"color":"aqua","text":"4"}
 execute if score warpdriveTimer timers matches 80 run function gnosia:phase/warp-drive-fade
 execute if score warpdriveTimer timers matches 10 run function gnosia:phase/warp-drive-sfx
-execute if score warpdriveTimer timers matches 60 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"3"}
-execute if score warpdriveTimer timers matches 40 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"2"}
-execute if score warpdriveTimer timers matches 20 run title @a[tag=crew] actionbar {"bold":true,"color":"aqua","text":"1"}
+execute if score warpdriveTimer timers matches 60 run title @a actionbar {"bold":true,"color":"aqua","text":"3"}
+execute if score warpdriveTimer timers matches 40 run title @a actionbar {"bold":true,"color":"aqua","text":"2"}
+execute if score warpdriveTimer timers matches 20 run title @a actionbar {"bold":true,"color":"aqua","text":"1"}
 execute if score warpdriveTimer timers matches 19 run function gnosia:disable-voicechat
 execute at @e[tag=warpdriveParticles,limit=1] run tp @a[tag=!gnosia,tag=!dead,tag=warpdrive] ~ ~-10 ~ 0 -90
 execute as @a[tag=!gnosia,tag=!dead,tag=warpdrive] run gamemode spectator @s
 effect give @a[tag=!gnosia,tag=warpdrive] minecraft:blindness 3 1 true
-execute as @a if score @s spectatorOnDeath matches 1 run tag @s remove alive
 
 # Gnosia Dead Check
 
@@ -139,7 +140,7 @@ execute if score @e[tag=c14,limit=1,type=armor_stand] voteSub matches 0 if score
 execute if score @e[tag=c15,limit=1,type=armor_stand] voteSub matches 0 if score voteCheck voteCheck matches 15 run scoreboard players add voteCheck voteCheck 1
 
 execute if score voteCheck voteCheck >= playerThreshold rolesCheck run scoreboard players remove cryoAnnouncement delay 1
-execute if score cryoAnnouncement delay matches 0 if score voteCheck voteCheck >= playerThreshold rolesCheck run function gnosia:voting/tally-votes-max1
+execute if score cryoAnnouncement delay matches 0 if score voteCheck voteCheck >= playerThreshold rolesCheck run function gnosia:voting/tally-votes-max
 execute if score cryoAnnouncement delay matches 0 if score voteCheck voteCheck >= playerThreshold rolesCheck run scoreboard players set voteCheck voteCheck 0
 execute if score cryoAnnouncement delay matches 0 run scoreboard players set cryoAnnouncement delay 40
 #Cryotext Timer
@@ -236,91 +237,13 @@ execute if score gnosiaKillChoose gnosiaKillChoose matches 13 run title @a[tag=g
 execute if score gnosiaKillChoose gnosiaKillChoose matches 14 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c14]","color":"#e60039"}]
 execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c15]","color":"#e60039"}]
 
-# Door Lock OLD
-
-#execute if score doorcaferetia-lock timers matches 0.. run scoreboard players remove doorcaferetia-lock timers 1
-
-#execute if score doorcaferetia-lock timers matches 18 at @e[tag=doorcafeteria] run fill ^3 ^ ^ ^3 ^4 ^ iron_block
-#execute if score doorcaferetia-lock timers matches 18 at @e[tag=doorcafeteria] run fill ^-3 ^ ^ ^-3 ^4 ^ iron_block
-
-#execute if score doorcaferetia-lock timers matches 16 at @e[tag=doorcafeteria] run fill ^3 ^ ^ ^2 ^4 ^ iron_block
-#execute if score doorcaferetia-lock timers matches 16 at @e[tag=doorcafeteria] run fill ^-3 ^ ^ ^-2 ^4 ^ iron_block
-
-#execute if score doorcaferetia-lock timers matches 14 at @e[tag=doorcafeteria] run fill ^3 ^ ^ ^1 ^4 ^ iron_block
-#execute if score doorcaferetia-lock timers matches 14 at @e[tag=doorcafeteria] run fill ^-3 ^ ^ ^-1 ^4 ^ iron_block
-
-#execute if score doorcaferetia-lock timers matches 12 at @e[tag=doorcafeteria] run fill ^3 ^ ^ ^0 ^4 ^ iron_block
-
-# Door Unlock OLD
-
-#execute if score doorcaferetia-unlock timers matches 0.. run scoreboard players remove doorcaferetia-unlock timers 1
-
-#execute if score doorcaferetia-unlock timers matches 12 at @e[tag=doorcafeteria] run fill ^3 ^ ^ ^3 ^4 ^ air
-#execute if score doorcaferetia-unlock timers matches 12 at @e[tag=doorcafeteria] run fill ^-3 ^ ^ ^-3 ^4 ^ air
-
-#execute if score doorcaferetia-unlock timers matches 14 at @e[tag=doorcafeteria] run fill ^0 ^ ^ ^2 ^4 ^ air
-#execute if score doorcaferetia-unlock timers matches 14 at @e[tag=doorcafeteria] run fill ^-1 ^ ^ ^-2 ^4 ^ air
-
-#execute if score doorcaferetia-unlock timers matches 16 at @e[tag=doorcafeteria] run fill ^0 ^ ^ ^1 ^4 ^ air
-#execute if score doorcaferetia-unlock timers matches 16 at @e[tag=doorcafeteria] run fill ^-1 ^ ^ ^-1 ^4 ^ air
-
-#execute if score doorcaferetia-unlock timers matches 18 at @e[tag=doorcafeteria] run fill ^0 ^ ^ ^0 ^4 ^ air
 
 # Area Cafeteria Check
 
 execute as @a if entity @s[x=-96,y=-16,z=-89,dx=45,dy=500,dz=45] run scoreboard players set @s areaCafeCheck 1
 execute as @a unless entity @s[x=-96,y=-16,z=-89,dx=45,dy=500,dz=45] run scoreboard players set @s areaCafeCheck 0
 
-# Players ID
-execute as @a[tag=c1,tag=!dead] run scoreboard players set @s playersID 1
-execute as @a[tag=c2,tag=!dead] run scoreboard players set @s playersID 2
-execute as @a[tag=c3,tag=!dead] run scoreboard players set @s playersID 3
-execute as @a[tag=c4,tag=!dead] run scoreboard players set @s playersID 4
-execute as @a[tag=c5,tag=!dead] run scoreboard players set @s playersID 5
-execute as @a[tag=c6,tag=!dead] run scoreboard players set @s playersID 6
-execute as @a[tag=c7,tag=!dead] run scoreboard players set @s playersID 7
-execute as @a[tag=c8,tag=!dead] run scoreboard players set @s playersID 8
-execute as @a[tag=c9,tag=!dead] run scoreboard players set @s playersID 9
-execute as @a[tag=c10,tag=!dead] run scoreboard players set @s playersID 10
-execute as @a[tag=c11,tag=!dead] run scoreboard players set @s playersID 11
-execute as @a[tag=c12,tag=!dead] run scoreboard players set @s playersID 12
-execute as @a[tag=c13,tag=!dead] run scoreboard players set @s playersID 13
-execute as @a[tag=c14,tag=!dead] run scoreboard players set @s playersID 14
-execute as @a[tag=c15,tag=!dead] run scoreboard players set @s playersID 15
-
-execute as @a[tag=c1,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 1
-execute as @a[tag=c2,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 2
-execute as @a[tag=c3,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 3
-execute as @a[tag=c4,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 4
-execute as @a[tag=c5,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 5
-execute as @a[tag=c6,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 6
-execute as @a[tag=c7,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 7
-execute as @a[tag=c8,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 8
-execute as @a[tag=c9,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 9
-execute as @a[tag=c10,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 10
-execute as @a[tag=c11,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 11
-execute as @a[tag=c12,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 12
-execute as @a[tag=c13,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 13
-execute as @a[tag=c14,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 14
-execute as @a[tag=c15,tag=!dead,tag=cryoVote] run scoreboard players set @s playersIDrevote 15
-
-# Music OLD RANDOM SYSTEM
 stopsound @a music
-#execute if score freetime-music music matches 1.. run scoreboard players remove freetime-music music 1
-#execute if score freetime-music music matches ..0 run scoreboard players set freetime-music music 120
-#execute if score freetime-music music matches 121.. run scoreboard players set freetime-music music 120
-
-#execute if score discussion-music music matches 1.. run scoreboard players remove discussion-music music 1
-#execute if score discussion-music music matches ..0 run scoreboard players set discussion-music music 4
-
-#execute if score voting-music music matches 1.. run scoreboard players remove voting-music music 1
-#execute if score voting-music music matches ..0 run scoreboard players set voting-music music 4
-
-#execute as @a[tag=dead] unless entity @s[x=-329,y=55,z=-1488,dx=229,dy=100,dz=-250] run tp @s -276.37 82.00 -1609.50 ~ ~
-#execute if score @a[limit=1] random matches 5 run scoreboard players add freetime-music music 7
-#execute if score @a[limit=1] random matches 5 run scoreboard players remove discussion-music music 1
-#execute if score @a[limit=1] random matches 5 run scoreboard players remove voting-music music 1
-#execute if score @a[limit=1] random matches 5.. run scoreboard players set @a random 0
 
 # Door Lock
 
@@ -339,54 +262,51 @@ execute if score doorcaferetia-unlock timers matches 16 at @e[tag=doormeeting] r
 execute if score doorcaferetia-unlock timers matches 18 at @e[tag=doormeeting] run fill ^1 ^0 ^0 ^-1 ^0 ^0 air
 
 # Check players amount
-execute store result score playersAmount rolesCheck run execute if entity @a
-execute if score votingTimer timers matches -1 store result score playersAlive rolesCheck run execute if entity @a[tag=!dead]
+execute store result score playersAmount rolesCheck if entity @a[tag=crew]
+execute if score votingTimer timers matches -1 store result score playersAlive rolesCheck run execute if entity @a[tag=crew,tag=!dead]
 execute store result score bugLeft rolesLeft run execute if entity @a[tag=bug,tag=!dead]
-execute store result score humansLeft rolesLeft run execute if entity @a[tag=bug,tag=!dead]
-execute store result score humansLeft rolesLeft run execute if entity @a[tag=!gnosia,tag=!dead]
-execute store result score gnosiaLeft rolesLeft run execute if entity @a[tag=gnosia,tag=!dead]
+execute store result score humansLeft rolesLeft if entity @a[tag=crew,tag=!gnosia,tag=!dead]
+execute store result score gnosiaLeft rolesLeft if entity @a[tag=gnosia,tag=!dead]
 scoreboard players operation playerThreshold rolesCheck = playersAlive rolesCheck
 scoreboard players add playerThreshold rolesCheck 1
-#scoreboard players operation playersAliveRevote rolesCheck = playersAlive rolesCheck
-#execute as @a[tag=cryoVote] run scoreboard players remove playersAliveRevote rolesCheck 1
 
 # AUTOVOTE
 
-execute as @a[tag=!dead] if score @s alreadyVoted matches 0 if score votingTimer timers matches 2 run function gnosia:voting/voteselect/random
+execute if score votingTimer timers matches 2 as @a[tag=crew,tag=!dead] if score @s alreadyVoted matches 0 run function gnosia:voting/voteselect/random
 
 ## TITLE ANIMATION
 execute if score whoisthegnosia titleAnimation matches 0.. run scoreboard players add whoisthegnosia titleAnimation 1
 execute if score whoisthegnosia titleAnimation matches 50.. run scoreboard players set whoisthegnosia titleAnimation -1
 
-execute if score whoisthegnosia titleAnimation matches 2 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"W"}
+execute if score whoisthegnosia titleAnimation matches 2 run title @a subtitle {"bold":true,"color":"#e60039","text":"W"}
 execute if score whoisthegnosia titleAnimation matches 2 run effect give @a[tag=c1] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 4 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Wh"}
+execute if score whoisthegnosia titleAnimation matches 4 run title @a subtitle {"bold":true,"color":"#e60039","text":"Wh"}
 execute if score whoisthegnosia titleAnimation matches 4 run effect give @a[tag=c2] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 6 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who"}
+execute if score whoisthegnosia titleAnimation matches 6 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who"}
 execute if score whoisthegnosia titleAnimation matches 6 run effect give @a[tag=c3] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 8 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who i"}
+execute if score whoisthegnosia titleAnimation matches 8 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who i"}
 execute if score whoisthegnosia titleAnimation matches 8 run effect give @a[tag=c4] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 10 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is"}
+execute if score whoisthegnosia titleAnimation matches 10 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is"}
 execute if score whoisthegnosia titleAnimation matches 10 run effect give @a[tag=c5] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 12 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is t"}
+execute if score whoisthegnosia titleAnimation matches 12 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is t"}
 execute if score whoisthegnosia titleAnimation matches 12 run effect give @a[tag=c6] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 14 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is th"}
+execute if score whoisthegnosia titleAnimation matches 14 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is th"}
 execute if score whoisthegnosia titleAnimation matches 14 run effect give @a[tag=c7] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 16 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the "}
+execute if score whoisthegnosia titleAnimation matches 16 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the "}
 execute if score whoisthegnosia titleAnimation matches 16 run effect give @a[tag=c8] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 18 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the G"}
+execute if score whoisthegnosia titleAnimation matches 18 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the G"}
 execute if score whoisthegnosia titleAnimation matches 18 run effect give @a[tag=c9] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 20 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gn"}
+execute if score whoisthegnosia titleAnimation matches 20 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the Gn"}
 execute if score whoisthegnosia titleAnimation matches 20 run effect give @a[tag=c10] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 22 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gno"}
+execute if score whoisthegnosia titleAnimation matches 22 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the Gno"}
 execute if score whoisthegnosia titleAnimation matches 22 run effect give @a[tag=c11] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 24 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnos"}
+execute if score whoisthegnosia titleAnimation matches 24 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnos"}
 execute if score whoisthegnosia titleAnimation matches 24 run effect give @a[tag=c12] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 26 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosi"}
+execute if score whoisthegnosia titleAnimation matches 26 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosi"}
 execute if score whoisthegnosia titleAnimation matches 26 run effect give @a[tag=c13] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 28 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosia"}
+execute if score whoisthegnosia titleAnimation matches 28 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosia"}
 execute if score whoisthegnosia titleAnimation matches 28 run effect give @a[tag=c14] glowing 1 10 true
-execute if score whoisthegnosia titleAnimation matches 30 run title @a[tag=crew] subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosia?"}
+execute if score whoisthegnosia titleAnimation matches 30 run title @a subtitle {"bold":true,"color":"#e60039","text":"Who is the Gnosia?"}
 execute if score whoisthegnosia titleAnimation matches 30 run effect give @a[tag=c15] glowing 1 10 true
 
 effect give @a[tag=cryoVote] glowing 2 10 true
@@ -404,35 +324,6 @@ execute if score endScreen gameStatus matches 1 run gamemode spectator @a
 
 data merge entity @e[type=text_display,tag=endScores1,limit=1] {line_width:300,alignment:"left",Tags:["endScores1"],text:[{"selector":"@e[tag=mark-c1,limit=1]"},{"selector":"@a[tag=c1]"},{"text":"\n"},{"selector":"@e[tag=mark-c2,limit=1]"},{"selector":"@a[tag=c2]"},{"text":"\n"},{"selector":"@e[tag=mark-c3,limit=1]"},{"selector":"@a[tag=c3]"},{"text":"\n"},{"selector":"@e[tag=mark-c4,limit=1]"},{"selector":"@a[tag=c4]"},{"text":"\n"},{"selector":"@e[tag=mark-c5,limit=1]"},{"selector":"@a[tag=c5]"},{"text":"\n"},{"selector":"@e[tag=mark-c6,limit=1]"},{"selector":"@a[tag=c6]"},{"text":"\n"},{"selector":"@e[tag=mark-c7,limit=1]"},{"selector":"@a[tag=c7]"},{"text":"\n"},{"selector":"@e[tag=mark-c8,limit=1]"},{"selector":"@a[tag=c8]"},{"text":"\n"},{"selector":"@e[tag=mark-c9,limit=1]"},{"selector":"@a[tag=c9]"},{"text":"\n"},{"selector":"@e[tag=mark-c10,limit=1]"},{"selector":"@a[tag=c10]"},{"text":"\n"},{"selector":"@e[tag=mark-c11,limit=1]"},{"selector":"@a[tag=c11]"},{"text":"\n"},{"selector":"@e[tag=mark-c12,limit=1]"},{"selector":"@a[tag=c12]"},{"text":"\n"},{"selector":"@e[tag=mark-c13,limit=1]"},{"selector":"@a[tag=c13]"},{"text":"\n"},{"selector":"@e[tag=mark-c14,limit=1]"},{"selector":"@a[tag=c14]"},{"text":"\n"},{"selector":"@e[tag=mark-c15,limit=1]"},{"selector":"@a[tag=c15]"}]}
 execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores1] ~ ~-4 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores1] {Tags:["endScores1"],text:[{"selector":"@e[tag=c1]"},""],alignment:"left",billboard:"fixed",line_width:100}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores2] ~ ~-.3 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores2] {Tags:["endScores2"],text:[{"selector":"@e[tag=c2]"},""],alignment:"left",billboard:"fixed",line_width:100}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores3] ~ ~-.6 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores3] {Tags:["endScores3"],text:[{"selector":"@e[tag=c3]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores4] ~ ~-.9 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores4] {Tags:["endScores4"],text:[{"selector":"@e[tag=c4]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores5] ~ ~-1.2 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores5] {Tags:["endScores5"],text:[{"selector":"@e[tag=c5]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores6] ~ ~-1.5 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores6] {Tags:["endScores6"],text:[{"selector":"@e[tag=c6]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores7] ~ ~-1.8 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores7] {Tags:["endScores7"],text:[{"selector":"@e[tag=c7]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores8] ~ ~-2.1 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores8] {Tags:["endScores8"],text:[{"selector":"@e[tag=c8]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores9] ~ ~-2.4 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores9] {Tags:["endScores9"],text:[{"selector":"@e[tag=c9]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores10] ~ ~-2.7 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores10] {Tags:["endScores10"],text:[{"selector":"@e[tag=c10]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores11] ~ ~-3 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores11] {Tags:["endScores11"],text:[{"selector":"@e[tag=c11]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores12] ~ ~-3.3 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores12] {Tags:["endScores12"],text:[{"selector":"@e[tag=c12]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores13] ~ ~-3.6 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores13] {Tags:["endScores13"],text:[{"selector":"@e[tag=c13]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores14] ~ ~-3.9 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores14] {Tags:["endScores14"],text:[{"selector":"@e[tag=c14]"},""],alignment:"left",billboard:"fixed"}
-#execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores15] ~ ~-4.2 ~ -90 0
-#data merge entity @e[type=text_display,limit=1,sort=nearest,tag=endScores15] {Tags:["endScores15"],text:[{"selector":"@e[tag=c15]"},""],alignment:"left",billboard:"fixed"}
 
 gamemode adventure @a[gamemode=survival]
 
@@ -454,7 +345,7 @@ execute store result score @a[tag=c13] playersOn run execute if entity @a[tag=c1
 execute store result score @a[tag=c14] playersOn run execute if entity @a[tag=c14]
 execute store result score @a[tag=c15] playersOn run execute if entity @a[tag=c15]
 
-execute if score win winning-conditions matches 1 unless entity @a[tag=!dead,tag=!gnosia,gamemode=adventure] run function gnosia:phase/end-screen-delayed
+execute if score win winning-conditions matches 1 unless entity @a[tag=crew,tag=!dead,tag=!gnosia,gamemode=adventure] run function gnosia:phase/end-screen-delayed
 
 # Sync Dead Players with Armor Stands
 
@@ -490,7 +381,7 @@ execute as @a[tag=c13,tag=dead] run tag @e[type=armor_stand,tag=c13] add dead
 execute as @a[tag=c14,tag=dead] run tag @e[type=armor_stand,tag=c14] add dead
 execute as @a[tag=c15,tag=dead] run tag @e[type=armor_stand,tag=c15] add dead
 
-function gnosia:clic-clac
+function gnosia:phase/start/clic-clac
 
 execute as @a[tag=!cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4,gamemode=!spectator] run execute at @s run tp @s ~ ~-2 ~-4 0 0
 scoreboard players set cryovoteAsleep temp 0

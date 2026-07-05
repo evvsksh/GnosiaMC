@@ -1,4 +1,8 @@
 tag @e remove cryoVote
+scoreboard players set #cryoVoteCount temp 0
+scoreboard players set #max temp -1
+scoreboard players set @e[type=armor_stand,tag=disconnect] voteSub 0
+
 scoreboard players set #max temp 0
 scoreboard players operation #max temp > @e[tag=disconnect] vote
 execute as @e[tag=disconnect] if score @s vote = #max temp run tag @s add cryoVote

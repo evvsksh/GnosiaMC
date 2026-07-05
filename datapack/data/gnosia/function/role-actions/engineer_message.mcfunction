@@ -1,5 +1,5 @@
 tag @s add exclude
-execute if entity @a[tag=!dead,tag=!exclude] run tellraw @s {bold:true,color:"#187fc4",text:"Who will you investigate?"}
+execute if entity @a[tag=crew,tag=!dead,tag=!exclude] run tellraw @s {bold:true,color:"#187fc4",text:"Who will you investigate?"}
 
 execute if entity @a[tag=c1,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 1"},color:"#187fc4",selector:"@a[tag=c1,tag=!dead,tag=!exclude]"}
 execute if entity @a[tag=c2,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 2"},color:"#187fc4",selector:"@a[tag=c2,tag=!dead,tag=!exclude]"}

@@ -3,7 +3,7 @@ scoreboard players set votesCasted temp 0
 clear @a written_book
 clear @a netherite_sword
 scoreboard players set win winning-conditions 0
-schedule function gnosia:start-game 20t
+schedule function gnosia:phase/start/start-game 20t
 schedule clear gnosia:music/discussion-music
 schedule clear gnosia:music/voting-music
 schedule clear gnosia:music/free-time-music

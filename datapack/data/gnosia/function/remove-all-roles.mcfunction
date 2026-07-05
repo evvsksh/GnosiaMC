@@ -7,5 +7,7 @@ tag @a remove guard
 tag @a remove acfollower
 tag @a remove bug
 tag @a remove dead
+tag @a remove gnosiaElimination
+tag @a remove cryoSleep
 tag @a remove spawned
 tag @a remove cryoVote
