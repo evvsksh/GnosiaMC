@@ -17,7 +17,7 @@ execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run tag @a[tag=c15
 tag @a[tag=gnosiaEliminationTemp] add deathReport
 tag @a[tag=gnosiaEliminationTemp] add gnosiaElimination
 tag @a[tag=gnosiaEliminationTemp] add dead
-execute as @a[tag=gnosiaEliminationTemp] if score @s logReportIndexEngineer matches 1.. run function gnosia:log/reports/color_killed
+execute as @a[tag=gnosiaEliminationTemp] run function gnosia:log/reports/color_killed
 tag @a[tag=gnosiaEliminationTemp] remove gnosiaEliminationTemp
 
 schedule function gnosia:kill-glitch-sfx 5.5s

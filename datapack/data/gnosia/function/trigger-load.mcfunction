@@ -26,3 +26,5 @@ scoreboard objectives add role trigger
 scoreboard objectives add claim_engineer trigger
 scoreboard objectives add claim_doctor trigger
 scoreboard objectives add claim_guard trigger
+
+scoreboard objectives add checkTeam trigger

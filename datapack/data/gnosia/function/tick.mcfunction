@@ -495,3 +495,7 @@ function gnosia:clic-clac
 execute as @a[tag=!cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4,gamemode=!spectator] run execute at @s run tp @s ~ ~-2 ~-4 0 0
 scoreboard players set cryovoteAsleep temp 0
 execute as @a[tag=cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4,gamemode=!spectator] run scoreboard players add cryovoteAsleep temp 1
+
+scoreboard players remove gnosParticle delay 1
+execute if score gnosParticle delay matches ..0 as @a[tag=gnosia,tag=!dead,gamemode=adventure] at @s run particle minecraft:dust{color:[0.902f,0f,0.2235f],scale:0.6} ~ ~1 ~ 0.3 0.5 0.3 0 1 force @a[tag=gnosia,distance=0.1..]
+execute if score gnosParticle delay matches ..0 run scoreboard players set gnosParticle delay 3

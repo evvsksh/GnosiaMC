@@ -1,0 +1,3 @@
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[-1].raw.extra[1].hover_event.value.extra append value {text:"\n",color:"#253636",shadow_color:[1,1,1,0.5],extra:[{text:"The universe has been destroyed"}]}
+
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append value {text:"\nThe crew, the ship, and the universe itself erode away...",color:"#253636",shadow_color:[1,1,1,0.5]}

@@ -8,6 +8,6 @@ execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGu
 execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGuard,tag=!dead] if score showRoleActionbar gameStatus matches 1 run team join guard_duty @a[tag=guard,tag=!dead]
 execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGuard,tag=!dead] if score showRoleActionbar gameStatus matches 1 run playsound gnosia:reveal-role player @a ~ ~ ~ 1 1 1
 execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGuard,tag=!dead] if score showRoleActionbar gameStatus matches 1 run scoreboard players set guardDuty claimStatus 1
-execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGuard,tag=!dead] if score showRoleActionbar gameStatus matches 1 as @a[tag=guard,tag=!dead] if score @s logReportIndexEngineer matches 1.. run function gnosia:log/reports/index_update_role_guard
+execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGuard,tag=!dead] if score showRoleActionbar gameStatus matches 1 as @a[tag=guard,tag=!dead] run function gnosia:log/reports/index_update_role_guard
 execute if entity @s[tag=!cantClaim] if entity @a[tag=guard,tag=!checkForOtherGuard,tag=!dead] if score showRoleActionbar gameStatus matches 1 run tag @a[tag=guard,tag=!dead] add cantClaim
 tag @s remove checkForOtherGuard
