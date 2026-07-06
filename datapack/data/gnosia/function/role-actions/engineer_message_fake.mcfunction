@@ -20,7 +20,7 @@ execute if entity @e[tag=playerDummy,tag=c13,tag=!dead,tag=!exclude] run tellraw
 execute if entity @e[tag=playerDummy,tag=c14,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 14"},color:"#187fc4",selector:"@e[tag=playerDummy,tag=c14,tag=!dead,tag=!exclude]"}
 execute if entity @e[tag=playerDummy,tag=c15,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 15"},color:"#187fc4",selector:"@e[tag=playerDummy,tag=c15,tag=!dead,tag=!exclude]"}
 
-scoreboard players operation @s reportTarget = @e[sort=random,limit=1,tag=playerDummy,tag=!dead,tag=!exclude] playersID
+scoreboard players operation @s reportTarget = @e[sort=random,limit=1,tag=playerDummy,tag=!dead,tag=!exclude] playerDummyID
 scoreboard players set @s reportRole 1
 
 tellraw @s [{bold:true,color:"#187fc4",text:"\nInvestigate your target as:"},{text:"\n"},{bold:false,click_event:{action:"run_command","command":"/trigger fakeCheckResult set 1"},color:"#6eba2b",text:"Human"},{text:"\n"},{bold:false,click_event:{action:"run_command","command":"/trigger fakeCheckResult set 2"},color:"#e60039",text:"Gnosia"}]

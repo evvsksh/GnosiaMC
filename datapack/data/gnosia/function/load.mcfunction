@@ -11,6 +11,7 @@ scoreboard objectives add voteCheck dummy
 scoreboard objectives add spectatorOnDeath dummy
 scoreboard objectives add gnosiaKillChoose dummy
 scoreboard objectives add alreadyVoted dummy
+scoreboard objectives add alreadyVotedDummy dummy
 scoreboard objectives add alreadyVotedCryo dummy
 scoreboard objectives add rolesCheck dummy
 scoreboard objectives add cryotextTimer dummy

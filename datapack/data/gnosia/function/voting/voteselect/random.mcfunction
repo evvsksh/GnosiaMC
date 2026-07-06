@@ -20,28 +20,27 @@ execute if entity @s[tag=c15] run tag @a[tag=c15] add player_marker
 
 tellraw @a[tag=player_marker] {"color":"aqua","italic":true,"text":"You failed to vote on time, a random vote has been assigned."}
 
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 1 run scoreboard players add @e[tag=playerDummy,tag=c1] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 2 run scoreboard players add @e[tag=playerDummy,tag=c2] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 3 run scoreboard players add @e[tag=playerDummy,tag=c3] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 4 run scoreboard players add @e[tag=playerDummy,tag=c4] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 5 run scoreboard players add @e[tag=playerDummy,tag=c5] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 6 run scoreboard players add @e[tag=playerDummy,tag=c6] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 7 run scoreboard players add @e[tag=playerDummy,tag=c7] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 8 run scoreboard players add @e[tag=playerDummy,tag=c8] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 9 run scoreboard players add @e[tag=playerDummy,tag=c9] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 10 run scoreboard players add @e[tag=playerDummy,tag=c10] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 11 run scoreboard players add @e[tag=playerDummy,tag=c11] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 12 run scoreboard players add @e[tag=playerDummy,tag=c12] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 13 run scoreboard players add @e[tag=playerDummy,tag=c13] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 14 run scoreboard players add @e[tag=playerDummy,tag=c14] voteSub 1
-execute if score @s alreadyVoted matches 0 if score @s random_vote_select matches 15 run scoreboard players add @e[tag=playerDummy,tag=c15] voteSub 1
+execute if score @s random_vote_select matches 1 run scoreboard players add @e[tag=playerDummy,tag=c1] voteSub 1
+execute if score @s random_vote_select matches 2 run scoreboard players add @e[tag=playerDummy,tag=c2] voteSub 1
+execute if score @s random_vote_select matches 3 run scoreboard players add @e[tag=playerDummy,tag=c3] voteSub 1
+execute if score @s random_vote_select matches 4 run scoreboard players add @e[tag=playerDummy,tag=c4] voteSub 1
+execute if score @s random_vote_select matches 5 run scoreboard players add @e[tag=playerDummy,tag=c5] voteSub 1
+execute if score @s random_vote_select matches 6 run scoreboard players add @e[tag=playerDummy,tag=c6] voteSub 1
+execute if score @s random_vote_select matches 7 run scoreboard players add @e[tag=playerDummy,tag=c7] voteSub 1
+execute if score @s random_vote_select matches 8 run scoreboard players add @e[tag=playerDummy,tag=c8] voteSub 1
+execute if score @s random_vote_select matches 9 run scoreboard players add @e[tag=playerDummy,tag=c9] voteSub 1
+execute if score @s random_vote_select matches 10 run scoreboard players add @e[tag=playerDummy,tag=c10] voteSub 1
+execute if score @s random_vote_select matches 11 run scoreboard players add @e[tag=playerDummy,tag=c11] voteSub 1
+execute if score @s random_vote_select matches 12 run scoreboard players add @e[tag=playerDummy,tag=c12] voteSub 1
+execute if score @s random_vote_select matches 13 run scoreboard players add @e[tag=playerDummy,tag=c13] voteSub 1
+execute if score @s random_vote_select matches 14 run scoreboard players add @e[tag=playerDummy,tag=c14] voteSub 1
+execute if score @s random_vote_select matches 15 run scoreboard players add @e[tag=playerDummy,tag=c15] voteSub 1
 
-execute if score @s alreadyVoted matches 0 run scoreboard players add votesCasted temp 1
-execute if score @s alreadyVoted matches 0 run playsound gnosia:select player @a[tag=player_marker] ~ ~ ~ 1 1 1
-execute if score @s alreadyVoted matches 0 run scoreboard players operation @s votedFor = @s random_vote_select
-execute if score @s alreadyVoted matches 0 run scoreboard players operation @a[tag=player_marker] votedFor = @s random_vote_select
-execute if score @s alreadyVoted matches 1.. run tellraw @s {"color":"dark_red","text":"You already voted!"}
-scoreboard players set @s alreadyVoted 1
+execute run scoreboard players add votesCasted temp 1
+execute run playsound gnosia:select player @a[tag=player_marker] ~ ~ ~ 1 1 1
+execute run scoreboard players operation @s votedFor = @s random_vote_select
+execute run scoreboard players operation @a[tag=player_marker] votedFor = @s random_vote_select
+scoreboard players set @s alreadyVotedDummy 1
 clear @a[tag=player_marker] minecraft:written_book[minecraft:custom_data={voteBook:1b}]
 
 scoreboard players set @s random_vote_select 0

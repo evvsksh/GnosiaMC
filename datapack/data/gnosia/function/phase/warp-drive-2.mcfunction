@@ -35,5 +35,5 @@ execute as @a[tag=angel,tag=!dead] run function gnosia:role-actions/angel_messag
 
 # Liars
 
-execute as @a[tag=!engineer,scores={engineerID=1..}] run function gnosia:role-actions/engineer_message_fake
-execute as @a[tag=!doctor,scores={doctorID=1..}] run function gnosia:role-actions/doctor_message_fake
+execute as @a[tag=!engineer,scores={engineerID=1..},tag=!dead] run function gnosia:role-actions/engineer_message_fake
+execute as @a[tag=!doctor,scores={doctorID=1..},tag=!dead] run function gnosia:role-actions/doctor_message_fake

@@ -1,4 +1,4 @@
-execute as @a[tag=crew] unless score @s playersID matches 1..15 run function gnosia:spectate_bad_id
+execute if score gameStarted gameStatus matches 1 as @a[tag=crew] unless score @s playersID matches 1..15 run function gnosia:spectate_bad_id
 
 execute if score discussionTimer timers matches 0.. run scoreboard players remove discussionTimer timers 1
 execute if score revoteTimer timers matches 0.. run scoreboard players remove revoteTimer timers 1
@@ -260,7 +260,7 @@ scoreboard players add playerThreshold rolesCheck 1
 
 # AUTOVOTE
 
-execute if score votingTimer timers matches 2 as @e[tag=playerDummy,tag=!dead] if score @s alreadyVoted matches 0 run function gnosia:voting/voteselect/random
+execute if score votingTimer timers matches 2 as @e[tag=playerDummy,tag=!dead] if score @s alreadyVotedDummy matches 0 run function gnosia:voting/voteselect/random
 
 # Cold Sleep Room Time Limit
 
@@ -333,3 +333,37 @@ function gnosia:phase/start/clic-clac
 scoreboard players remove gnosParticle delay 1
 execute if score gnosParticle delay matches ..0 as @a[tag=gnosia,tag=!dead,gamemode=adventure] at @s run particle minecraft:dust{color:[0.902f,0f,0.2235f],scale:0.6} ~ ~1 ~ 0.3 0.5 0.3 0 1 force @a[tag=gnosia,distance=0.1..]
 execute if score gnosParticle delay matches ..0 run scoreboard players set gnosParticle delay 3
+
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c1] if entity @a[tag=c1] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c2] if entity @a[tag=c2] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c3] if entity @a[tag=c3] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c4] if entity @a[tag=c4] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c5] if entity @a[tag=c5] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c6] if entity @a[tag=c6] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c7] if entity @a[tag=c7] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c8] if entity @a[tag=c8] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c9] if entity @a[tag=c9] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c10] if entity @a[tag=c10] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c11] if entity @a[tag=c11] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c12] if entity @a[tag=c12] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c13] if entity @a[tag=c13] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c14] if entity @a[tag=c14] run function gnosia:synchronize_dummies
+execute as @e[tag=missingPlayer,tag=playerDummy,tag=c15] if entity @a[tag=c15] run function gnosia:synchronize_dummies
+
+tag @e[tag=missingPlayer] remove missingPlayer
+
+execute as @e[tag=playerDummy,tag=c1] unless entity @a[tag=c1] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c2] unless entity @a[tag=c2] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c3] unless entity @a[tag=c3] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c4] unless entity @a[tag=c4] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c5] unless entity @a[tag=c5] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c6] unless entity @a[tag=c6] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c7] unless entity @a[tag=c7] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c8] unless entity @a[tag=c8] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c9] unless entity @a[tag=c9] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c10] unless entity @a[tag=c10] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c11] unless entity @a[tag=c11] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c12] unless entity @a[tag=c12] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c13] unless entity @a[tag=c13] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c14] unless entity @a[tag=c14] run tag @s add missingPlayer
+execute as @e[tag=playerDummy,tag=c15] unless entity @a[tag=c15] run tag @s add missingPlayer

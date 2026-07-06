@@ -17,5 +17,5 @@ execute if score engSearch gnosiaKillChoose matches 15 as @e[tag=playerDummy,tag
 tag @e[tag=engBugTemp] add deathReport
 tag @e[tag=engBugTemp] add gnosiaElimination
 tag @e[tag=engBugTemp] add dead
-execute as @e[tag=engBugTemp] run function gnosia:syncronize_dummies
+execute as @e[tag=engBugTemp] run function gnosia:synchronize_dummies
 tag @e[tag=engBugTemp] remove engBugTemp

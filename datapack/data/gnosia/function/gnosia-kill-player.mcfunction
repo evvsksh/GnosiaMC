@@ -17,7 +17,7 @@ execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run tag @e[tag=pla
 tag @e[tag=gnosiaEliminationTemp] add deathReport
 tag @e[tag=gnosiaEliminationTemp] add gnosiaElimination
 tag @e[tag=gnosiaEliminationTemp] add dead
-execute as @e[tag=gnosiaEliminationTemp] run function gnosia:syncronize_dummies
+execute as @e[tag=gnosiaEliminationTemp] run function gnosia:synchronize_dummies
 execute as @e[tag=gnosiaEliminationTemp] run function gnosia:log/reports/color_killed
 tag @e[tag=gnosiaEliminationTemp] remove gnosiaEliminationTemp
 

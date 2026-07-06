@@ -45,7 +45,7 @@ gamemode spectator @a[tag=cryoVote]
 tag @e[tag=playerDummy,tag=cryoVote] add cryoSleep
 tag @e[tag=playerDummy,tag=cryoVote] add docSearch
 tag @e[tag=playerDummy,tag=cryoVote] add dead
-execute as @e[tag=playerDummy,tag=cryoVote] run function gnosia:syncronize_dummies
+execute as @e[tag=playerDummy,tag=cryoVote] run function gnosia:synchronize_dummies
 execute unless score doctor claimStatus matches 1.. run function gnosia:log/reports/generate/retroactive/doctor_freeze
 
 stopsound @a record

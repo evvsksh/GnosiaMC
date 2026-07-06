@@ -1,31 +1,31 @@
-setblock -299 88 -1610 oak_wall_sign[facing=east]{front_text:{messages:[{text:"",extra:["",{selector:"@a[tag=c1]"},{selector:"@a[tag=c2]"},{selector:"@a[tag=c3]"},{selector:"@a[tag=c4]"},{selector:"@a[tag=c5]"},{selector:"@a[tag=c6]"},{selector:"@a[tag=c7]"},{selector:"@a[tag=c8]"},{selector:"@a[tag=c9]"},{selector:"@a[tag=c10]"},{selector:"@a[tag=c11]"},{selector:"@a[tag=c12]"},{selector:"@a[tag=c13]"},{selector:"@a[tag=c14]"},{selector:"@a[tag=c15]"}]},"","",""]}}
+setblock -299 88 -1610 oak_wall_sign[facing=east]{front_text:{messages:[{text:"",extra:["",{selector:"@e[tag=playerDummy,tag=c1]"},{selector:"@e[tag=playerDummy,tag=c2]"},{selector:"@e[tag=playerDummy,tag=c3]"},{selector:"@e[tag=playerDummy,tag=c4]"},{selector:"@e[tag=playerDummy,tag=c5]"},{selector:"@e[tag=playerDummy,tag=c6]"},{selector:"@e[tag=playerDummy,tag=c7]"},{selector:"@e[tag=playerDummy,tag=c8]"},{selector:"@e[tag=playerDummy,tag=c9]"},{selector:"@e[tag=playerDummy,tag=c10]"},{selector:"@e[tag=playerDummy,tag=c11]"},{selector:"@e[tag=playerDummy,tag=c12]"},{selector:"@e[tag=playerDummy,tag=c13]"},{selector:"@e[tag=playerDummy,tag=c14]"},{selector:"@e[tag=playerDummy,tag=c15]"}]},"","",""]}}
 
 data modify block -300 88 -1610 Items[{Slot:14b}].components."minecraft:written_book_content".pages set value [{raw:{text:""}}]
 
 execute if entity @s[tag=engineer] store result score @s correctReportID run data get block -300 88 -1610 Items[{Slot:14b}].components."minecraft:custom_data".engineerList[0].real_check
-execute if entity @s[tag=engineer] if score @s correctReportID matches 1 run tag @a[tag=c1] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 2 run tag @a[tag=c2] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 3 run tag @a[tag=c3] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 4 run tag @a[tag=c4] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 5 run tag @a[tag=c5] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 6 run tag @a[tag=c6] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 7 run tag @a[tag=c7] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 8 run tag @a[tag=c8] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 9 run tag @a[tag=c9] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 10 run tag @a[tag=c10] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 11 run tag @a[tag=c11] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 12 run tag @a[tag=c12] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 13 run tag @a[tag=c13] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 14 run tag @a[tag=c14] add correctID
-execute if entity @s[tag=engineer] if score @s correctReportID matches 15 run tag @a[tag=c15] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 1 run tag @e[tag=playerDummy,tag=c1] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 2 run tag @e[tag=playerDummy,tag=c2] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 3 run tag @e[tag=playerDummy,tag=c3] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 4 run tag @e[tag=playerDummy,tag=c4] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 5 run tag @e[tag=playerDummy,tag=c5] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 6 run tag @e[tag=playerDummy,tag=c6] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 7 run tag @e[tag=playerDummy,tag=c7] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 8 run tag @e[tag=playerDummy,tag=c8] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 9 run tag @e[tag=playerDummy,tag=c9] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 10 run tag @e[tag=playerDummy,tag=c10] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 11 run tag @e[tag=playerDummy,tag=c11] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 12 run tag @e[tag=playerDummy,tag=c12] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 13 run tag @e[tag=playerDummy,tag=c13] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 14 run tag @e[tag=playerDummy,tag=c14] add correctID
+execute if entity @s[tag=engineer] if score @s correctReportID matches 15 run tag @e[tag=playerDummy,tag=c15] add correctID
 
-execute if entity @a[tag=correctID,tag=!gnosia] run scoreboard players set @s correctReportResult 1
-execute if entity @a[tag=correctID,tag=gnosia] run scoreboard players set @s correctReportResult 2
+execute if entity @e[tag=playerDummy,tag=correctID,tag=!gnosia] run scoreboard players set @s correctReportResult 1
+execute if entity @e[tag=playerDummy,tag=correctID,tag=gnosia] run scoreboard players set @s correctReportResult 2
 
-execute if score @s correctReportResult matches 1 run tellraw @s {color:"#187fc4",text:"You investigated ",extra:[{color:"#187fc4",selector:"@a[tag=correctID]"}," as ",{color:"#6eba2b",text:"Human"}]}
-execute if score @s correctReportResult matches 2 run tellraw @s {color:"#187fc4",text:"You investigated ",extra:[{color:"#187fc4",selector:"@a[tag=correctID]"}," as ",{color:"#e60039",text:"Gnosia"}]}
+execute if score @s correctReportResult matches 1 run tellraw @s {color:"#187fc4",text:"You investigated ",extra:[{color:"#187fc4",selector:"@e[tag=playerDummy,tag=correctID]"}," as ",{color:"#6eba2b",text:"Human"}]}
+execute if score @s correctReportResult matches 2 run tellraw @s {color:"#187fc4",text:"You investigated ",extra:[{color:"#187fc4",selector:"@e[tag=playerDummy,tag=correctID]"}," as ",{color:"#e60039",text:"Gnosia"}]}
 
-tag @a[tag=correctID] remove correctID
+tag @e[tag=correctID] remove correctID
 
 execute if data block -300 88 -1610 Items[{Slot:1b}].components."minecraft:custom_data".checkedAlready[6][{id:1i}] run data remove block -300 88 -1610 Items[{Slot:14b}].components."minecraft:custom_data".engineerList[0].checkable[{id:1i}]
 execute if data block -300 88 -1610 Items[{Slot:1b}].components."minecraft:custom_data".checkedAlready[6][{id:2i}] run data remove block -300 88 -1610 Items[{Slot:14b}].components."minecraft:custom_data".engineerList[0].checkable[{id:2i}]
