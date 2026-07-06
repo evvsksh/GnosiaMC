@@ -50,6 +50,8 @@ jobs:
           elapsed=0
           success=false
 
+          tail -f server.log &
+
           while [ $elapsed -lt $timeout ]; do
             if ! kill -0 $SERVER_PID 2>/dev/null; then
               echo "Server process died unexpectedly."
