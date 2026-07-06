@@ -9,18 +9,18 @@ scoreboard players set winRole logState 0
 
 data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append value {text:"\n\nRoles:"}
 
-execute as @a[tag=c1] run function gnosia:log/status/role_reveal
-execute as @a[tag=c2] run function gnosia:log/status/role_reveal
-execute as @a[tag=c3] run function gnosia:log/status/role_reveal
-execute as @a[tag=c4] run function gnosia:log/status/role_reveal
-execute as @a[tag=c5] run function gnosia:log/status/role_reveal
-execute as @a[tag=c6] run function gnosia:log/status/role_reveal
-execute as @a[tag=c7] run function gnosia:log/status/role_reveal
-execute as @a[tag=c8] run function gnosia:log/status/role_reveal
-execute as @a[tag=c9] run function gnosia:log/status/role_reveal
-execute as @a[tag=c10] run function gnosia:log/status/role_reveal
-execute as @a[tag=c11] run function gnosia:log/status/role_reveal
-execute as @a[tag=c12] run function gnosia:log/status/role_reveal
-execute as @a[tag=c13] run function gnosia:log/status/role_reveal
-execute as @a[tag=c14] run function gnosia:log/status/role_reveal
-execute as @a[tag=c15] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c1] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c2] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c3] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c4] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c5] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c6] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c7] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c8] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c9] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c10] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c11] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c12] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c13] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c14] run function gnosia:log/status/role_reveal
+execute as @e[tag=playerDummy,tag=c15] run function gnosia:log/status/role_reveal

@@ -22,6 +22,7 @@ scoreboard objectives add winning-conditions dummy
 scoreboard objectives add areaCafeCheck dummy
 scoreboard objectives add timers dummy
 scoreboard objectives add playersID dummy
+scoreboard objectives add playerDummyID dummy
 scoreboard objectives add revoteCryo dummy
 scoreboard objectives add music dummy
 scoreboard objectives add nightTime dummy
@@ -35,9 +36,12 @@ scoreboard objectives add votedFor dummy
 scoreboard objectives add claimStatus dummy
 scoreboard objectives add engineerID dummy
 scoreboard objectives add doctorID dummy
+scoreboard objectives add engineerDummyID dummy
+scoreboard objectives add doctorDummyID dummy
 scoreboard objectives add reportTarget dummy
 scoreboard objectives add reportRole dummy
 scoreboard objectives add engineerReportRole dummy
+scoreboard objectives add random_vote_select dummy
 
 scoreboard objectives add doctorReport_c1 dummy
 scoreboard objectives add doctorReport_c2 dummy
@@ -74,6 +78,7 @@ scoreboard players set votingTimer timers -1
 scoreboard players set warpdriveTimer timers -1
 scoreboard players set revoteTimer timers -1
 scoreboard players set cryovotingTimer timers -1
+scoreboard players set cryoPatienceTimer timers -1
 
 scoreboard players set ledAnimationTimerOff temp -1
 scoreboard players set ledAnimationTimerOnGreen temp -1
@@ -120,7 +125,9 @@ scoreboard players set showRoleActionbar gameStatus 0
 scoreboard players set gameStarted gameStatus 0
 function gnosia:enable-voicechat
 
-#scoreboard players reset * playersID
+scoreboard players reset * playersID
+kill @e[type=armor_stand,tag=playerDummy]
+scoreboard players reset * playerDummyID
 
 # Set BOSSBAR
 
@@ -246,24 +253,6 @@ scoreboard players set gameStarted gameStatus 0
 
 tp @a -289.5 82 -1609.5 -90 0
 gamemode adventure @a
-
-kill @e[type=armor_stand,tag=disconnect]
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c1","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c2","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c3","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c4","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c5","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c6","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c7","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c8","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c9","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c10","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c11","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c12","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c13","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c14","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c15","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-execute as @e[tag=disconnect] run data merge entity @s {CustomNameVisible:0b}
 
 tp @e[tag=votePos] -269 37.5 -1610 0 0
 tp @e[type=minecraft:text_display,tag=voteScores1] @e[tag=votePos,limit=1]

@@ -6,7 +6,7 @@ team modify engineer_claim color red
 team modify doctor_claim color red
 team modify guard_duty color red
 scoreboard players set votingTimer timers 1200
-scoreboard players set @e[type=armor_stand,tag=disconnect] voteSub 0
+scoreboard players set @e[type=armor_stand,tag=playerDummy] voteSub 0
 playsound gnosia:leviactivate player @a ~ ~ ~ 1 1 1
 function gnosia:disable-bossbars
 bossbar set voting visible true

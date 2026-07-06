@@ -4,6 +4,7 @@ execute if score discussionTimer timers matches 0.. run scoreboard players remov
 execute if score revoteTimer timers matches 0.. run scoreboard players remove revoteTimer timers 1
 execute if score votingTimer timers matches 0.. run scoreboard players remove votingTimer timers 1
 execute if score cryovotingTimer timers matches 0.. run scoreboard players remove votingTimer timers 1
+execute if score cryoPatienceTimer timers matches 0.. run scoreboard players remove cryoPatienceTimer timers 1
 
 execute if score warpdriveTimer timers matches 0.. run scoreboard players remove warpdriveTimer timers 1
 execute if score ledAnimationTimerOff temp matches 0.. run scoreboard players remove ledAnimationTimerOff temp 1
@@ -67,14 +68,8 @@ execute at @e[tag=warpdriveParticles,limit=1] run tp @a[tag=!gnosia,tag=!dead,ta
 execute as @a[tag=!gnosia,tag=!dead,tag=warpdrive] run gamemode spectator @s
 effect give @a[tag=!gnosia,tag=warpdrive] minecraft:blindness 3 1 true
 
-# Gnosia Dead Check
+# Bug Particles
 
-#execute as @a[tag=gnosia] if score @s spectatorOnDeath matches 1 run scoreboard players remove gnosiaLeft rolesLeft 1
-
-# Bug Dead Check
-
-execute as @a[tag=bug] if score @s spectatorOnDeath matches 1 run scoreboard players set bugLeft rolesLeft 0
-execute as @a[tag=bug] if score @s spectatorOnDeath matches 1 run scoreboard players remove humansLeft rolesLeft 1
 execute unless score endScreen gameStatus matches 1 at @a[team=bug] run particle minecraft:infested ~ ~.7 ~ .1 .1 .1 .4 20 normal
 
 # Update Text Displays
@@ -154,13 +149,6 @@ execute if score cryotextTimer cryotextTimer matches 240.. run scoreboard player
 execute if score cryotextTimer cryotextTimer matches 120 run data merge entity @e[type=text_display,limit=1,tag=cryotext] {start_interpolation:-1,interpolation_duration:50,text_opacity:0b,background:1481884}
 execute if score cryotextTimer cryotextTimer matches 120 run data merge entity @e[type=text_display,limit=1,tag=cryotextName] {start_interpolation:-1,interpolation_duration:50,text_opacity:0b,background:1481884}
 
-#Spawning Sequence
-execute if score .spawnSequence delay matches 1.. run scoreboard players remove .spawnSequence delay 1
-execute if score .spawnSequence delay matches 1.. run tag @r[tag=!spawned] add spawning
-execute if score .spawnSequence delay matches 1.. run execute as @a[tag=spawning] at @e[tag=crewSpawn,type=minecraft:armor_stand,sort=random,limit=1] run tp @s ~ ~ ~ ~ 0
-tag @a[tag=spawning] add spawned
-tag @a[tag=spawning] remove spawning
-
 #Warpdrive Particles
 execute at @e[tag=warpdriveParticles] run particle minecraft:end_rod ~ ~ ~ .1 .1 .1 .7 50 normal
 
@@ -185,57 +173,57 @@ scoreboard players set @a spectatorOnDeath 0
 
 # Selection Actionbar Title: Engineer
 
-execute if score engSearch gnosiaKillChoose matches 1 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c1]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 2 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c2]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 3 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c3]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 4 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c4]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 5 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c5]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 6 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c6]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 7 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c7]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 8 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c8]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 9 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c9]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 10 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c10]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 11 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c11]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 12 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c12]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 13 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c13]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 14 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c14]","color":"#187fc4"}]
-execute if score engSearch gnosiaKillChoose matches 15 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@a[tag=c15]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 1 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c1]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 2 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c2]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 3 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c3]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 4 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c4]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 5 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c5]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 6 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c6]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 7 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c7]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 8 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c8]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 9 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c9]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 10 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c10]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 11 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c11]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 12 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c12]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 13 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c13]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 14 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c14]","color":"#187fc4"}]
+execute if score engSearch gnosiaKillChoose matches 15 run title @a[tag=engineer] actionbar ["",{"text":"You have selected ","color":"#187fc4"},{"selector":"@e[tag=playerDummy,tag=c15]","color":"#187fc4"}]
 
 # Selection Actionbar Title: Angel
 
-execute if score angelSave gnosiaKillChoose matches 1 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c1]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 2 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c2]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 3 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c3]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 4 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c4]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 5 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c5]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 6 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c6]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 7 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c7]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 8 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c8]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 9 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c9]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 10 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c10]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 11 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c11]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 12 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c12]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 13 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c13]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 14 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c14]","color":"#f6ad3c"}]
-execute if score angelSave gnosiaKillChoose matches 15 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@a[tag=c15]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 1 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c1]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 2 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c2]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 3 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c3]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 4 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c4]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 5 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c5]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 6 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c6]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 7 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c7]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 8 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c8]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 9 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c9]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 10 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c10]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 11 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c11]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 12 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c12]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 13 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c13]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 14 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c14]","color":"#f6ad3c"}]
+execute if score angelSave gnosiaKillChoose matches 15 run title @a[tag=angel] actionbar ["",{"text":"You have selected ","color":"#f6ad3c"},{"selector":"@e[tag=playerDummy,tag=c15]","color":"#f6ad3c"}]
 
 # Selection Actionbar Title: Gnosia
 
-execute if score gnosiaKillChoose gnosiaKillChoose matches 1 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c1]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 2 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c2]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 3 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c3]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 4 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c4]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 5 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c5]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 6 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c6]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 7 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c7]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 8 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c8]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 9 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c9]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 10 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c10]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 11 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c11]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 12 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c12]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 13 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c13]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 14 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c14]","color":"#e60039"}]
-execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@a[tag=c15]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 1 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c1]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 2 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c2]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 3 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c3]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 4 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c4]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 5 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c5]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 6 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c6]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 7 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c7]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 8 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c8]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 9 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c9]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 10 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c10]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 11 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c11]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 12 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c12]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 13 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c13]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 14 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c14]","color":"#e60039"}]
+execute if score gnosiaKillChoose gnosiaKillChoose matches 15 run title @a[tag=gnosia] actionbar ["",{"text":"You have selected ","color":"#e60039"},{"selector":"@e[tag=playerDummy,tag=c15]","color":"#e60039"}]
 
 
 # Area Cafeteria Check
@@ -262,17 +250,28 @@ execute if score doorcaferetia-unlock timers matches 16 at @e[tag=doormeeting] r
 execute if score doorcaferetia-unlock timers matches 18 at @e[tag=doormeeting] run fill ^1 ^0 ^0 ^-1 ^0 ^0 air
 
 # Check players amount
-execute store result score playersAmount rolesCheck if entity @a[tag=crew]
-execute if score votingTimer timers matches -1 store result score playersAlive rolesCheck run execute if entity @a[tag=crew,tag=!dead]
-execute store result score bugLeft rolesLeft run execute if entity @a[tag=bug,tag=!dead]
-execute store result score humansLeft rolesLeft if entity @a[tag=crew,tag=!gnosia,tag=!dead]
-execute store result score gnosiaLeft rolesLeft if entity @a[tag=gnosia,tag=!dead]
+execute store result score playersAmount rolesCheck if entity @e[tag=playerDummy]
+execute if score votingTimer timers matches -1 store result score playersAlive rolesCheck if entity @e[tag=playerDummy,tag=!dead]
+execute store result score bugLeft rolesLeft if entity @e[tag=playerDummy,tag=bug,tag=!dead]
+execute store result score humansLeft rolesLeft if entity @e[tag=playerDummy,tag=!gnosia,tag=!dead]
+execute store result score gnosiaLeft rolesLeft if entity @e[tag=playerDummy,tag=gnosia,tag=!dead]
 scoreboard players operation playerThreshold rolesCheck = playersAlive rolesCheck
 scoreboard players add playerThreshold rolesCheck 1
 
 # AUTOVOTE
 
-execute if score votingTimer timers matches 2 as @a[tag=crew,tag=!dead] if score @s alreadyVoted matches 0 run function gnosia:voting/voteselect/random
+execute if score votingTimer timers matches 2 as @e[tag=playerDummy,tag=!dead] if score @s alreadyVoted matches 0 run function gnosia:voting/voteselect/random
+
+# Cold Sleep Room Time Limit
+
+execute as @a[tag=!cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4,gamemode=!spectator] run execute at @s run tp @s ~ ~-2 ~-4 0 0
+execute store result score cryovoteAsleep temp if entity @a[tag=cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4]
+
+execute if score cryoPatienceTimer timers matches 0..2300 unless entity @a[tag=cryoVote] as @e[tag=cryoVote,tag=playerDummy] run function gnosia:phase/force_into_fridge
+execute if score cryoPatienceTimer timers matches 0..2300 unless entity @a[tag=cryoVote] run function gnosia:phase/cryo-kill
+
+execute if score cryoPatienceTimer timers matches 0 as @e[tag=cryoVote,tag=playerDummy] run function gnosia:phase/force_into_fridge
+execute if score cryoPatienceTimer timers matches 0 run function gnosia:phase/cryo-kill
 
 ## TITLE ANIMATION
 execute if score whoisthegnosia titleAnimation matches 0.. run scoreboard players add whoisthegnosia titleAnimation 1
@@ -322,70 +321,14 @@ execute if score endScreen gameStatus matches 1 run tp @e[tag=endPos,limit=1] -2
 execute if score endScreen gameStatus matches 1 run tp @a -263 83 -1610 90 -5
 execute if score endScreen gameStatus matches 1 run gamemode spectator @a
 
-data merge entity @e[type=text_display,tag=endScores1,limit=1] {line_width:300,alignment:"left",Tags:["endScores1"],text:[{"selector":"@e[tag=mark-c1,limit=1]"},{"selector":"@a[tag=c1]"},{"text":"\n"},{"selector":"@e[tag=mark-c2,limit=1]"},{"selector":"@a[tag=c2]"},{"text":"\n"},{"selector":"@e[tag=mark-c3,limit=1]"},{"selector":"@a[tag=c3]"},{"text":"\n"},{"selector":"@e[tag=mark-c4,limit=1]"},{"selector":"@a[tag=c4]"},{"text":"\n"},{"selector":"@e[tag=mark-c5,limit=1]"},{"selector":"@a[tag=c5]"},{"text":"\n"},{"selector":"@e[tag=mark-c6,limit=1]"},{"selector":"@a[tag=c6]"},{"text":"\n"},{"selector":"@e[tag=mark-c7,limit=1]"},{"selector":"@a[tag=c7]"},{"text":"\n"},{"selector":"@e[tag=mark-c8,limit=1]"},{"selector":"@a[tag=c8]"},{"text":"\n"},{"selector":"@e[tag=mark-c9,limit=1]"},{"selector":"@a[tag=c9]"},{"text":"\n"},{"selector":"@e[tag=mark-c10,limit=1]"},{"selector":"@a[tag=c10]"},{"text":"\n"},{"selector":"@e[tag=mark-c11,limit=1]"},{"selector":"@a[tag=c11]"},{"text":"\n"},{"selector":"@e[tag=mark-c12,limit=1]"},{"selector":"@a[tag=c12]"},{"text":"\n"},{"selector":"@e[tag=mark-c13,limit=1]"},{"selector":"@a[tag=c13]"},{"text":"\n"},{"selector":"@e[tag=mark-c14,limit=1]"},{"selector":"@a[tag=c14]"},{"text":"\n"},{"selector":"@e[tag=mark-c15,limit=1]"},{"selector":"@a[tag=c15]"}]}
+data merge entity @e[type=text_display,tag=endScores1,limit=1] {line_width:300,alignment:"left",Tags:["endScores1"],text:[{"selector":"@e[tag=mark-c1,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c1]"},{"text":"\n"},{"selector":"@e[tag=mark-c2,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c2]"},{"text":"\n"},{"selector":"@e[tag=mark-c3,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c3]"},{"text":"\n"},{"selector":"@e[tag=mark-c4,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c4]"},{"text":"\n"},{"selector":"@e[tag=mark-c5,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c5]"},{"text":"\n"},{"selector":"@e[tag=mark-c6,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c6]"},{"text":"\n"},{"selector":"@e[tag=mark-c7,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c7]"},{"text":"\n"},{"selector":"@e[tag=mark-c8,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c8]"},{"text":"\n"},{"selector":"@e[tag=mark-c9,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c9]"},{"text":"\n"},{"selector":"@e[tag=mark-c10,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c10]"},{"text":"\n"},{"selector":"@e[tag=mark-c11,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c11]"},{"text":"\n"},{"selector":"@e[tag=mark-c12,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c12]"},{"text":"\n"},{"selector":"@e[tag=mark-c13,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c13]"},{"text":"\n"},{"selector":"@e[tag=mark-c14,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c14]"},{"text":"\n"},{"selector":"@e[tag=mark-c15,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c15]"}]}
 execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores1] ~ ~-4 ~ -90 0
 
 gamemode adventure @a[gamemode=survival]
 
-scoreboard players reset * playersOn
-
-execute store result score @a[tag=c1] playersOn run execute if entity @a[tag=c1]
-execute store result score @a[tag=c2] playersOn run execute if entity @a[tag=c2]
-execute store result score @a[tag=c3] playersOn run execute if entity @a[tag=c3]
-execute store result score @a[tag=c4] playersOn run execute if entity @a[tag=c4]
-execute store result score @a[tag=c5] playersOn run execute if entity @a[tag=c5]
-execute store result score @a[tag=c6] playersOn run execute if entity @a[tag=c6]
-execute store result score @a[tag=c7] playersOn run execute if entity @a[tag=c7]
-execute store result score @a[tag=c8] playersOn run execute if entity @a[tag=c8]
-execute store result score @a[tag=c9] playersOn run execute if entity @a[tag=c9]
-execute store result score @a[tag=c10] playersOn run execute if entity @a[tag=c10]
-execute store result score @a[tag=c11] playersOn run execute if entity @a[tag=c11]
-execute store result score @a[tag=c12] playersOn run execute if entity @a[tag=c12]
-execute store result score @a[tag=c13] playersOn run execute if entity @a[tag=c13]
-execute store result score @a[tag=c14] playersOn run execute if entity @a[tag=c14]
-execute store result score @a[tag=c15] playersOn run execute if entity @a[tag=c15]
-
 execute if score win winning-conditions matches 1 unless entity @a[tag=crew,tag=!dead,tag=!gnosia,gamemode=adventure] run function gnosia:phase/end-screen-delayed
 
-# Sync Dead Players with Armor Stands
-
-execute as @a[tag=c1,tag=!dead] run tag @e[type=armor_stand,tag=c1] remove dead
-execute as @a[tag=c2,tag=!dead] run tag @e[type=armor_stand,tag=c2] remove dead
-execute as @a[tag=c3,tag=!dead] run tag @e[type=armor_stand,tag=c3] remove dead
-execute as @a[tag=c4,tag=!dead] run tag @e[type=armor_stand,tag=c4] remove dead
-execute as @a[tag=c5,tag=!dead] run tag @e[type=armor_stand,tag=c5] remove dead
-execute as @a[tag=c6,tag=!dead] run tag @e[type=armor_stand,tag=c6] remove dead
-execute as @a[tag=c7,tag=!dead] run tag @e[type=armor_stand,tag=c7] remove dead
-execute as @a[tag=c8,tag=!dead] run tag @e[type=armor_stand,tag=c8] remove dead
-execute as @a[tag=c9,tag=!dead] run tag @e[type=armor_stand,tag=c9] remove dead
-execute as @a[tag=c10,tag=!dead] run tag @e[type=armor_stand,tag=c10] remove dead
-execute as @a[tag=c11,tag=!dead] run tag @e[type=armor_stand,tag=c11] remove dead
-execute as @a[tag=c12,tag=!dead] run tag @e[type=armor_stand,tag=c12] remove dead
-execute as @a[tag=c13,tag=!dead] run tag @e[type=armor_stand,tag=c13] remove dead
-execute as @a[tag=c14,tag=!dead] run tag @e[type=armor_stand,tag=c14] remove dead
-execute as @a[tag=c15,tag=!dead] run tag @e[type=armor_stand,tag=c15] remove dead
-
-execute as @a[tag=c1,tag=dead] run tag @e[type=armor_stand,tag=c1] add dead
-execute as @a[tag=c2,tag=dead] run tag @e[type=armor_stand,tag=c2] add dead
-execute as @a[tag=c3,tag=dead] run tag @e[type=armor_stand,tag=c3] add dead
-execute as @a[tag=c4,tag=dead] run tag @e[type=armor_stand,tag=c4] add dead
-execute as @a[tag=c5,tag=dead] run tag @e[type=armor_stand,tag=c5] add dead
-execute as @a[tag=c6,tag=dead] run tag @e[type=armor_stand,tag=c6] add dead
-execute as @a[tag=c7,tag=dead] run tag @e[type=armor_stand,tag=c7] add dead
-execute as @a[tag=c8,tag=dead] run tag @e[type=armor_stand,tag=c8] add dead
-execute as @a[tag=c9,tag=dead] run tag @e[type=armor_stand,tag=c9] add dead
-execute as @a[tag=c10,tag=dead] run tag @e[type=armor_stand,tag=c10] add dead
-execute as @a[tag=c11,tag=dead] run tag @e[type=armor_stand,tag=c11] add dead
-execute as @a[tag=c12,tag=dead] run tag @e[type=armor_stand,tag=c12] add dead
-execute as @a[tag=c13,tag=dead] run tag @e[type=armor_stand,tag=c13] add dead
-execute as @a[tag=c14,tag=dead] run tag @e[type=armor_stand,tag=c14] add dead
-execute as @a[tag=c15,tag=dead] run tag @e[type=armor_stand,tag=c15] add dead
-
 function gnosia:phase/start/clic-clac
-
-execute as @a[tag=!cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4,gamemode=!spectator] run execute at @s run tp @s ~ ~-2 ~-4 0 0
-scoreboard players set cryovoteAsleep temp 0
-execute as @a[tag=cryoVote,x=-179,y=64,z=-1582,dx=-21,dy=4,dz=4,gamemode=!spectator] run scoreboard players add cryovoteAsleep temp 1
 
 scoreboard players remove gnosParticle delay 1
 execute if score gnosParticle delay matches ..0 as @a[tag=gnosia,tag=!dead,gamemode=adventure] at @s run particle minecraft:dust{color:[0.902f,0f,0.2235f],scale:0.6} ~ ~1 ~ 0.3 0.5 0.3 0 1 force @a[tag=gnosia,distance=0.1..]
