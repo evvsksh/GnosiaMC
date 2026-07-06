@@ -42,25 +42,43 @@ jobs:
           cd /tmp/minecraft/
           FLAGS="-XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1HeapRegionSize=8M -XX:G1HeapWastePercent=5 -XX:G1MaxNewSizePercent=40 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1NewSizePercent=30 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -XX:MaxGCPauseMillis=200 -XX:MaxTenuringThreshold=1 -XX:SurvivorRatio=32"
 
+          touch server.log
           java $FLAGS -jar server.jar --nogui > server.log 2>&1 &
           SERVER_PID=$!
 
-          touch server.log
+          timeout=120
+          elapsed=0
+          success=false
 
-          if ! timeout 2m tail -f server.log --pid=$SERVER_PID | while read -r line; do
-            echo "$line"
-            if echo "$line" | grep -q "Starting Minecraft server on \*:25565"; then
+          while [ $elapsed -lt $timeout ]; do
+            if ! kill -0 $SERVER_PID 2>/dev/null; then
+              echo "Server process died unexpectedly."
+              cat server.log
+              exit 1
+            fi
+
+            if grep -qE "Done \([0-9.]+s\)! For help, type \"help\"" server.log; then
+              echo "Server completely started up and ready! Shutting down..."
               kill $SERVER_PID
+              success=true
               break
             fi
-          done; then
-            echo "Timeout reached"
-            kill $SERVER_PID 2>/dev/null || true
-            exit 1
-          fi
 
-          if grep -q "Failed to load datapack" server.log || grep -q "Failed to load function" server.log; then
-            echo "Error occurred while loading datapack"
+            if grep -q "Failed to load datapack" server.log || grep -q "Failed to load function" server.log; then
+              echo "Critical error detected in server.log:"
+              grep -E "Failed to load datapack|Failed to load function" server.log
+              kill $SERVER_PID 2>/dev/null || true
+              exit 1
+            fi
+
+            sleep 2
+            elapsed=$((elapsed + 2))
+          done
+
+          if [ "$success" = false ]; then
+            echo "Timeout reached before server finished starting."
+            kill $SERVER_PID 2>/dev/null || true
+            cat server.log
             exit 1
           fi
 
