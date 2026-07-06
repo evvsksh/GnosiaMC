@@ -39,11 +39,15 @@ jobs:
 
       - name: Run and Check Server
         run: |
+          RED='\033[0;31m'
+          GREEN='\033[0;32m'
+          NC='\033[0m'
+
           cd /tmp/minecraft/
-          FLAGS="-XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1HeapRegionSize=8M -XX:G1HeapWastePercent=5 -XX:G1MaxNewSizePercent=40 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1NewSizePercent=30 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -XX:MaxGCPauseMillis=200 -XX:MaxTenuringThreshold=1 -XX:SurvivorRatio=32"
+          FLAGS="-Dterminal.ansi=true -Dlog4j.skipJansi=false -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1HeapRegionSize=8M -XX:G1HeapWastePercent=5 -XX:G1MaxNewSizePercent=40 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1NewSizePercent=30 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -XX:MaxGCPauseMillis=200 -XX:MaxTenuringThreshold=1 -XX:SurvivorRatio=32"
 
           touch server.log
-          java $FLAGS -jar server.jar --nogui > server.log 2>&1 &
+          java- $FLAGS -jar server.jar --nogui > server.log 2>&1 &
           SERVER_PID=$!
 
           timeout=120
@@ -54,20 +58,20 @@ jobs:
 
           while [ $elapsed -lt $timeout ]; do
             if ! kill -0 $SERVER_PID 2>/dev/null; then
-              echo "Server process died unexpectedly."
+              echo -e "${RED}Server process died unexpectedly.${NC}"
               cat server.log
               exit 1
             fi
 
             if grep -qE "Done \([0-9.]+s\)! For help, type \"help\"" server.log; then
-              echo "Server completely started up and ready! Shutting down..."
+              echo -e "${GREEN}Server completely started up and ready! Shutting down...${NC}"
               kill $SERVER_PID
               success=true
               break
             fi
 
             if grep -q "Failed to load datapack" server.log || grep -q "Failed to load function" server.log; then
-              echo "Critical error detected in server.log:"
+              echo -e "${RED}Critical error detected in server.log:${NC}"
               grep -E "Failed to load datapack|Failed to load function" server.log
               kill $SERVER_PID 2>/dev/null || true
               exit 1
@@ -78,7 +82,7 @@ jobs:
           done
 
           if [ "$success" = false ]; then
-            echo "Timeout reached before server finished starting."
+            echo -e "${RED}Timeout reached before server finished starting.${NC}"
             kill $SERVER_PID 2>/dev/null || true
             cat server.log
             exit 1
