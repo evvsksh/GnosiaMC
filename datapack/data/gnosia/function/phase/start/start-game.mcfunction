@@ -39,6 +39,7 @@ scoreboard players set @a[tag=crew] playersID 0
 function gnosia:phase/start/assign-c-roles
 function gnosia:phase/start/assign-roles
 function gnosia:phase/start/set_up_player_dummies
+function gnosia:phase/start/announce-roles-title
 
 function gnosia:phase/start/bug-id
 difficulty peaceful

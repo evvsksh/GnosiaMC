@@ -11,4 +11,3 @@ execute if score enableAC rolesCheck matches 1 run tag @r[tag=crew,tag=!gnosia,t
 execute if score enableBug rolesCheck matches 1 run tag @r[tag=crew,tag=!gnosia,tag=!engineer,tag=!doctor,tag=!angel,tag=!guard,tag=!acfollower] add bug
 
 function gnosia:phase/start/assign-crewmate-role
-function gnosia:phase/start/announce-roles-title
