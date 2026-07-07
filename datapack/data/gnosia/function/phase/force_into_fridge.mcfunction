@@ -35,4 +35,4 @@ execute if entity @s[tag=c13] at @s run tp @a[tag=c13] ~ ~ ~
 execute if entity @s[tag=c14] at @s run tp @a[tag=c14] ~ ~ ~
 execute if entity @s[tag=c15] at @s run tp @a[tag=c15] ~ ~ ~
 
-setblock ~ ~ ~-3 minecraft:dark_oak_shelf
+execute at @s run setblock ~ ~ ~-3 minecraft:dark_oak_shelf

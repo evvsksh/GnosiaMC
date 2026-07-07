@@ -1,4 +1,4 @@
-kill @e[type=armor_stand,tag=playerDummy]
+kill @e[tag=playerDummy]
 scoreboard players reset * playerDummyID
 execute if entity @a[tag=c1] run summon armor_stand -200 0 -1610 {CustomNameVisible:0b,Marker:1b,Invisible:1b,Tags:["c1","playerDummy"],CustomName:{"text":"Username Get Error"}}
 execute if entity @a[tag=c2] run summon armor_stand -200 0 -1610 {CustomNameVisible:0b,Marker:1b,Invisible:1b,Tags:["c2","playerDummy"],CustomName:{"text":"Username Get Error"}}

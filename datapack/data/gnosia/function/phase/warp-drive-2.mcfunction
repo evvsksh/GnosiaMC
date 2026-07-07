@@ -13,7 +13,7 @@ schedule clear gnosia:music/free-time-music
 
 execute as @a[tag=crew,tag=!dead] run function gnosia:phase/random_spawn
 tag @e[tag=randomSpawnTaken] remove randomSpawnTaken
-tp @a[gamemode=spectator] @r[tag=crew,tag=!dead]
+execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~
 
 execute unless score engineer claimStatus matches 1.. run function gnosia:log/reports/generate/retroactive/engineer_day
 

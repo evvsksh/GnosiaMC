@@ -367,3 +367,5 @@ execute as @e[tag=playerDummy,tag=c12] unless entity @a[tag=c12] run tag @s add 
 execute as @e[tag=playerDummy,tag=c13] unless entity @a[tag=c13] run tag @s add missingPlayer
 execute as @e[tag=playerDummy,tag=c14] unless entity @a[tag=c14] run tag @s add missingPlayer
 execute as @e[tag=playerDummy,tag=c15] unless entity @a[tag=c15] run tag @s add missingPlayer
+
+execute if score gameStarted gameStatus matches 0 run title @a[scores={spectatorVolunteerStorage=1..}] actionbar {color:gray,text:"Volunteering for Spectator."}

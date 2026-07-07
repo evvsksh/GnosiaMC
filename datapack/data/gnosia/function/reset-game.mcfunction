@@ -46,11 +46,13 @@ scoreboard players set doctor claimStatus 0
 scoreboard players set guardDuty claimStatus 0
 scoreboard players set canLie claimStatus 1
 kill @e[tag=Marks]
+kill @e[tag=playerDummy]
 # disattiva i player dalla tab
 scoreboard players set tabHidden gameStatus 1
 tag @a remove gnosiaElimination
 tag @a remove cryoSleep
 tag @a remove cantClaim
+tag @a remove crew
 xp set @a 0 levels
 xp set @a 0 points
 scoreboard players set gameStarted gameStatus 1
@@ -58,3 +60,4 @@ function gnosia:disable-voicechat
 schedule function gnosia:phase/discussion-start 60s
 function gnosia:replace-trapdoors-cryoroom
 kill @e[type=minecraft:text_display,tag=cryoroomName]
+fill -274 83 -1611 -274 83 -1609 minecraft:air

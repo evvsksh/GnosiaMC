@@ -16,7 +16,7 @@ scoreboard players add day days 1
 execute as @a[tag=crew,tag=!dead] run function gnosia:phase/random_spawn
 tag @e[tag=randomSpawnTaken] remove randomSpawnTaken
 gamemode adventure @a[tag=crew,tag=!dead]
-tp @a[gamemode=spectator] @r[tag=crew,tag=!dead]
+execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~
 effect give @a[tag=crew,tag=!dead] minecraft:blindness 2 1 true
 
 function gnosia:log/generate_day

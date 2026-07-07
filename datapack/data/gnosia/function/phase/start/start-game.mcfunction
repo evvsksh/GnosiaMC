@@ -29,8 +29,10 @@ bossbar set warpdrive visible false
 bossbar set discussion visible false
 
 execute as @a unless score @s consecutiveGamesSpectated matches 1.. run scoreboard players set @s consecutiveGamesSpectated 0
+execute as @a unless score @s spectatorVolunteerStorage matches 1.. run scoreboard players set @s spectatorVolunteerStorage 0
 function gnosia:phase/start/determine_players
 scoreboard players add @a[tag=!crew] consecutiveGamesSpectated 1
+scoreboard players set @a[scores={spectatorVolunteerStorage=1}] spectatorVolunteerStorage 0
 
 function gnosia:remove-c-roles
 scoreboard players set @a[tag=crew] playersID 0
@@ -57,7 +59,7 @@ scoreboard players operation playersAmount rolesCheck = playersAmountStart roles
 execute as @a[tag=crew,tag=!dead] run function gnosia:phase/random_spawn
 tag @e[tag=randomSpawnTaken] remove randomSpawnTaken
 gamemode adventure @a[tag=crew]
-tp @a[gamemode=spectator] @r[tag=crew,tag=!dead]
+execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~
 effect give @a[tag=crew] minecraft:blindness 12 1 true
 
 scoreboard players set day days 1

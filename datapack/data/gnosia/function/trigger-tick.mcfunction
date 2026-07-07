@@ -100,3 +100,11 @@ scoreboard players enable @a checkTeam
 execute as @a[tag=gnosia,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#e60039",text:"Gnosia: "},{bold:false,color:white,selector:"@e[tag=playerDummy,tag=gnosia]"}]
 execute as @a[tag=guard,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#46b035",text:"Guard Duty: "},{bold:false,color:white,selector:"@e[tag=playerDummy,tag=guard]"}]
 scoreboard players set @a[scores={checkTeam=1..}] checkTeam 0
+
+scoreboard players enable @a spectator_volunteer
+execute as @a[scores={spectator_volunteer=1..3}] run scoreboard players operation @s spectatorVolunteerStorage = @s spectator_volunteer
+execute as @a[scores={spectator_volunteer=1..3}] run scoreboard players remove @s spectatorVolunteerStorage 1
+execute as @a[scores={spectator_volunteer=1}] run tellraw @s {color:aqua,text:"No longer volunteering for spectator."}
+execute as @a[scores={spectator_volunteer=2}] run tellraw @s {color:aqua,text:"You will spectate the next round."}
+execute as @a[scores={spectator_volunteer=3}] run tellraw @s {color:aqua,text:"You will spectate until you decide not to."}
+scoreboard players set @a[scores={spectator_volunteer=1..}] spectator_volunteer 0

@@ -28,3 +28,5 @@ scoreboard objectives add claim_doctor trigger
 scoreboard objectives add claim_guard trigger
 
 scoreboard objectives add checkTeam trigger
+
+scoreboard objectives add spectator_volunteer trigger

@@ -67,6 +67,7 @@ scoreboard objectives add correctReportID dummy
 scoreboard objectives add correctReportResult dummy
 
 scoreboard objectives add consecutiveGamesSpectated dummy
+scoreboard objectives add spectatorVolunteerStorage dummy
 
 scoreboard players set whoisthegnosia titleAnimation -1
 scoreboard players set endScreen gameStatus 1
@@ -127,7 +128,7 @@ scoreboard players set gameStarted gameStatus 0
 function gnosia:enable-voicechat
 
 scoreboard players reset * playersID
-kill @e[type=armor_stand,tag=playerDummy]
+kill @e[tag=playerDummy]
 scoreboard players reset * playerDummyID
 
 # Set BOSSBAR
@@ -286,3 +287,7 @@ kill @e[type=minecraft:text_display,tag=cryoroomName]
 
 execute unless block -300 88 -1610 minecraft:barrel run setblock -300 88 -1610 minecraft:barrel
 function gnosia:log/distribute_master
+
+setblock -274 83 -1611 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Cancel",click_event:{action:run_command,command:"trigger spectator_volunteer set 1"}},"Spectating",""]}}
+setblock -274 83 -1610 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 2"}},"Next Game",""]}}
+setblock -274 83 -1609 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 3"}},"Until Cancelled",""]}}
