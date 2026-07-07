@@ -25,7 +25,7 @@ title @a[tag=guard] title {text:""}
 title @a[tag=!crew] times 0 100 20
 title @a[tag=!crew] subtitle {text:"You are Spectating",color:gray}
 title @a[tag=!crew] title {text:""}
-execute as @a[tag=gnosia] run function gnosia:remind_teammates_gnosia
+execute if score maxGnosia rolesCheck matches 2.. as @a[tag=gnosia] run function gnosia:remind_teammates_gnosia
 execute as @a[tag=guard] run function gnosia:remind_teammates_guard_duty
 execute as @a[tag=crew,tag=!gnosia] run scoreboard players add humansLeft rolesLeft 1
 

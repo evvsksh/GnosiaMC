@@ -2,8 +2,8 @@ execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft run scoreboard pla
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 0.. run schedule function gnosia:phase/winning-conditions-night/gnosia-win-night 5s
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 1.. run schedule function gnosia:phase/winning-conditions-night/bug-win-night 5s
 
-execute if entity @e[tag=deathReport] run playsound gnosia:killgnosia player @a 1 1 1 1 1 1
-execute if entity @e[tag=deathReport] run playsound gnosia:gnosiawin player @a[tag=deathReport] 1 1 1 1 1 1
+execute if entity @e[tag=deathReport] run playsound gnosia:killgnosia player @a 0 0 0 1 1 1
+execute if entity @e[tag=deathReport] run playsound gnosia:gnosiawin player @a[tag=deathReport] 0 0 0 1 1 0.5
 
 title @a times 0 30 5
 title @a[tag=!deathReport] title {"text":"█","font":"gnosia:blackfade",color:black}

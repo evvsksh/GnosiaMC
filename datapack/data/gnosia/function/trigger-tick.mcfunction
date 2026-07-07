@@ -97,8 +97,8 @@ execute if score discussionTimer timers matches 1.. as @a[tag=!dead,tag=!reportM
 scoreboard players set @a[scores={makeReport=1..}] makeReport 0
 
 scoreboard players enable @a checkTeam
-execute as @a[tag=gnosia,scores={checkTeam=1..}] run function gnosia:remind_teammates_gnosia
-execute as @a[tag=gnosia,scores={checkTeam=1..}] run tellraw @s {bold:true,color:"#e60039",text:"Remaining Gnosia Alive: ",extra:[{score:{name:"gnosiaLeft",objective:"rolesLeft"}}]}
+execute if score maxGnosia rolesCheck matches 2.. as @a[tag=gnosia,scores={checkTeam=1..}] run function gnosia:remind_teammates_gnosia
+execute if score maxGnosia rolesCheck matches 2.. as @a[tag=gnosia,scores={checkTeam=1..}] run tellraw @s {bold:true,color:"#e60039",text:"Remaining Gnosia Alive: ",extra:[{score:{name:"gnosiaLeft",objective:"rolesLeft"}}]}
 execute as @a[tag=guard,scores={checkTeam=1..}] run function gnosia:remind_teammates_guard_duty
 scoreboard players set @a[scores={checkTeam=1..}] checkTeam 0
 
