@@ -291,8 +291,8 @@ tag @a remove dead
 
 function gnosia:door-vote-closing
 
-execute if score endGameReload gameStatus matches 0 run tellraw @a {"bold":true,"color":"aqua","text":"Gnosia Datapack V1.2 - Loaded!"}
-execute if score endGameReload gameStatus matches 0 run title @a actionbar {"bold":true,"color":"aqua","text":"Gnosia Datapack V1.2 - Loaded!"}
+execute if score endGameReload gameStatus matches 0 run tellraw @a {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
+execute if score endGameReload gameStatus matches 0 run title @a actionbar {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
 execute if score endGameReload gameStatus matches 1 run scoreboard players set endGameReload gameStatus 0
 schedule clear gnosia:phase/discussion-start
 function gnosia:replace-trapdoors-cryoroom
