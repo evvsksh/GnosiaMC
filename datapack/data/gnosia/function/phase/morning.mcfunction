@@ -7,7 +7,7 @@ execute if entity @e[tag=deathReport] run playsound gnosia:gnosiawin player @a[t
 
 title @a times 0 30 5
 title @a[tag=!deathReport] title {"text":"█","font":"gnosia:blackfade",color:black}
-title @a[tag=deathReport] title {"text":"█","font":"gnosia:blackfade",color:dark_red}
+title @a[tag=deathReport] title {"text":"█","font":"gnosia:blackfade",color:"#6e0b00"}
 schedule function gnosia:phase/day-title 3s
 tag @a remove warpdrive
 team modify crew nametagVisibility never

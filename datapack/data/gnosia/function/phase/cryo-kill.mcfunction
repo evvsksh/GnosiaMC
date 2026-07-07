@@ -39,7 +39,7 @@ execute as @e[tag=playerDummy,tag=cryoVote] run function gnosia:log/reports/colo
 function gnosia:log/distribute_master
 
 title @a[tag=cryoVote] times 0 30 5
-title @a[tag=cryoVote] title {"text":"█","font":"gnosia:blackfade",color:dark_blue}
+title @a[tag=cryoVote] title {"text":"█","font":"gnosia:blackfade",color:"#000b40"}
 
 gamemode spectator @a[tag=cryoVote]
 tag @e[tag=playerDummy,tag=cryoVote] add cryoSleep
