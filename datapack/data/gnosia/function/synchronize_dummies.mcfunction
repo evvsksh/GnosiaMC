@@ -14,6 +14,7 @@ execute if entity @s[tag=c13] run tag @a[tag=c13] add dummy_sync
 execute if entity @s[tag=c14] run tag @a[tag=c14] add dummy_sync
 execute if entity @s[tag=c15] run tag @a[tag=c15] add dummy_sync
 
+execute if entity @s[tag=deathReport] run tag @a[tag=dummy_sync] add deathReport
 execute if entity @s[tag=gnosiaElimination] run tag @a[tag=dummy_sync] add gnosiaElimination
 execute if entity @s[tag=cryoSleep] run tag @a[tag=dummy_sync] add cryoSleep
 execute if entity @s[tag=dead] run tag @a[tag=dummy_sync] add dead

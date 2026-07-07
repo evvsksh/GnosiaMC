@@ -70,7 +70,9 @@ effect give @a[tag=!gnosia,tag=warpdrive] minecraft:blindness 3 1 true
 
 # Bug Particles
 
-execute unless score endScreen gameStatus matches 1 at @a[team=bug] run particle minecraft:infested ~ ~.7 ~ .1 .1 .1 .4 20 normal
+execute unless score endScreen gameStatus matches 1 at @a[team=bug] run particle minecraft:infested ~ ~.7 ~ 0.3 0.5 0.3 .4 20 normal
+execute unless score endScreen gameStatus matches 1 at @a[team=bug_engineer] run particle minecraft:infested ~ ~.7 ~ 0.3 0.5 0.3 .4 20 normal
+execute unless score endScreen gameStatus matches 1 at @a[team=bug_doctor] run particle minecraft:infested ~ ~.7 ~ 0.3 0.5 0.3 .4 20 normal
 
 # Update Text Displays
 
@@ -151,6 +153,10 @@ execute if score cryotextTimer cryotextTimer matches 120 run data merge entity @
 
 #Warpdrive Particles
 execute at @e[tag=warpdriveParticles] run particle minecraft:end_rod ~ ~ ~ .1 .1 .1 .7 50 normal
+
+#Spectator Glow
+execute if score resetAnimation delay matches ..-1 run effect give @a[tag=!crew,gamemode=spectator] minecraft:glowing 1 0 true
+execute if score resetAnimation delay matches ..-1 run effect give @a[tag=crew,gamemode=spectator,tag=dead,tag=!deathReport] minecraft:glowing 1 0 true
 
 #Gnosia Kill Check
 
@@ -321,7 +327,6 @@ execute if score endScreen gameStatus matches 1 run tp @e[tag=endPos,limit=1] -2
 execute if score endScreen gameStatus matches 1 run tp @a -263 83 -1610 90 -5
 execute if score endScreen gameStatus matches 1 run gamemode spectator @a
 
-data merge entity @e[type=text_display,tag=endScores1,limit=1] {line_width:300,alignment:"left",Tags:["endScores1"],text:[{"selector":"@e[tag=mark-c1,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c1]"},{"text":"\n"},{"selector":"@e[tag=mark-c2,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c2]"},{"text":"\n"},{"selector":"@e[tag=mark-c3,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c3]"},{"text":"\n"},{"selector":"@e[tag=mark-c4,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c4]"},{"text":"\n"},{"selector":"@e[tag=mark-c5,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c5]"},{"text":"\n"},{"selector":"@e[tag=mark-c6,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c6]"},{"text":"\n"},{"selector":"@e[tag=mark-c7,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c7]"},{"text":"\n"},{"selector":"@e[tag=mark-c8,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c8]"},{"text":"\n"},{"selector":"@e[tag=mark-c9,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c9]"},{"text":"\n"},{"selector":"@e[tag=mark-c10,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c10]"},{"text":"\n"},{"selector":"@e[tag=mark-c11,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c11]"},{"text":"\n"},{"selector":"@e[tag=mark-c12,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c12]"},{"text":"\n"},{"selector":"@e[tag=mark-c13,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c13]"},{"text":"\n"},{"selector":"@e[tag=mark-c14,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c14]"},{"text":"\n"},{"selector":"@e[tag=mark-c15,limit=1]"},{"selector":"@e[tag=playerDummy,tag=c15]"}]}
 execute at @e[tag=endPos,limit=1] run tp @e[type=minecraft:text_display,tag=endScores1] ~ ~-4 ~ -90 0
 
 gamemode adventure @a[gamemode=survival]

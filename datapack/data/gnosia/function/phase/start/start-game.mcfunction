@@ -59,7 +59,7 @@ scoreboard players operation playersAmount rolesCheck = playersAmountStart roles
 execute as @a[tag=crew,tag=!dead] run function gnosia:phase/random_spawn
 tag @e[tag=randomSpawnTaken] remove randomSpawnTaken
 gamemode adventure @a[tag=crew]
-execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~
+execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~ 0 0
 effect give @a[tag=crew] minecraft:blindness 12 1 true
 
 scoreboard players set day days 1

@@ -120,6 +120,21 @@ scoreboard players reset * logReportIndexEngineer
 scoreboard players reset * logReportIndexDoctor
 scoreboard players reset * correctReportID
 scoreboard players reset * correctReportResult
+scoreboard players reset * doctorReport_c1
+scoreboard players reset * doctorReport_c2
+scoreboard players reset * doctorReport_c3
+scoreboard players reset * doctorReport_c4
+scoreboard players reset * doctorReport_c5
+scoreboard players reset * doctorReport_c6
+scoreboard players reset * doctorReport_c7
+scoreboard players reset * doctorReport_c8
+scoreboard players reset * doctorReport_c9
+scoreboard players reset * doctorReport_c10
+scoreboard players reset * doctorReport_c11
+scoreboard players reset * doctorReport_c12
+scoreboard players reset * doctorReport_c13
+scoreboard players reset * doctorReport_c14
+scoreboard players reset * doctorReport_c15
 
 # GAME STATUS
 scoreboard players set tabHidden gameStatus 0
@@ -180,42 +195,40 @@ tag @a remove reportMade
 
 # Add TEAMS
 
-team add res_dead
-team modify res_dead friendlyFire false
-team modify res_dead nametagVisibility never
-team modify res_dead color dark_red
-
-team add res_frozen
-team modify res_frozen friendlyFire false
-team modify res_frozen nametagVisibility never
-team modify res_frozen color dark_aqua
-
 team add crew
 team join crew @a
 team modify crew friendlyFire false
 team modify crew nametagVisibility never
 team modify crew color white
 
-team add bug
-team modify bug color black
-
 team add engineer_claim
 team modify engineer_claim friendlyFire false
 team modify engineer_claim nametagVisibility never
-team modify engineer_claim suffix [{"color":"#187fc4","text":" [Engineer]"}]
+team modify engineer_claim suffix {"color":"#187fc4","text":" [Engineer]"}
 team modify engineer_claim color white
 
 team add doctor_claim
 team modify doctor_claim friendlyFire false
 team modify doctor_claim nametagVisibility never
-team modify doctor_claim suffix [{"color":"#8376b5","text":" [Doctor]"}]
+team modify doctor_claim suffix {"color":"#8376b5","text":" [Doctor]"}
 team modify doctor_claim color white
 
 team add guard_duty
 team modify guard_duty friendlyFire false
 team modify guard_duty nametagVisibility never
-team modify guard_duty suffix [{"color":"#46b035","text":" [Guard Duty]"}]
+team modify guard_duty suffix {"color":"#46b035","text":" [Guard Duty]"}
 team modify guard_duty color white
+
+team add bug
+team modify bug color black
+
+team add bug_engineer
+team modify bug_engineer color black
+team modify bug_engineer suffix {"color":"#187fc4","text":" [Engineer]"}
+
+team add bug_doctor
+team modify bug_doctor color black
+team modify bug_doctor suffix [{"color":"#8376b5","text":" [Doctor]"}]
 
 # Edit Gamerules
 

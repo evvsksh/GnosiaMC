@@ -1,7 +1,9 @@
-# Teleport everyone back (it does spawning again but this should change with the addition of rooms)
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft run scoreboard players set win winning-conditions 1
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 0.. run schedule function gnosia:phase/winning-conditions-night/gnosia-win-night 5s
 execute if score gnosiaLeft rolesLeft >= humansLeft rolesLeft if score bugLeft rolesLeft matches 1.. run schedule function gnosia:phase/winning-conditions-night/bug-win-night 5s
+
+execute if entity @e[tag=deathReport] run playsound gnosia:killgnosia player @a 1 1 1 1 1 1
+execute if entity @e[tag=deathReport] run playsound gnosia:gnosiawin player @a[tag=deathReport] 1 1 1 1 1 1
 
 title @a times 0 30 5
 title @a[tag=!deathReport] title {"text":"█","font":"gnosia:blackfade",color:black}
@@ -16,7 +18,7 @@ scoreboard players add day days 1
 execute as @a[tag=crew,tag=!dead] run function gnosia:phase/random_spawn
 tag @e[tag=randomSpawnTaken] remove randomSpawnTaken
 gamemode adventure @a[tag=crew,tag=!dead]
-execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~
+execute at @r[tag=crew,tag=!dead] run tp @a[gamemode=spectator] ~ ~2 ~ 0 0
 effect give @a[tag=crew,tag=!dead] minecraft:blindness 2 1 true
 
 function gnosia:log/generate_day

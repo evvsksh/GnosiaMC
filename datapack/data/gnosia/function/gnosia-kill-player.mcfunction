@@ -21,6 +21,5 @@ execute as @e[tag=gnosiaEliminationTemp] run function gnosia:synchronize_dummies
 execute as @e[tag=gnosiaEliminationTemp] run function gnosia:log/reports/color_killed
 tag @e[tag=gnosiaEliminationTemp] remove gnosiaEliminationTemp
 
-schedule function gnosia:kill-glitch-sfx 5.5s
 scoreboard players set gnosiaKillChoose gnosiaKillChoose 0
 scoreboard players set angelSave gnosiaKillChoose 0
