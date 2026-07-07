@@ -1,0 +1,11 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "gnosia:font/black.png",
+            "ascent": 80,
+            "height": 260,
+            "chars": ["█"]
+        }
+    ]
+}

@@ -1,0 +1,237 @@
+{
+  "agree": {
+    "sounds": ["gnosia:agree"]
+  },
+  "alarm": {
+    "sounds": ["gnosia:alarm"]
+  },
+  "angelsave": {
+    "sounds": ["gnosia:angel-save"]
+  },
+  "chime1": {
+    "sounds": ["gnosia:chime1"]
+  },
+  "chime2": {
+    "sounds": ["gnosia:chime2"]
+  },
+  "chime3": {
+    "sounds": ["gnosia:chime3"]
+  },
+  "chime4": {
+    "sounds": ["gnosia:chime4"]
+  },
+  "chime5": {
+    "sounds": ["gnosia:chime5"]
+  },
+  "chime6": {
+    "sounds": ["gnosia:chime6"]
+  },
+  "chime7": {
+    "sounds": ["gnosia:chime7"]
+  },
+  "chime8": {
+    "sounds": ["gnosia:chime8"]
+  },
+  "chime9": {
+    "sounds": ["gnosia:chime9"]
+  },
+  "chime10": {
+    "sounds": ["gnosia:chime10"]
+  },
+  "chime11": {
+    "sounds": ["gnosia:chime11"]
+  },
+  "chime12": {
+    "sounds": ["gnosia:chime12"]
+  },
+  "collaborate": {
+    "sounds": ["gnosia:collaborate"]
+  },
+  "definiteally": {
+    "sounds": ["gnosia:definite-ally"]
+  },
+  "definiteenemy": {
+    "sounds": ["gnosia:definite-enemy"]
+  },
+  "distortion": {
+    "sounds": ["gnosia:distortion"]
+  },
+  "door": {
+    "sounds": ["gnosia:door"]
+  },
+  "door2": {
+    "sounds": ["gnosia:door2"]
+  },
+  "flash": {
+    "sounds": ["gnosia:flash"]
+  },
+  "gnosiakill": {
+    "sounds": ["gnosia:gnosia-kill"]
+  },
+  "gnosiarevealed": {
+    "sounds": ["gnosia:gnosia-revealed"]
+  },
+  "reveal-role": {
+    "sounds": ["gnosia:reveal-role"]
+  },
+  "gnosiawin": {
+    "sounds": ["gnosia:gnosia-win"]
+  },
+  "leviactivate": {
+    "sounds": ["gnosia:levi-activate"]
+  },
+  "lying": {
+    "sounds": ["gnosia:lying"]
+  },
+  "popbubbly": {
+    "sounds": ["gnosia:pop1"]
+  },
+  "select": {
+    "sounds": ["gnosia:select"]
+  },
+  "votecount": {
+    "sounds": ["gnosia:vote-count"]
+  },
+  "voted": {
+    "sounds": ["gnosia:voted"]
+  },
+  "led-off": {
+    "sounds": ["gnosia:led-off"]
+  },
+  "led-on": {
+    "sounds": ["gnosia:led-on"]
+  },
+  "loop": {
+    "sounds": ["gnosia:loop"]
+  },
+  "ship-ambience": {
+    "sounds": ["gnosia:ship-ambience"]
+  },
+  "killgnosia": {
+    "sounds": ["gnosia:killgnosia"]
+  },
+  "door-locked": {
+    "sounds": ["gnosia:door-locked"]
+  },
+  "warpdrive": {
+    "sounds": ["gnosia:warpdrive"]
+  },
+  "ost.a-ray-of-hope": {
+    "sounds": ["gnosia:ost/a-ray-of-hope"]
+  },
+  "ost.a-sip-of-wonder": {
+    "sounds": ["gnosia:ost/a-sip-of-wonder"]
+  },
+  "ost.aster": {
+    "sounds": ["gnosia:ost/aster"]
+  },
+  "ost.aster-anime": {
+    "sounds": ["gnosia:ost/aster-anime"]
+  },
+  "ost.back-street-cats": {
+    "sounds": ["gnosia:ost/back-street-cats"]
+  },
+  "ost.bake-no-kawa": {
+    "sounds": ["gnosia:ost/bake-no-kawa"]
+  },
+  "ost.blue-sky-blue-stars": {
+    "sounds": ["gnosia:ost/blue-sky-blue-stars"]
+  },
+  "ost.call-of-ender": {
+    "sounds": ["gnosia:ost/call-of-ender"]
+  },
+  "ost.call-of-ender-anime": {
+    "sounds": ["gnosia:ost/call-of-ender-anime"]
+  },
+  "ost.climax": {
+    "sounds": ["gnosia:ost/climax"]
+  },
+  "ost.eyes-of-you": {
+    "sounds": ["gnosia:ost/eyes-of-you"]
+  },
+  "ost.floor-killer": {
+    "sounds": ["gnosia:ost/floor-killer"]
+  },
+  "ost.flying-yellow-cucumber": {
+    "sounds": ["gnosia:ost/flying-yellow-cucumber"]
+  },
+  "ost.for-your-fun": {
+    "sounds": ["gnosia:ost/for-your-fun"]
+  },
+  "ost.gnosia-is-you": {
+    "sounds": ["gnosia:ost/gnosia-is-you"]
+  },
+  "ost.hollow-vessel": {
+    "sounds": ["gnosia:ost/hollow-vessel"]
+  },
+  "ost.ice-prison": {
+    "sounds": ["gnosia:ost/ice-prison"]
+  },
+  "ost.in-the-unknown-ship": {
+    "sounds": ["gnosia:ost/in-the-unknown-ship"]
+  },
+  "ost.look-into-my-eyes": {
+    "sounds": ["gnosia:ost/look-into-my-eyes"]
+  },
+  "ost.loo-whoo": {
+    "sounds": ["gnosia:ost/loo-whoo"]
+  },
+  "ost.red-alert": {
+    "sounds": ["gnosia:ost/red-alert"]
+  },
+  "ost.red-alert-anime": {
+    "sounds": ["gnosia:ost/red-alert-anime"]
+  },
+  "ost.remind-me": {
+    "sounds": ["gnosia:ost/remind-me"]
+  },
+  "ost.routine": {
+    "sounds": ["gnosia:ost/routine"]
+  },
+  "ost.shooting-stars-go-away": {
+    "sounds": ["gnosia:ost/shooting-stars-go-away"]
+  },
+  "ost.suspicion": {
+    "sounds": ["gnosia:ost/suspicion"]
+  },
+  "ost.suspicion-anime": {
+    "sounds": ["gnosia:ost/suspicion-anime"]
+  },
+  "ost.the-last-march-of-us": {
+    "sounds": ["gnosia:ost/the-last-march-of-us"]
+  },
+  "ost.the-silver-key": {
+    "sounds": ["gnosia:ost/the-silver-key"]
+  },
+  "ost.this-is-a-lie": {
+    "sounds": ["gnosia:ost/this-is-a-lie"]
+  },
+  "ost.truth": {
+    "sounds": ["gnosia:ost/truth"]
+  },
+  "ost.ululo": {
+    "sounds": ["gnosia:ost/ululo"]
+  },
+  "ost.ululo-anime": {
+    "sounds": ["gnosia:ost/ululo-anime"]
+  },
+  "ost.voting": {
+    "sounds": ["gnosia:ost/voting"]
+  },
+  "ost.we-all-broken": {
+    "sounds": ["gnosia:ost/we-all-broken"]
+  },
+  "ost.we-are-gnosia": {
+    "sounds": ["gnosia:ost/we-are-gnosia"]
+  },
+  "ost.wind-blows": {
+    "sounds": ["gnosia:ost/wind-blows"]
+  },
+  "ost.world-of-probability": {
+    "sounds": ["gnosia:ost/world-of-probability"]
+  },
+  "entity.player.death": {
+    "replace": true,
+    "sounds": ["gnosia:entity/player/death"]
+  }
+}

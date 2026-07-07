@@ -1,0 +1,10 @@
+{
+  "entity.player.death": {
+    "replace": true,
+    "sounds": ["gnosia:entity/player/death"]
+  },
+  "entity.player.hurt": {
+    "replace": true,
+    "sounds": []
+  }
+}
