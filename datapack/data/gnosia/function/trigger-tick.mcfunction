@@ -1,13 +1,9 @@
-#TRIGGER FOR A SINGLE COMMAND
-
-#scoreboard players enable @a TRIGGER
-#execute as @a[scores={TRIGGER=1..}] run function ...
-#scoreboard players set @a[scores={TRIGGER=1..}] TRIGGER 0
+### VOTE SELECT
 
 scoreboard players enable @a vote_select
-execute as @a[scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 if score @s vote_select = @s playersID run tellraw @s {"color":"dark_red","text":"You can't vote for yourself!"}
-execute as @a[scores={vote_select=1..},tag=!dead] unless score @s alreadyVoted matches 0 run tellraw @s {"color":"dark_red","text":"You already voted!"}
-execute as @a[scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 unless score @s vote_select = @s playersID run function gnosia:voting/voteselect/select
+execute as @a[tag=crew,scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 if score @s vote_select = @s playersID run tellraw @s {"color":"dark_red","text":"You can't vote for yourself!"}
+execute as @a[tag=crew,scores={vote_select=1..},tag=!dead] unless score @s alreadyVoted matches 0 run tellraw @s {"color":"dark_red","text":"You already voted!"}
+execute as @a[tag=crew,scores={vote_select=1..},tag=!dead] if score @s alreadyVoted matches 0 unless score @s vote_select = @s playersID run function gnosia:voting/voteselect/select
 scoreboard players set @a[scores={vote_select=1..}] vote_select 0
 
 ### ENGINEER SELECT
@@ -42,16 +38,16 @@ scoreboard players set @a[scores={doc_fake_human=1..}] doc_fake_human 0
 
 
 scoreboard players enable @a both_cryo
-execute as @a[tag=!cryoVote,scores={both_cryo=1..}] run function gnosia:voting/castvote-both-cryo
+execute as @a[tag=crew,tag=!cryoVote,scores={both_cryo=1..},tag=!dead] run function gnosia:voting/castvote-both-cryo
 scoreboard players set @a[scores={both_cryo=1..}] both_cryo 0
 
 scoreboard players enable @a no_cryo
-execute as @a[tag=!cryoVote,scores={no_cryo=1..}] run function gnosia:voting/castvote-no-cryo
+execute as @a[tag=crew,tag=!cryoVote,scores={no_cryo=1..},tag=!dead] run function gnosia:voting/castvote-no-cryo
 scoreboard players set @a[scores={no_cryo=1..}] no_cryo 0
 
 
 scoreboard players enable @a role
-execute as @a[scores={role=1..}] run function gnosia:role-tell
+execute as @a[tag=crew,scores={role=1..}] run function gnosia:role-tell
 scoreboard players set @a[scores={role=1..}] role 0
 
 scoreboard players enable @a fakeCheckResult
@@ -101,6 +97,14 @@ execute if score discussionTimer timers matches 1.. as @a[tag=!dead,tag=!reportM
 scoreboard players set @a[scores={makeReport=1..}] makeReport 0
 
 scoreboard players enable @a checkTeam
-execute as @a[tag=gnosia,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#e60039",text:"Gnosia: "},{bold:false,selector:"@a[tag=gnosia]"}]
-execute as @a[tag=guard,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#46b035",text:"Guard Duty: "},{bold:false,selector:"@a[tag=guard]"}]
+execute as @a[tag=gnosia,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#e60039",text:"Gnosia: "},{bold:false,color:white,selector:"@e[tag=playerDummy,tag=gnosia]"}]
+execute as @a[tag=guard,scores={checkTeam=1..}] run tellraw @s [{bold:true,color:"#46b035",text:"Guard Duty: "},{bold:false,color:white,selector:"@e[tag=playerDummy,tag=guard]"}]
 scoreboard players set @a[scores={checkTeam=1..}] checkTeam 0
+
+scoreboard players enable @a spectator_volunteer
+execute as @a[scores={spectator_volunteer=1..3}] run scoreboard players operation @s spectatorVolunteerStorage = @s spectator_volunteer
+execute as @a[scores={spectator_volunteer=1..3}] run scoreboard players remove @s spectatorVolunteerStorage 1
+execute as @a[scores={spectator_volunteer=1}] run tellraw @s {color:aqua,text:"No longer volunteering for spectator."}
+execute as @a[scores={spectator_volunteer=2}] run tellraw @s {color:aqua,text:"You will spectate the next round."}
+execute as @a[scores={spectator_volunteer=3}] run tellraw @s {color:aqua,text:"You will spectate until you decide not to."}
+scoreboard players set @a[scores={spectator_volunteer=1..}] spectator_volunteer 0

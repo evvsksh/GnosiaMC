@@ -16,4 +16,4 @@ execute as @a[tag=c13] run function gnosia:log/status/player_status
 execute as @a[tag=c14] run function gnosia:log/status/player_status
 execute as @a[tag=c15] run function gnosia:log/status/player_status
 
-data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append value {color:"#e60039",text:"\n\nIf you are Gnosia, click to view teammates."}
+data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_book_content".pages[0].raw.extra[-1].hover_event.value.extra append value {color:"#e60039",text:"\n\nIf you are Gnosia,\nclick to view teammates."}

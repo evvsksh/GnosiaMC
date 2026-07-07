@@ -1,1 +1,0 @@
-tag @a[tag=!gnosia,tag=!angel,tag=!doctor,tag=!engineer,tag=!bug,tag=!acfollower,tag=!guard] add crewmate

@@ -1,0 +1,15 @@
+execute if entity @s[tag=c1] run tag @e[tag=playerDummy,tag=c1] add dummy_marker
+execute if entity @s[tag=c2] run tag @e[tag=playerDummy,tag=c2] add dummy_marker
+execute if entity @s[tag=c3] run tag @e[tag=playerDummy,tag=c3] add dummy_marker
+execute if entity @s[tag=c4] run tag @e[tag=playerDummy,tag=c4] add dummy_marker
+execute if entity @s[tag=c5] run tag @e[tag=playerDummy,tag=c5] add dummy_marker
+execute if entity @s[tag=c6] run tag @e[tag=playerDummy,tag=c6] add dummy_marker
+execute if entity @s[tag=c7] run tag @e[tag=playerDummy,tag=c7] add dummy_marker
+execute if entity @s[tag=c8] run tag @e[tag=playerDummy,tag=c8] add dummy_marker
+execute if entity @s[tag=c9] run tag @e[tag=playerDummy,tag=c9] add dummy_marker
+execute if entity @s[tag=c10] run tag @e[tag=playerDummy,tag=c10] add dummy_marker
+execute if entity @s[tag=c11] run tag @e[tag=playerDummy,tag=c11] add dummy_marker
+execute if entity @s[tag=c12] run tag @e[tag=playerDummy,tag=c12] add dummy_marker
+execute if entity @s[tag=c13] run tag @e[tag=playerDummy,tag=c13] add dummy_marker
+execute if entity @s[tag=c14] run tag @e[tag=playerDummy,tag=c14] add dummy_marker
+execute if entity @s[tag=c15] run tag @e[tag=playerDummy,tag=c15] add dummy_marker

@@ -1,4 +1,4 @@
-tellraw @a {"color":"aqua","text":"Both crew members will go into cryosleep, as decided by the rest of the crew"}
+tellraw @a {"color":"aqua","text":"All tied crew members will go into cryosleep, as decided by the rest of the crew"}
 schedule function gnosia:door-vote-opening 5s
 schedule function gnosia:phase/tp-to-cryosleep 10s
 

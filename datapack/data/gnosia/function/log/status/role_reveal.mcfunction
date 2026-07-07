@@ -1,6 +1,6 @@
 tag @s add log_event_role_reveal
 
-setblock -299 88 -1610 oak_wall_sign[facing=east]{front_text:{messages:[{text:"\n",extra:[{color:white,text:"",extra:[""]},{text:"",color:white,extra:[""]}]},{selector:"@a[tag=log_event_role_reveal]"},"",""]}}
+setblock -299 88 -1610 oak_wall_sign[facing=east]{front_text:{messages:[{text:"\n",extra:[{color:white,text:"",extra:[""]},{text:"",color:white,extra:[""]}]},{selector:"@e[tag=log_event_role_reveal]"},"",""]}}
 
 execute if entity @s[tag=crewmate] run data modify block -299 88 -1610 front_text.messages[0].extra[0] set value {color:"#6eba2b",text:"[Crew] "}
 execute if entity @s[tag=engineer] run data modify block -299 88 -1610 front_text.messages[0].extra[0] set value {color:"#187fc4",text:"[Engineer] "}

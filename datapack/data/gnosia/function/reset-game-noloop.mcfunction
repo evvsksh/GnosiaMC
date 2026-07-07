@@ -3,7 +3,7 @@ scoreboard players set votesCasted temp 0
 clear @a written_book
 clear @a netherite_sword
 scoreboard players set win winning-conditions 0
-schedule function gnosia:start-game 20t
+schedule function gnosia:phase/start/start-game 20t
 schedule clear gnosia:music/discussion-music
 schedule clear gnosia:music/voting-music
 schedule clear gnosia:music/free-time-music
@@ -43,10 +43,13 @@ scoreboard players set canLie claimStatus 1
 # disattiva i player dalla tab
 scoreboard players set tabHidden gameStatus 1
 kill @e[tag=Marks]
+kill @e[tag=playerDummy]
 tag @a remove gnosiaElimination
 tag @a remove cryoSleep
 tag @a remove cantClaim
+tag @a remove crew
 scoreboard players set gameStarted gameStatus 1
 
 stopsound @a
 schedule function gnosia:phase/discussion-start 60s
+fill -274 83 -1611 -274 83 -1609 minecraft:air

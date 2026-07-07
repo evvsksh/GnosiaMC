@@ -11,6 +11,7 @@ scoreboard objectives add voteCheck dummy
 scoreboard objectives add spectatorOnDeath dummy
 scoreboard objectives add gnosiaKillChoose dummy
 scoreboard objectives add alreadyVoted dummy
+scoreboard objectives add alreadyVotedDummy dummy
 scoreboard objectives add alreadyVotedCryo dummy
 scoreboard objectives add rolesCheck dummy
 scoreboard objectives add cryotextTimer dummy
@@ -22,7 +23,7 @@ scoreboard objectives add winning-conditions dummy
 scoreboard objectives add areaCafeCheck dummy
 scoreboard objectives add timers dummy
 scoreboard objectives add playersID dummy
-scoreboard objectives add playersIDrevote dummy
+scoreboard objectives add playerDummyID dummy
 scoreboard objectives add revoteCryo dummy
 scoreboard objectives add music dummy
 scoreboard objectives add nightTime dummy
@@ -36,9 +37,12 @@ scoreboard objectives add votedFor dummy
 scoreboard objectives add claimStatus dummy
 scoreboard objectives add engineerID dummy
 scoreboard objectives add doctorID dummy
+scoreboard objectives add engineerDummyID dummy
+scoreboard objectives add doctorDummyID dummy
 scoreboard objectives add reportTarget dummy
 scoreboard objectives add reportRole dummy
 scoreboard objectives add engineerReportRole dummy
+scoreboard objectives add random_vote_select dummy
 
 scoreboard objectives add doctorReport_c1 dummy
 scoreboard objectives add doctorReport_c2 dummy
@@ -62,6 +66,9 @@ scoreboard objectives add logReportIndexDoctor dummy
 scoreboard objectives add correctReportID dummy
 scoreboard objectives add correctReportResult dummy
 
+scoreboard objectives add consecutiveGamesSpectated dummy
+scoreboard objectives add spectatorVolunteerStorage dummy
+
 scoreboard players set whoisthegnosia titleAnimation -1
 scoreboard players set endScreen gameStatus 1
 scoreboard players set delay delay 1
@@ -73,6 +80,7 @@ scoreboard players set votingTimer timers -1
 scoreboard players set warpdriveTimer timers -1
 scoreboard players set revoteTimer timers -1
 scoreboard players set cryovotingTimer timers -1
+scoreboard players set cryoPatienceTimer timers -1
 
 scoreboard players set ledAnimationTimerOff temp -1
 scoreboard players set ledAnimationTimerOnGreen temp -1
@@ -112,6 +120,21 @@ scoreboard players reset * logReportIndexEngineer
 scoreboard players reset * logReportIndexDoctor
 scoreboard players reset * correctReportID
 scoreboard players reset * correctReportResult
+scoreboard players reset * doctorReport_c1
+scoreboard players reset * doctorReport_c2
+scoreboard players reset * doctorReport_c3
+scoreboard players reset * doctorReport_c4
+scoreboard players reset * doctorReport_c5
+scoreboard players reset * doctorReport_c6
+scoreboard players reset * doctorReport_c7
+scoreboard players reset * doctorReport_c8
+scoreboard players reset * doctorReport_c9
+scoreboard players reset * doctorReport_c10
+scoreboard players reset * doctorReport_c11
+scoreboard players reset * doctorReport_c12
+scoreboard players reset * doctorReport_c13
+scoreboard players reset * doctorReport_c14
+scoreboard players reset * doctorReport_c15
 
 # GAME STATUS
 scoreboard players set tabHidden gameStatus 0
@@ -119,7 +142,9 @@ scoreboard players set showRoleActionbar gameStatus 0
 scoreboard players set gameStarted gameStatus 0
 function gnosia:enable-voicechat
 
-#scoreboard players reset @a playersID
+scoreboard players reset * playersID
+kill @e[tag=playerDummy]
+scoreboard players reset * playerDummyID
 
 # Set BOSSBAR
 
@@ -161,7 +186,7 @@ bossbar set cryovoting visible false
 
 # Add TAGS
 
-tag @a add crew
+tag @a remove crew
 tag @a remove gnosiaElimination
 tag @a remove cryoSleep
 tag @a remove docSearch
@@ -170,42 +195,40 @@ tag @a remove reportMade
 
 # Add TEAMS
 
-team add res_dead
-team modify res_dead friendlyFire false
-team modify res_dead nametagVisibility never
-team modify res_dead color dark_red
-
-team add res_frozen
-team modify res_frozen friendlyFire false
-team modify res_frozen nametagVisibility never
-team modify res_frozen color dark_aqua
-
 team add crew
 team join crew @a
 team modify crew friendlyFire false
 team modify crew nametagVisibility never
 team modify crew color white
 
-team add bug
-team modify bug color black
-
 team add engineer_claim
 team modify engineer_claim friendlyFire false
 team modify engineer_claim nametagVisibility never
-team modify engineer_claim suffix [{"color":"#187fc4","text":" [Engineer]"}]
+team modify engineer_claim suffix {"color":"#187fc4","text":" [Engineer]"}
 team modify engineer_claim color white
 
 team add doctor_claim
 team modify doctor_claim friendlyFire false
 team modify doctor_claim nametagVisibility never
-team modify doctor_claim suffix [{"color":"#8376b5","text":" [Doctor]"}]
+team modify doctor_claim suffix {"color":"#8376b5","text":" [Doctor]"}
 team modify doctor_claim color white
 
 team add guard_duty
 team modify guard_duty friendlyFire false
 team modify guard_duty nametagVisibility never
-team modify guard_duty suffix [{"color":"#46b035","text":" [Guard Duty]"}]
+team modify guard_duty suffix {"color":"#46b035","text":" [Guard Duty]"}
 team modify guard_duty color white
+
+team add bug
+team modify bug color black
+
+team add bug_engineer
+team modify bug_engineer color black
+team modify bug_engineer suffix {"color":"#187fc4","text":" [Engineer]"}
+
+team add bug_doctor
+team modify bug_doctor color black
+team modify bug_doctor suffix [{"color":"#8376b5","text":" [Doctor]"}]
 
 # Edit Gamerules
 
@@ -246,24 +269,6 @@ scoreboard players set gameStarted gameStatus 0
 tp @a -289.5 82 -1609.5 -90 0
 gamemode adventure @a
 
-kill @e[type=armor_stand,tag=disconnect]
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c1","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c2","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c3","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c4","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c5","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c6","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c7","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c8","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c9","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c10","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c11","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c12","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c13","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c14","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-summon armor_stand -200 0 -1610 {CustomNameVisible:1b,NoGravity:1b,Invulnerable:1b,Tags:["c15","disconnect"],CustomName:{"text":"§8§k........ §8❌ §8§k ........"}}
-execute as @e[tag=disconnect] run data merge entity @s {CustomNameVisible:0b}
-
 tp @e[tag=votePos] -269 37.5 -1610 0 0
 tp @e[type=minecraft:text_display,tag=voteScores1] @e[tag=votePos,limit=1]
 tp @e[type=minecraft:text_display,tag=voteScores2] @e[tag=votePos,limit=1]
@@ -286,8 +291,8 @@ tag @a remove dead
 
 function gnosia:door-vote-closing
 
-execute if score endGameReload gameStatus matches 0 run tellraw @a {"bold":true,"color":"aqua","text":"Gnosia Datapack V1.2 - Loaded!"}
-execute if score endGameReload gameStatus matches 0 run title @a actionbar {"bold":true,"color":"aqua","text":"Gnosia Datapack V1.2 - Loaded!"}
+execute if score endGameReload gameStatus matches 0 run tellraw @a {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
+execute if score endGameReload gameStatus matches 0 run title @a actionbar {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
 execute if score endGameReload gameStatus matches 1 run scoreboard players set endGameReload gameStatus 0
 schedule clear gnosia:phase/discussion-start
 function gnosia:replace-trapdoors-cryoroom
@@ -295,3 +300,7 @@ kill @e[type=minecraft:text_display,tag=cryoroomName]
 
 execute unless block -300 88 -1610 minecraft:barrel run setblock -300 88 -1610 minecraft:barrel
 function gnosia:log/distribute_master
+
+setblock -274 83 -1611 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Cancel",click_event:{action:run_command,command:"trigger spectator_volunteer set 1"}},"Spectating",""]}}
+setblock -274 83 -1610 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 2"}},"Next Game",""]}}
+setblock -274 83 -1609 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 3"}},"Until Cancelled",""]}}

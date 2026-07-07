@@ -22,6 +22,9 @@ title @a[tag=crewmate] title {text:""}
 title @a[tag=guard] times 0 100 20
 title @a[tag=guard] subtitle {text:"You were on Guard Duty!",color:"#46b035"}
 title @a[tag=guard] title {text:""}
+title @a[tag=!crew] times 0 100 20
+title @a[tag=!crew] subtitle {text:"You are Spectating",color:gray}
+title @a[tag=!crew] title {text:""}
 tellraw @a[tag=gnosia] [{bold:true,color:"#e60039",text:"Gnosia: "},{bold:false,selector:"@a[tag=gnosia]"}]
 tellraw @a[tag=guard] [{bold:true,color:"#46b035",text:"Guard Duty: "},{bold:false,selector:"@a[tag=guard]"}]
 execute as @a[tag=crew,tag=!gnosia] run scoreboard players add humansLeft rolesLeft 1

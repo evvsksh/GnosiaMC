@@ -25,7 +25,7 @@ execute if score resetAnimation delay matches 150.. run execute at @e[limit=1,ta
 execute if score resetAnimation delay matches 176 run title @a times 0 2 3
 execute if score resetAnimation delay matches 176 run title @a title {"text":"█","font":"gnosia:blackfade",color:black}
 
-execute if score resetAnimation delay matches 177 run function gnosia:start-game
+execute if score resetAnimation delay matches 177 run function gnosia:phase/start/start-game
 #execute if score resetAnimation delay matches 177 run tellraw @a "SOS"
 
 

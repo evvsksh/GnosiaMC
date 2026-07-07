@@ -4,4 +4,4 @@ scoreboard players set voteCheck voteCheck 1
 #function gnosia:phase/count-alive
 scoreboard players operation playerThreshold rolesCheck = playersAlive rolesCheck
 scoreboard players add playerThreshold rolesCheck 1
-scoreboard players set @e[tag=disconnect,type=armor_stand] vote 0
+scoreboard players set @e[tag=playerDummy,type=armor_stand] vote 0
