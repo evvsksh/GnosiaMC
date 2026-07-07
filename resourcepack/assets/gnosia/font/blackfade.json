@@ -2,7 +2,7 @@
     "providers": [
         {
             "type": "bitmap",
-            "file": "gnosia:font/black.png",
+            "file": "gnosia:font/fade.png",
             "ascent": 80,
             "height": 260,
             "chars": ["█"]
