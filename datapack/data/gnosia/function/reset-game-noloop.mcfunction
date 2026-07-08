@@ -40,7 +40,6 @@ scoreboard players set engineer claimStatus 0
 scoreboard players set doctor claimStatus 0
 scoreboard players set guardDuty claimStatus 0
 scoreboard players set canLie claimStatus 1
-# disattiva i player dalla tab
 scoreboard players set tabHidden gameStatus 1
 kill @e[tag=Marks]
 kill @e[tag=playerDummy]
@@ -49,7 +48,7 @@ tag @a remove cryoSleep
 tag @a remove cantClaim
 tag @a remove crew
 scoreboard players set gameStarted gameStatus 1
-
+function gnosia:admin/disable-op
 stopsound @a
 schedule function gnosia:phase/discussion-start 60s
 fill -274 83 -1611 -274 83 -1609 minecraft:air

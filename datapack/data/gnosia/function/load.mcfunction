@@ -258,7 +258,6 @@ schedule clear gnosia:phase/warp-drive
 schedule clear gnosia:phase/discussion-start
 schedule clear gnosia:phase/discussion-timer
 
-# mostra i players nella tab
 scoreboard players set tabHidden gameStatus 0
 scoreboard players set endScreen gameStatus 0
 execute as @e[type=armor_stand,tag=marks] run data merge entity @s {CustomName:{"color":"aqua","text":""}}
@@ -290,6 +289,7 @@ tag @a remove cryoVote
 tag @a remove dead
 
 function gnosia:door-vote-closing
+function gnosia:admin/enable-op
 
 execute if score endGameReload gameStatus matches 0 run tellraw @a {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
 execute if score endGameReload gameStatus matches 0 run title @a actionbar {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
