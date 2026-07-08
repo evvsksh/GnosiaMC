@@ -140,7 +140,7 @@ scoreboard players reset * doctorReport_c15
 scoreboard players set tabHidden gameStatus 0
 scoreboard players set showRoleActionbar gameStatus 0
 scoreboard players set gameStarted gameStatus 0
-function gnosia:enable-voicechat
+function gnosia:voicechat/enable
 
 scoreboard players reset * playersID
 kill @e[tag=playerDummy]
