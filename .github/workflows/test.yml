@@ -37,6 +37,9 @@ jobs:
           # eula
           echo eula=true > eula.txt
 
+          # settings
+          echo function-permission-level=4 >> server.properties
+
       - name: Run and Check Server
         run: |
 
