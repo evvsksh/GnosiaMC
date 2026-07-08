@@ -1,2 +1,2 @@
 # admin tag = op
-deop @a[tag=admin]
+execute as @a[tag=admin] run deop @s[type=player]

@@ -1,2 +1,2 @@
 # admin tag = op
-op @a[tag=admin]
+execute as @a[tag=admin] run op @s[type=player]
