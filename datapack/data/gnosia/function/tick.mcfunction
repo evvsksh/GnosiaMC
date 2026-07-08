@@ -63,7 +63,7 @@ execute if score warpdriveTimer timers matches 10 run function gnosia:phase/warp
 execute if score warpdriveTimer timers matches 60 run title @a actionbar {"bold":true,"color":"aqua","text":"3"}
 execute if score warpdriveTimer timers matches 40 run title @a actionbar {"bold":true,"color":"aqua","text":"2"}
 execute if score warpdriveTimer timers matches 20 run title @a actionbar {"bold":true,"color":"aqua","text":"1"}
-execute if score warpdriveTimer timers matches 19 run function gnosia:disable-voicechat
+execute if score warpdriveTimer timers matches 19 run function gnosia:voicechat/disable
 execute at @e[tag=warpdriveParticles,limit=1] run tp @a[tag=!gnosia,tag=!dead,tag=warpdrive] ~ ~-10 ~ 0 -90
 execute as @a[tag=!gnosia,tag=!dead,tag=warpdrive] run gamemode spectator @s
 effect give @a[tag=!gnosia,tag=warpdrive] minecraft:blindness 3 1 true

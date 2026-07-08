@@ -56,7 +56,7 @@ tag @a remove crew
 xp set @a 0 levels
 xp set @a 0 points
 scoreboard players set gameStarted gameStatus 1
-function gnosia:disable-voicechat
+function gnosia:voicechat/disable
 schedule function gnosia:phase/discussion-start 60s
 function gnosia:replace-trapdoors-cryoroom
 kill @e[type=minecraft:text_display,tag=cryoroomName]

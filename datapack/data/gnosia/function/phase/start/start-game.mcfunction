@@ -47,7 +47,7 @@ scoreboard players set endScreen gameStatus 0
 scoreboard players reset * votedFor
 execute as @e[type=armor_stand,tag=marks] run data merge entity @s {CustomName:{"color":"aqua","text":""}}
 tag @a remove docSearch
-function gnosia:disable-voicechat
+function gnosia:voicechat/disable
 function gnosia:door-vote-opening-start
 tag @a remove resetanim
 
@@ -76,7 +76,7 @@ execute if score enableDoctor rolesCheck matches 0 run scoreboard players set do
 execute if score enableGuard rolesCheck matches 0 run scoreboard players set guardDuty claimStatus 2
 execute if score engineer claimStatus matches 2 if score doctor claimStatus matches 2 run scoreboard players set canLie claimStatus 0
 scoreboard players operation playersAlive rolesCheck = playersAmount rolesCheck
-schedule function gnosia:enable-voicechat 3s
+schedule function gnosia:voicechat/enable 3s
 
 setblock -300 88 -1610 minecraft:air
 setblock -300 88 -1610 minecraft:barrel
