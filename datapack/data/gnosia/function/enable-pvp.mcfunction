@@ -1,1 +1,1 @@
-scoreboard players set pvpEnabled gameStatus 1
+gamerule pvp true

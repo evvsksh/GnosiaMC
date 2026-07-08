@@ -57,6 +57,7 @@ xp set @a 0 points
 scoreboard players set gameStarted gameStatus 1
 function gnosia:voicechat/disable
 schedule function gnosia:phase/discussion-start 60s
+schedule function gnosia:ship-lights/alarm-toggle 30s
 function gnosia:replace-trapdoors-cryoroom
 kill @e[type=minecraft:text_display,tag=cryoroomName]
 fill -274 83 -1611 -274 83 -1609 minecraft:air

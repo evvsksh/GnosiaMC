@@ -7,4 +7,4 @@ kill @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{retroactiveRep
 function gnosia:written_book_vote
 scoreboard players set @e[tag=playerDummy] voteSub 0
 scoreboard players set votesCasted temp 0
-scoreboard players set speakEnabled gameStatus 0
+function gnosia:voicechat/disable
