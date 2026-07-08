@@ -60,3 +60,4 @@ schedule function gnosia:phase/discussion-start 60s
 function gnosia:replace-trapdoors-cryoroom
 kill @e[type=minecraft:text_display,tag=cryoroomName]
 fill -274 83 -1611 -274 83 -1609 minecraft:air
+function gnosia:admin/disable-op
