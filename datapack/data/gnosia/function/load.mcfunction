@@ -204,19 +204,19 @@ team modify crew color white
 team add engineer_claim
 team modify engineer_claim friendlyFire false
 team modify engineer_claim nametagVisibility never
-team modify engineer_claim suffix {"color":"#187fc4","text":" [Engineer]"}
+team modify engineer_claim suffix {"color":"#187fc4","text":" [🔍]"}
 team modify engineer_claim color white
 
 team add doctor_claim
 team modify doctor_claim friendlyFire false
 team modify doctor_claim nametagVisibility never
-team modify doctor_claim suffix {"color":"#8376b5","text":" [Doctor]"}
+team modify doctor_claim suffix {"color":"#8376b5","text":" [✝]"}
 team modify doctor_claim color white
 
 team add guard_duty
 team modify guard_duty friendlyFire false
 team modify guard_duty nametagVisibility never
-team modify guard_duty suffix {"color":"#46b035","text":" [Guard Duty]"}
+team modify guard_duty suffix {"color":"#46b035","text":" [💂]"}
 team modify guard_duty color white
 
 team add bug
@@ -224,11 +224,11 @@ team modify bug color black
 
 team add bug_engineer
 team modify bug_engineer color black
-team modify bug_engineer suffix {"color":"#187fc4","text":" [Engineer]"}
+team modify bug_engineer suffix {"color":"#187fc4","text":" [🔍]"}
 
 team add bug_doctor
 team modify bug_doctor color black
-team modify bug_doctor suffix [{"color":"#8376b5","text":" [Doctor]"}]
+team modify bug_doctor suffix [{"color":"#8376b5","text":" [✝]"}]
 
 # Edit Gamerules
 
