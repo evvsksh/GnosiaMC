@@ -30,3 +30,4 @@ tellraw @a[tag=!dead,scores={engineerID=1..}] {underlined:true,color:"#187fc4",t
 tellraw @a[tag=!dead,scores={doctorID=1..}] {underlined:true,color:"#8376b5",text:"Make Your Report",click_event:{action:run_command,command:"trigger makeReport set 1"}}
 
 scoreboard players reset * votedFor
+function gnosia:ship-lights/ship-light-normal
