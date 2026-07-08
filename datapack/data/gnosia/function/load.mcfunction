@@ -300,6 +300,7 @@ kill @e[type=minecraft:text_display,tag=cryoroomName]
 
 execute unless block -300 88 -1610 minecraft:barrel run setblock -300 88 -1610 minecraft:barrel
 function gnosia:log/distribute_master
+scoreboard objectives setdisplay sidebar
 
 setblock -274 83 -1611 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Cancel",click_event:{action:run_command,command:"trigger spectator_volunteer set 1"}},"Spectating",""]}}
 setblock -274 83 -1610 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 2"}},"Next Game",""]}}
