@@ -1,3 +1,5 @@
+function gnosia:warn-the-dead-people
+
 execute if score gameStarted gameStatus matches 1 as @a[tag=crew] unless score @s playersID matches 1..15 run function gnosia:spectate_bad_id
 
 execute if score discussionTimer timers matches 0.. run scoreboard players remove discussionTimer timers 1
