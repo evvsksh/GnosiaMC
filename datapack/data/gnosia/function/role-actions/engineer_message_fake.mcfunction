@@ -20,6 +20,8 @@ execute if entity @e[tag=playerDummy,tag=c13,tag=!dead,tag=!exclude] run tellraw
 execute if entity @e[tag=playerDummy,tag=c14,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 14"},underlined:true,color:"#187fc4",selector:"@e[tag=playerDummy,tag=c14,tag=!dead,tag=!exclude]"}
 execute if entity @e[tag=playerDummy,tag=c15,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 15"},underlined:true,color:"#187fc4",selector:"@e[tag=playerDummy,tag=c15,tag=!dead,tag=!exclude]"}
 
+tellraw @s[tag=admin] {selector:"@e[tag=playerDummy,tag=exclude]"}
+
 scoreboard players operation @s reportTarget = @e[sort=random,limit=1,tag=playerDummy,tag=!dead,tag=!exclude] playerDummyID
 scoreboard players set @s reportRole 1
 
