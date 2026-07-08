@@ -85,3 +85,4 @@ function gnosia:log/generate_day
 function gnosia:log/event/redacted_death
 function gnosia:log/distribute_master
 function gnosia:log/reports/generate/retroactive/storage
+function gnosia:enforce-bossbar
