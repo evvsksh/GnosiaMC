@@ -7,7 +7,7 @@ scoreboard players set win winning-conditions 1
 
 effect give @a[tag=crewmate] glowing infinite 1 true
 effect give @a[tag=gnosia,tag=!dead] speed infinite 2 true
-effect give @a[tag=gnosia,tag=!dead] resistance infinite 10 true
+effect give @a[tag=gnosia,tag=!dead] resistance infinite 255 true
 team modify crew color red
 team modify engineer_claim color red
 team modify doctor_claim color red
