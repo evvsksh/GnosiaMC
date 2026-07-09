@@ -1,3 +1,4 @@
+function gnosia:admin/disable-op
 stopsound @a
 scoreboard players set votesCasted temp 0
 clear @a
@@ -60,4 +61,3 @@ schedule function gnosia:ship-lights/alarm-toggle 30s
 function gnosia:replace-trapdoors-cryoroom
 kill @e[type=minecraft:text_display,tag=cryoroomName]
 fill -274 83 -1611 -274 83 -1609 minecraft:air
-function gnosia:admin/disable-op
