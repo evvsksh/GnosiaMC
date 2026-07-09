@@ -2,7 +2,7 @@
 
 ![Gnosia](./.github/assets/gnosia.png)
 
-![GitHub repo size](https://img.shields.io/github/stars/evvsksh/GnosiaMC?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/evvsksh/GnosiaMC?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/evvsksh/GnosiaMC?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/evvsksh/GnosiaMC?style=for-the-badge)
 
 ---
 </div>
