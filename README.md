@@ -14,7 +14,5 @@
 
 <div align="center">
     <h2>Gameplay Example</h2>
-    <a href="./.github/assets/trailer.mp4">
-        <img src="https://images.placeholders.dev/?width=600&height=350&text=Click+to+Play+Video" alt="Watch the Gameplay Video">
-    </a>
+    <video src="https://github.com/user-attachments/assets/1b3309ab-b026-4517-8bd5-fdab7009464f"></video>
 </div>
