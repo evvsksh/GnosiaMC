@@ -5,4 +5,3 @@ team modify crew nametagVisibility never
 team modify engineer_claim nametagVisibility never
 team modify doctor_claim nametagVisibility never
 team modify guard_duty nametagVisibility never
-function gnosia:enable-interact

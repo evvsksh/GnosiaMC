@@ -25,7 +25,7 @@ scoreboard players operation freetimelastPlayed music = freetime-music music
 
 schedule function gnosia:music/free-time-music 293.3s
 
-# Nome file                      | Secondi    | Tick
+# File name                      | Seconds    | Ticks
 # -------------------------------------------------------------
 # a-ray-of-hope.ogg              | 195        | 3900       | F
 # a-sip-of-wonder.ogg            | 180        | 3600       | F

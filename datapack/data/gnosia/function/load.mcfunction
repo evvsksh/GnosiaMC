@@ -1,8 +1,7 @@
 stopsound @a
 clear @a
 
-function gnosia:disable-pvp
-function gnosia:disable-interact
+function gnosia:pvp/disable
 
 playsound gnosia:leviactivate player @a ~ ~ ~ 1 1 1
 scoreboard objectives add voteSub dummy
@@ -26,12 +25,9 @@ scoreboard objectives add playersID dummy
 scoreboard objectives add playerDummyID dummy
 scoreboard objectives add revoteCryo dummy
 scoreboard objectives add music dummy
-scoreboard objectives add nightTime dummy
 scoreboard objectives add titleAnimation dummy
 scoreboard objectives add gameStatus dummy
 scoreboard objectives add loreSequence dummy
-scoreboard objectives add speak dummy
-scoreboard objectives add whitelist dummy
 scoreboard objectives add playersOn dummy
 scoreboard objectives add votedFor dummy
 scoreboard objectives add claimStatus dummy
@@ -137,7 +133,6 @@ scoreboard players reset * doctorReport_c14
 scoreboard players reset * doctorReport_c15
 
 # GAME STATUS
-scoreboard players set tabHidden gameStatus 0
 scoreboard players set showRoleActionbar gameStatus 0
 scoreboard players set gameStarted gameStatus 0
 function gnosia:voicechat/enable
@@ -148,8 +143,8 @@ scoreboard players reset * playerDummyID
 
 # Set BOSSBAR
 
-bossbar add discussion Discussion
-bossbar add voting Voting
+bossbar add discussion "Discussion"
+bossbar add voting "Voting"
 bossbar add warpdrive "Warp Drive"
 bossbar add revote "Final Vote"
 bossbar add cryovoting "Final Decision"
@@ -237,7 +232,6 @@ gamerule spawn_mobs false
 gamerule show_death_messages false
 # set to true for stars animation
 gamerule advance_time false
-scoreboard players set nightTime nightTime 15000
 time set 22000
 gamerule keep_inventory true
 gamerule pvp false
@@ -258,7 +252,6 @@ schedule clear gnosia:phase/warp-drive
 schedule clear gnosia:phase/discussion-start
 schedule clear gnosia:phase/discussion-timer
 
-scoreboard players set tabHidden gameStatus 0
 scoreboard players set endScreen gameStatus 0
 execute as @e[type=armor_stand,tag=marks] run data merge entity @s {CustomName:{"color":"aqua","text":""}}
 function gnosia:ship-lights/ship-light-normal

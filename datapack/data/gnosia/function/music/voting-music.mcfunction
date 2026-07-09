@@ -18,9 +18,8 @@ execute if score voting-music music matches 4 run playsound gnosia:ost.voting re
 scoreboard players operation votinglastPlayed music = voting-music music
 
 schedule function gnosia:music/voting-music 230s
-# asdsadsadad
 
-# Nome file                      | Secondi    | Tick      
+# File name                      | Seconds    | Ticks
 # -------------------------------------------------------------
 # a-ray-of-hope.ogg              | 195        | 3900       | F
 # a-sip-of-wonder.ogg            | 180        | 3600       | F
@@ -28,7 +27,7 @@ schedule function gnosia:music/voting-music 230s
 # aster.ogg                      | 220        | 4400       |
 # back-street-cats.ogg           | 120        | 2400       | F
 # bake-no-kawa.ogg               | 180        | 3600       |
-# blue-sky-blue-stars.ogg        | 365        | 7300       | 
+# blue-sky-blue-stars.ogg        | 365        | 7300       |
 # call-of-ender-anime.ogg        | 207        | 4140       | F
 # call-of-ender.ogg              | 260        | 5200       | F
 # climax.ogg                     | 48         | 960        |
@@ -41,12 +40,12 @@ schedule function gnosia:music/voting-music 230s
 # ice-prison.ogg                 | 200        | 4000       | WD
 # in-the-unknown-ship.ogg        | 145        | 2900       | F
 # loo-whoo.ogg                   | 249        | 4980       |
-# look-into-my-eyes.ogg          | 122        | 2440       | S 
+# look-into-my-eyes.ogg          | 122        | 2440       | S
 # red-alert-anime.ogg            | 154        | 3080       | PANIC
 # red-alert.ogg                  | 140        | 2800       | PANIC
 # remind-me.ogg                  | 125        | 2500       | F
 # routine.ogg                    | 170        | 3400       | F
-# shooting-stars-go-away.ogg     | 135        | 2700       | 
+# shooting-stars-go-away.ogg     | 135        | 2700       |
 # suspicion-anime.ogg            | 179        | 3580       | D
 # suspicion.ogg                  | 160        | 3200       | D
 # the-last-march-of-us.ogg       | 190        | 3800       |
@@ -57,6 +56,6 @@ schedule function gnosia:music/voting-music 230s
 # ululo.ogg                      | 230        | 4600       | F
 # voting.ogg                     | 210        | 4200       | V
 # we-all-broken.ogg              | 105        | 2100       | W
-# we-are-gnosia.ogg              | 191        | 3820       | 
+# we-are-gnosia.ogg              | 191        | 3820       |
 # wind-blows.ogg                 | 133        | 2660       | W
 # world-of-probability.ogg       | 105        | 2100       | F

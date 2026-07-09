@@ -52,7 +52,6 @@ function gnosia:doctor-result
 tag @e[tag=cryoVote] remove cryoVote
 
 function gnosia:voicechat/enable
-scoreboard players set tabHidden gameStatus 1
 
 schedule clear gnosia:phase/discussion-timer
 execute unless score win winning-conditions matches 1 run schedule function gnosia:phase/discussion-start 10s
