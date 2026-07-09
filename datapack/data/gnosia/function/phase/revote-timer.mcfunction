@@ -1,4 +1,4 @@
-scoreboard players set tabHidden gameStatus 0
+
 tag @a remove spawned
 stopsound @a record
 schedule function gnosia:music/discussion-music 3s

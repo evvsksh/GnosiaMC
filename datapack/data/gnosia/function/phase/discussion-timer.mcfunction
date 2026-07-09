@@ -1,4 +1,4 @@
-scoreboard players set tabHidden gameStatus 0
+
 tag @a remove spawned
 tag @a remove reportMade
 stopsound @a record

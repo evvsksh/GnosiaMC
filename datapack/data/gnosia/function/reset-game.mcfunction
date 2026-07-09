@@ -47,7 +47,6 @@ scoreboard players set guardDuty claimStatus 0
 scoreboard players set canLie claimStatus 1
 kill @e[tag=Marks]
 kill @e[tag=playerDummy]
-scoreboard players set tabHidden gameStatus 1
 tag @a remove gnosiaElimination
 tag @a remove cryoSleep
 tag @a remove cantClaim

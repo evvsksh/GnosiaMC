@@ -40,7 +40,6 @@ scoreboard players set engineer claimStatus 0
 scoreboard players set doctor claimStatus 0
 scoreboard players set guardDuty claimStatus 0
 scoreboard players set canLie claimStatus 1
-scoreboard players set tabHidden gameStatus 1
 kill @e[tag=Marks]
 kill @e[tag=playerDummy]
 tag @a remove gnosiaElimination

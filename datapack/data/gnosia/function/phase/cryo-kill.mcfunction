@@ -59,5 +59,3 @@ playsound minecraft:block.lava.extinguish player @a -191.51 64.58 -1582.00 1 .4 
 tp @e[tag=votePos] -269 37.5 -1610 0 0
 
 function gnosia:phase/tp-dead-to-cryoroom
-
-scoreboard players set tabHidden gameStatus 1
