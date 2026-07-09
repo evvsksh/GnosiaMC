@@ -19,4 +19,4 @@ execute if entity @e[tag=playerDummy,tag=c13,tag=!dead,tag=!exclude] run tellraw
 execute if entity @e[tag=playerDummy,tag=c14,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 14"},underlined:true,color:"#187fc4",selector:"@e[tag=playerDummy,tag=c14,tag=!dead,tag=!exclude]"}
 execute if entity @e[tag=playerDummy,tag=c15,tag=!dead,tag=!exclude] run tellraw @s {click_event:{action:"run_command","command":"/trigger eng_select set 15"},underlined:true,color:"#187fc4",selector:"@e[tag=playerDummy,tag=c15,tag=!dead,tag=!exclude]"}
 
-tag @s remove exclude
+tag @e[tag=exclude] remove exclude

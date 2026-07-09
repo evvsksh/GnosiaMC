@@ -3,4 +3,5 @@ title @a subtitle {"text":"Final Vote!","color":"white"}
 title @a title {"text":""}
 playsound gnosia:chime1 player @a 1 1 1 1 1 1
 function gnosia:light-vote-blue
+function gnosia:voicechat/enable
 function gnosia:phase/revote-timer
