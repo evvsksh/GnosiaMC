@@ -2,6 +2,7 @@ scoreboard players set @a alreadyVotedCryo 0
 scoreboard players set cryoPhase voteCheck 1
 scoreboard players set bothCryo revoteCryo 0
 scoreboard players set noCryo revoteCryo 0
+function gnosia:voicechat/enable
 function gnosia:voting/vote-suspended
 function gnosia:log/event/vote_suspended
 function gnosia:log/vote/generate_final
