@@ -39,6 +39,7 @@ execute as @e[tag=playerDummy,tag=c14,tag=deathReport] run function gnosia:log/e
 execute as @e[tag=playerDummy,tag=c15,tag=deathReport] run function gnosia:log/event/death
 execute unless entity @e[tag=playerDummy,tag=deathReport] run function gnosia:log/event/no_death
 
+tag @e[tag=playerDummy,tag=deathReport] add deathAnnounce
 tag @e[tag=deathReport] remove deathReport
 
 # Engineer Check
