@@ -5,7 +5,7 @@ playsound gnosia:ost.wind-blows record @a ~ ~ ~ .4 1 .4
 item replace entity @a[tag=gnosia] hotbar.4 with netherite_sword[enchantments={"unbreaking":3}] 1
 scoreboard players set win winning-conditions 1
 
-effect give @a[tag=crewmate] glowing infinite 1 true
+effect give @a[tag=crew,tag=!dead,tag=!gnosia] glowing infinite 1 true
 effect give @a[tag=gnosia,tag=!dead] speed infinite 2 true
 effect give @a[tag=gnosia,tag=!dead] resistance infinite 255 true
 team modify crew color red
