@@ -31,3 +31,5 @@ tellraw @a[tag=!dead,scores={doctorID=1..}] {underlined:true,color:"#8376b5",tex
 
 scoreboard players reset * votedFor
 function gnosia:ship-lights/ship-light-normal
+
+execute if score day days matches 2.. run schedule function gnosia:phase/announce_deaths 30t

@@ -13,6 +13,7 @@ function gnosia:log/reports/generate/engineer/claimants
 function gnosia:log/reports/generate/engineer/numbers
 function gnosia:log/event/claim_engineer
 
+tellraw @a {color:"#187fc4",selector:"@e[tag=dummy_marker]",extra:[{text:" has stepped forward as the Engineer."}]}
 function gnosia:log/reports/generate/retroactive/engineer_data
 execute if data block -300 88 -1610 Items[{Slot:1b}].components."minecraft:custom_data".engineerList[0] run function gnosia:log/reports/generate/retroactive/book/engineer/distribute
 
