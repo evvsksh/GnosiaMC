@@ -4,6 +4,7 @@ clear @a
 function gnosia:pvp/disable
 
 playsound gnosia:leviactivate player @a ~ ~ ~ 1 1 1
+scoreboard objectives add displayGuard dummy
 scoreboard objectives add voteSub dummy
 scoreboard objectives add vote dummy
 scoreboard objectives add voteCheck dummy
