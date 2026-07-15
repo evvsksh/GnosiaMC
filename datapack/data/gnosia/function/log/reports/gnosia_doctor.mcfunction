@@ -46,7 +46,7 @@ data modify block -300 88 -1610 Items[{Slot:0b}].components."minecraft:written_b
 
 tellraw @a {color:"#8376b5",selector:"@s",extra:[" reported ",{color:"#8376b5",selector:"@e[tag=log_report]"}," as ",{color:"#e60039",text:"Gnosia"}]}
 stopsound @a player gnosia:gnosiarevealed
-playsound gnosia:gnosiarevealed player @a
+playsound gnosia:gnosiarevealed player @a 1 1 1 1 1 1
 function gnosia:log/event/report_gnosia
 function gnosia:log/distribute_master
 tag @e[tag=log_report] remove log_report
