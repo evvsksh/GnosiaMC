@@ -4,6 +4,8 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/evvsksh/GnosiaMC?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/evvsksh/GnosiaMC?style=for-the-badge)
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/evvsksh/GnosiaMC/nightly.yml?style=for-the-badge)
+
 ---
 </div>
 
