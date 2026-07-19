@@ -1,7 +1,9 @@
-name: GnosiaMC Server Test
+name: GnosiaMC Development Release
 
 on:
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -101,3 +103,69 @@ jobs:
           name: server-logs
           path: /tmp/minecraft/logs/
           if-no-files-found: warn
+
+      - name: Bundle datapack
+        run: |
+          BUNDLE_DIR="/tmp/bundle-datapack"
+          mkdir -p "$BUNDLE_DIR"
+          cd "$BUNDLE_DIR"
+
+          cp -r "$GITHUB_WORKSPACE/datapack/*" $BUNDLE_DIR/
+          zip -r "$GITHUB_WORKSPACE/datapack.zip" .
+
+      - name: Bundle world
+        run: |
+          BUNDLE_DIR="/tmp/bundle-world"
+          mkdir -p "$BUNDLE_DIR"
+          cd "$BUNDLE_DIR"
+
+          cp -r "$GITHUB_WORKSPACE/world/*" $BUNDLE_DIR/
+          zip -r "$GITHUB_WORKSPACE/world.zip" .
+
+      - name: Bundle resourcepack
+        run: |
+          BUNDLE_DIR="/tmp/bundle-resourcepack"
+          mkdir -p "$BUNDLE_DIR"
+          cd "$BUNDLE_DIR"
+
+          cp -r "$GITHUB_WORKSPACE/resourcepack/*" $BUNDLE_DIR/
+          zip -r "$GITHUB_WORKSPACE/resources.zip" .
+
+      - name: Bundle full
+        run: |
+          BUNDLE_DIR="/tmp/bundle-full"
+          mkdir -p "$BUNDLE_DIR"
+          cd "$BUNDLE_DIR"
+
+          cp -r "$GITHUB_WORKSPACE/world/*" $BUNDLE_DIR/
+          cp -r "$GITHUB_WORKSPACE/datapack/*" $BUNDLE_DIR/datapacks/gnosia/
+          cp "$GITHUB_WORKSPACE/resources.zip" $BUNDLE_DIR/resources.zip
+
+          zip -r "$GITHUB_WORKSPACE/full.zip" .
+
+      - name: Generate Release Notes
+        run: |
+          cat <<EOF > /tmp/release_notes.txt
+          > [!NOTE]
+          > These are the latest nightly builds generated automatically from the main branch. Please note that these assets are static snapshots and reflect the state of the repository at the time of the last build.
+
+          ## What's Changed
+          EOF
+
+          # append commit history
+          gh api "repos/evvsksh/GnosiaMC/commits?per_page=15" \
+            --jq '.[] | select(.author != null) | select(.commit.message | startswith("Merge") | not) | "- \(.commit.message | split("\n")[0]) by @\(.author.login)"' \
+            >> /tmp/release_notes.txt
+
+      - name: Release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: nightly
+          body_path: /tmp/release_notes.txt
+          name: GnosiaMC Nightly Build
+          prerelase: true
+          files: |
+            "$GITHUB_WORKSPACE/datapack.zip"
+            "$GITHUB_WORKSPACE/world.zip"
+            "$GITHUB_WORKSPACE/resources.zip"
+            "$GITHUB_WORKSPACE/full.zip"
