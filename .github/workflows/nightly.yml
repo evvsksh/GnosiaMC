@@ -94,6 +94,7 @@ jobs:
           cd /tmp/bundle-datapack && zip -r "$GITHUB_WORKSPACE/datapack.zip" .
       - uses: actions/upload-artifact@v7
         with:
+          retention-days: 1
           name: datapack-zip
           path: datapack.zip
 
@@ -109,6 +110,7 @@ jobs:
           cd /tmp/bundle-world && zip -r "$GITHUB_WORKSPACE/world.zip" .
       - uses: actions/upload-artifact@v7
         with:
+          retention-days: 1
           name: world-zip
           path: world.zip
 
@@ -124,6 +126,7 @@ jobs:
           cd /tmp/bundle-resourcepack && zip -r "$GITHUB_WORKSPACE/resources.zip" .
       - uses: actions/upload-artifact@v7
         with:
+          retention-days: 1
           name: resources-zip
           path: resources.zip
 
@@ -144,6 +147,7 @@ jobs:
           cd /tmp/bundle-full && zip -r "$GITHUB_WORKSPACE/full.zip" .
       - uses: actions/upload-artifact@v7
         with:
+          retention-days: 1
           name: full-zip
           path: full.zip
 
