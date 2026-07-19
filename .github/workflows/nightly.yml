@@ -6,6 +6,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -89,7 +92,7 @@ jobs:
           mkdir -p /tmp/bundle-datapack
           cp -r "$GITHUB_WORKSPACE/datapack/." /tmp/bundle-datapack/
           cd /tmp/bundle-datapack && zip -r "$GITHUB_WORKSPACE/datapack.zip" .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: datapack-zip
           path: datapack.zip
@@ -104,7 +107,7 @@ jobs:
           mkdir -p /tmp/bundle-world
           cp -r "$GITHUB_WORKSPACE/world/." /tmp/bundle-world/
           cd /tmp/bundle-world && zip -r "$GITHUB_WORKSPACE/world.zip" .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: world-zip
           path: world.zip
@@ -119,7 +122,7 @@ jobs:
           mkdir -p /tmp/bundle-resourcepack
           cp -r "$GITHUB_WORKSPACE/resourcepack/." /tmp/bundle-resourcepack/
           cd /tmp/bundle-resourcepack && zip -r "$GITHUB_WORKSPACE/resources.zip" .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: resources-zip
           path: resources.zip
@@ -139,7 +142,7 @@ jobs:
           cd /tmp/bundle-resources && zip -r "$GITHUB_WORKSPACE/resources.zip" .
           cp "$GITHUB_WORKSPACE/resources.zip" /tmp/bundle-full/
           cd /tmp/bundle-full && zip -r "$GITHUB_WORKSPACE/full.zip" .
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: full-zip
           path: full.zip
@@ -148,7 +151,7 @@ jobs:
     needs: [bundle-datapack, bundle-world, bundle-resources, bundle-full]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v7
         with:
           pattern: "*-zip"
           merge-multiple: true
@@ -165,6 +168,8 @@ jobs:
           gh api "repos/evvsksh/GnosiaMC/commits?per_page=15" \
             --jq '.[] | select(.author != null) | select(.commit.message | startswith("Merge") | not) | "- \(.commit.message | split("\n")[0]) by @\(.author.login)"' \
             >> /tmp/release_notes.txt
+      - name: Print Release Notes
+        run: cat /tmp/release_notes.txt
       - uses: softprops/action-gh-release@v3
         with:
           tag_name: nightly
