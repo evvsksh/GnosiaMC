@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "skip_discussion": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:player_head",
+          "components": {
+            "minecraft:custom_name": {"text":"Skip Discussion","color":"aqua","italic":false,"bold":true},
+            "minecraft:food": {
+              "nutrition": 0,
+              "saturation": 0,
+              "can_always_eat": true
+            },
+            "minecraft:consumable": {
+              "consume_seconds": 0,
+              "animation": "none",
+              "has_consume_particles": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "gnosia:phase/vote-skip-discussion"
+  }
+}
