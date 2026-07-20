@@ -202,7 +202,7 @@ jobs:
         with:
           tag_name: nightly
           body_path: /tmp/release_notes.txt
-          name: GnosiaMC Nightly Build
+          name: Nightly
           make-latest: true
           files: |
             datapack.zip
