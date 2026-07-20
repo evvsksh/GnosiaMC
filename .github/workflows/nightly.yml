@@ -196,12 +196,7 @@ jobs:
           cat <<EOF > /tmp/release_notes.txt
           > [!NOTE]
           > These are the latest nightly builds generated automatically from the main branch. Please note that these assets are static snapshots and reflect the state of the repository at the time of the last build.
-
-          ## What's Changed
           EOF
-          gh api "repos/evvsksh/GnosiaMC/commits?per_page=15" \
-            --jq '.[] | select(.author != null) | select(.commit.message | startswith("Merge") | not) | "- \(.commit.message | split("\n")[0]) by @\(.author.login)"' \
-            >> /tmp/release_notes.txt
 
       - uses: softprops/action-gh-release@v3
         with:
