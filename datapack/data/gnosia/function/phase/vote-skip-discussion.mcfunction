@@ -8,7 +8,7 @@ execute as @a[tag=!dead] run scoreboard players add #crewAlive discussionSkipVot
 execute if score #count discussionSkipVotes = #crewAlive discussionSkipVotes run return 0
 
 scoreboard players add #count discussionSkipVotes 1
-tellraw @a {"text":"","extra":[{"color":"yellow","selector":"@s"},{"color":"aqua","text":" voted to skip the discussion."}]}
+tellraw @a {"text":"","extra":[{"color":"yellow","selector":"@a[sort=nearest,limit=1]"},{"color":"aqua","text":" voted to skip the discussion."}]}
 title @s actionbar {"text":"You voted to skip the discussion.","color":"aqua"}
 playsound gnosia:select ui @s ~ ~ ~
 
