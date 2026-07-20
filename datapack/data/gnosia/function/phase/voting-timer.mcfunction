@@ -17,4 +17,6 @@ execute if score revoteAmount voteCheck matches 0 run function gnosia:voting/sta
 execute if score revoteAmount voteCheck matches 1.. run function gnosia:voting/start-revote
 function gnosia:ship-lights/ship-light-red
 
+clear @a[tag=!dead] player_head
+
 #function gnosia:light-vote-red
