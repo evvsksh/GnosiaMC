@@ -33,3 +33,5 @@ scoreboard players reset * votedFor
 function gnosia:ship-lights/ship-light-normal
 
 execute if score day days matches 2.. run schedule function gnosia:phase/announce_deaths 30t
+
+function gnosia:phase/discussion-skip-head

@@ -66,6 +66,8 @@ scoreboard objectives add correctReportResult dummy
 scoreboard objectives add consecutiveGamesSpectated dummy
 scoreboard objectives add spectatorVolunteerStorage dummy
 
+scoreboard objectives add discussionSkipVotes dummy
+
 scoreboard players set whoisthegnosia titleAnimation -1
 scoreboard players set endScreen gameStatus 1
 scoreboard players set delay delay 1
