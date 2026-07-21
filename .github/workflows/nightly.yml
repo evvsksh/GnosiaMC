@@ -199,7 +199,7 @@ jobs:
           tag_name: nightly
           body_path: /tmp/release_notes.txt
           name: Nightly
-          make-latest: true
+          make_latest: true
           files: |
             datapack.zip
             world.zip
