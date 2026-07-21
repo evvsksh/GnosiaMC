@@ -15,7 +15,7 @@ schedule clear gnosia:phase/warp-drive
 team leave @a
 team add crew
 team join crew @a
-gamerule pvp false
+function gnosia:pvp/disable
 team modify crew friendlyFire false
 team modify engineer_claim friendlyFire false
 team modify doctor_claim friendlyFire false
