@@ -1,1 +1,1 @@
-scoreboard players set discussionTimer timers 100
+scoreboard players set discussionTimer timers 10

@@ -34,4 +34,7 @@ function gnosia:ship-lights/ship-light-normal
 
 execute if score day days matches 2.. run schedule function gnosia:phase/announce_deaths 30t
 
+# reset vote count every discussion
+scoreboard players set #count discussionSkipVotes 0
+
 function gnosia:phase/discussion-skip-head
