@@ -1,6 +1,8 @@
 # remove advancement (IMPORTANT)
 advancement revoke @s only gnosia:skip_discussion
 
+clear @s player_head
+
 scoreboard players set #crewAlive discussionSkipVotes 0
 execute as @a[tag=!dead] run scoreboard players add #crewAlive discussionSkipVotes 1
 
