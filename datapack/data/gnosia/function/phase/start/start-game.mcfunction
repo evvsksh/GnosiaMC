@@ -4,7 +4,7 @@ fill -184 70 -1591 -194 70 -1590 minecraft:pearlescent_froglight[axis=x] replace
 fill -184 70 -1585 -197 70 -1584 minecraft:pearlescent_froglight[axis=x] replace
 fill -188 67 -1594 -180 64 -1594 minecraft:pearlescent_froglight[axis=x] replace
 
-gamerule pvp false
+function gnosia:pvp/disable
 team modify crew friendlyFire false
 team modify engineer_claim friendlyFire false
 team modify doctor_claim friendlyFire false

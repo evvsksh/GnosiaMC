@@ -237,7 +237,7 @@ gamerule show_death_messages false
 gamerule advance_time false
 time set 22000
 gamerule keep_inventory true
-gamerule pvp false
+function gnosia:pvp/disable
 function gnosia:remove-c-roles
 function gnosia:remove-all-roles
 

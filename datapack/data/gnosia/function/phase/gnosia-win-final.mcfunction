@@ -13,5 +13,5 @@ team modify crew friendlyFire true
 team modify engineer_claim friendlyFire true
 team modify doctor_claim friendlyFire true
 team modify guard_duty friendlyFire true
-gamerule pvp true
+function gnosia:pvp/enable
 difficulty easy
