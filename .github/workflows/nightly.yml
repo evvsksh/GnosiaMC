@@ -105,7 +105,6 @@ jobs:
 
   bundle-datapack:
     name: "bundle (datapack)"
-    needs: check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -123,7 +122,6 @@ jobs:
 
   bundle-world:
     name: "bundle (world)"
-    needs: check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -141,7 +139,6 @@ jobs:
 
   bundle-resources:
     name: "bundle (resources)"
-    needs: check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -159,7 +156,6 @@ jobs:
 
   bundle-full:
     name: "bundle (full)"
-    needs: check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -181,7 +177,7 @@ jobs:
           path: full.zip
 
   release:
-    needs: [bundle-datapack, bundle-world, bundle-resources, bundle-full]
+    needs: [bundle-datapack, bundle-world, bundle-resources, bundle-full, check]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v7
