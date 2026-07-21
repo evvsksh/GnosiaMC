@@ -302,6 +302,8 @@ setblock -274 83 -1611 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,fro
 setblock -274 83 -1610 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 2"}},"Next Game",""]}}
 setblock -274 83 -1609 minecraft:pale_oak_wall_sign[facing=west]{is_waxed:1b,front_text:{messages:["",{text:"Spectate",click_event:{action:run_command,command:"trigger spectator_volunteer set 3"}},"Until Cancelled",""]}}
 
+# prevent double reloads
+schedule clear gnosia:reload
 
 execute if score endGameReload gameStatus matches 0 run tellraw @a {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
 execute if score endGameReload gameStatus matches 0 run title @a actionbar {"bold":true,"color":"aqua","text":"Gnosia Datapack V2.0 - Loaded!"}
