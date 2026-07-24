@@ -146,11 +146,11 @@ scoreboard players reset * playerDummyID
 
 # Set BOSSBAR
 
-bossbar add discussion "Discussion"
-bossbar add voting "Voting"
-bossbar add warpdrive "Warp Drive"
-bossbar add revote "Final Vote"
-bossbar add cryovoting "Final Decision"
+bossbar add discussion "§bDiscussion"
+bossbar add voting "§cVoting"
+bossbar add warpdrive "§5Warp Drive"
+bossbar add revote "§eFinal Vote"
+bossbar add cryovoting "§eFinal Decision"
 
 bossbar set discussion color blue
 bossbar set discussion max 6000
