@@ -379,3 +379,4 @@ function gnosia:admin/enable-op-dead
 
 effect give @a[tag=dead,gamemode=!spectator] minecraft:invisibility 1 255 true
 effect give @a[tag=dead,gamemode=!spectator] minecraft:resistance 1 255 true
+effect clear @a[tag=dead,gamemode=!spectator] minecraft:glowing
