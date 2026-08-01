@@ -179,3 +179,13 @@ jobs:
             /tmp/release-files/world.zip
             /tmp/release-files/resources.zip
             /tmp/release-files/full.zip
+
+      - name: Delete Artifacts
+        uses: geekyeggo/delete-artifact@v6
+        with:
+          name: |
+            datapack
+            world
+            resources
+            full
+          failOnError: false
