@@ -23,25 +23,19 @@ jobs:
 
       - name: Prepare Server
         run: |
-          # get latest stuff
           mkdir -p /tmp/minecraft/world/datapacks
           cp -r "$GITHUB_WORKSPACE/world" /tmp/minecraft/world
           cp -r "$GITHUB_WORKSPACE/datapack" /tmp/minecraft/world/datapacks/gnosia
 
-          # set up server
           cd /tmp/minecraft/
           curl -L -o server.jar "https://meta.fabricmc.net/v2/versions/loader/1.21.11/0.19.3/1.1.1/server/jar"
 
-          # set up mods
           mkdir -p /tmp/minecraft/mods
           curl -L -OJ --output-dir "$(pwd)/mods" "https://cdn.modrinth.com/data/9eGKb6K1/versions/tiSyltLv/voicechat-fabric-1.21.11-2.6.20.jar"
           curl -L -OJ --output-dir "$(pwd)/mods" "https://cdn.modrinth.com/data/Vebnzrzj/versions/CzCJJMuo/LuckPerms-Fabric-5.5.21.jar"
           curl -L -OJ --output-dir "$(pwd)/mods" "https://cdn.modrinth.com/data/P7dR8mSH/versions/5zJNhXV2/fabric-api-0.141.4%2B1.21.11.jar"
 
-          # eula
           echo eula=true > eula.txt
-
-          # settings
           echo function-permission-level=4 >> server.properties
 
       - name: Run and Check Server
@@ -95,99 +89,79 @@ jobs:
             exit 1
           fi
 
-      - name: Upload Logs Artifact
+      - name: Upload Logs
         if: failure()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v4
         with:
-          name: server-logs
-          path: /tmp/minecraft/logs/
-          if-no-files-found: warn
+          name: server-log
+          path: /tmp/minecraft/server.log
 
-  bundle-datapack:
-    name: "bundle (datapack)"
+  bundle:
+    name: "bundle (${{ matrix.target }})"
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - target: datapack
+            output: datapack.zip
+          - target: world
+            output: world.zip
+          - target: resources
+            output: resources.zip
+          - target: full
+            output: full.zip
     steps:
       - uses: actions/checkout@v7
 
-      - run: |
-          mkdir -p /tmp/bundle-datapack
-          cp -r "$GITHUB_WORKSPACE/datapack/." /tmp/bundle-datapack/
-          cd /tmp/bundle-datapack && zip -r "$GITHUB_WORKSPACE/datapack.zip" .
+      - name: Build Bundle
+        run: |
+          if [ "${{ matrix.target }}" = "datapack" ]; then
+            mkdir -p /tmp/bundle-datapack
+            cp -r "$GITHUB_WORKSPACE/datapack/." /tmp/bundle-datapack/
+            cd /tmp/bundle-datapack && zip -r "$GITHUB_WORKSPACE/datapack.zip" .
+          elif [ "${{ matrix.target }}" = "world" ]; then
+            mkdir -p /tmp/bundle-world
+            cp -r "$GITHUB_WORKSPACE/world/." /tmp/bundle-world/
+            cd /tmp/bundle-world && zip -r "$GITHUB_WORKSPACE/world.zip" .
+          elif [ "${{ matrix.target }}" = "resources" ]; then
+            mkdir -p /tmp/bundle-resourcepack
+            cp -r "$GITHUB_WORKSPACE/resourcepack/." /tmp/bundle-resourcepack/
+            cd /tmp/bundle-resourcepack && zip -r "$GITHUB_WORKSPACE/resources.zip" .
+          elif [ "${{ matrix.target }}" = "full" ]; then
+            mkdir -p /tmp/bundle-full/datapacks/gnosia
+            cp -r "$GITHUB_WORKSPACE/world/." /tmp/bundle-full/
+            cp -r "$GITHUB_WORKSPACE/datapack/." /tmp/bundle-full/datapacks/gnosia/
+            mkdir -p /tmp/bundle-resources
+            cp -r "$GITHUB_WORKSPACE/resourcepack/." /tmp/bundle-resources/
+            cd /tmp/bundle-resources && zip -r "$GITHUB_WORKSPACE/resources.zip" .
+            cp "$GITHUB_WORKSPACE/resources.zip" /tmp/bundle-full/
+            cd /tmp/bundle-full && zip -r "$GITHUB_WORKSPACE/full.zip" .
+          fi
 
-      - uses: actions/upload-artifact@v7
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          retention-days: 1
-          name: datapack-zip
-          path: datapack.zip
-
-  bundle-world:
-    name: "bundle (world)"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - run: |
-          mkdir -p /tmp/bundle-world
-          cp -r "$GITHUB_WORKSPACE/world/." /tmp/bundle-world/
-          cd /tmp/bundle-world && zip -r "$GITHUB_WORKSPACE/world.zip" .
-
-      - uses: actions/upload-artifact@v7
-        with:
-          retention-days: 1
-          name: world-zip
-          path: world.zip
-
-  bundle-resources:
-    name: "bundle (resources)"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - run: |
-          mkdir -p /tmp/bundle-resourcepack
-          cp -r "$GITHUB_WORKSPACE/resourcepack/." /tmp/bundle-resourcepack/
-          cd /tmp/bundle-resourcepack && zip -r "$GITHUB_WORKSPACE/resources.zip" .
-
-      - uses: actions/upload-artifact@v7
-        with:
-          retention-days: 1
-          name: resources-zip
-          path: resources.zip
-
-  bundle-full:
-    name: "bundle (full)"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - run: |
-          mkdir -p /tmp/bundle-full/datapacks/gnosia
-          cp -r "$GITHUB_WORKSPACE/world/." /tmp/bundle-full/
-          cp -r "$GITHUB_WORKSPACE/datapack/." /tmp/bundle-full/datapacks/gnosia/
-          mkdir -p /tmp/bundle-resources
-          cp -r "$GITHUB_WORKSPACE/resourcepack/." /tmp/bundle-resources/
-          cd /tmp/bundle-resources && zip -r "$GITHUB_WORKSPACE/resources.zip" .
-          cp "$GITHUB_WORKSPACE/resources.zip" /tmp/bundle-full/
-          cd /tmp/bundle-full && zip -r "$GITHUB_WORKSPACE/full.zip" .
-
-      - uses: actions/upload-artifact@v7
-        with:
-          retention-days: 1
-          name: full-zip
-          path: full.zip
+          name: ${{ matrix.target }}
+          path: ${{ matrix.output }}
 
   release:
-    needs: [bundle-datapack, bundle-world, bundle-resources, bundle-full, check]
+    needs: [bundle, check]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v7
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
         with:
-          pattern: "*-zip"
-          merge-multiple: true
+          path: /tmp/artifacts
+
+      - name: Prepare Release Files
+        run: |
+          mkdir -p /tmp/release-files
+          mv /tmp/artifacts/datapack/datapack.zip /tmp/release-files/
+          mv /tmp/artifacts/world/world.zip /tmp/release-files/
+          mv /tmp/artifacts/resources/resources.zip /tmp/release-files/
+          mv /tmp/artifacts/full/full.zip /tmp/release-files/
 
       - name: Generate Release Notes
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cat <<EOF > /tmp/release_notes.txt
           > [!NOTE]
@@ -201,7 +175,7 @@ jobs:
           name: Nightly
           make_latest: true
           files: |
-            datapack.zip
-            world.zip
-            resources.zip
-            full.zip
+            /tmp/release-files/datapack.zip
+            /tmp/release-files/world.zip
+            /tmp/release-files/resources.zip
+            /tmp/release-files/full.zip
