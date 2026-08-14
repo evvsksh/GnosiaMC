@@ -1,6 +1,7 @@
 # remove advancement (IMPORTANT)
 advancement revoke @s only gnosia:skip_discussion
 
+tag @s add votedSkip
 clear @s player_head
 
 scoreboard players set #crewAlive discussionSkipVotes 0

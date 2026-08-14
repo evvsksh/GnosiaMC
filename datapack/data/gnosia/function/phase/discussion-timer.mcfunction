@@ -38,3 +38,5 @@ execute if score day days matches 2.. run schedule function gnosia:phase/announc
 scoreboard players set #count discussionSkipVotes 0
 
 function gnosia:phase/discussion-skip-head
+
+tag @a remove votedSkip

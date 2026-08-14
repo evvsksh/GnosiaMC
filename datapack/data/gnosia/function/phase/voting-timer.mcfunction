@@ -20,3 +20,4 @@ function gnosia:ship-lights/ship-light-red
 clear @a[tag=!dead] player_head
 
 #function gnosia:light-vote-red
+tag @a remove votedSkip
