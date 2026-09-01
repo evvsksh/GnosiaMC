@@ -16,5 +16,5 @@
 
 <div align="center">
     <h2>Gameplay Example</h2>
-    <video src="https://github.com/user-attachments/assets/1b3309ab-b026-4517-8bd5-fdab7009464f"></video>
+    [![Watch the video](https://img.youtube.com/vi/UOAAMYj6PRg/maxresdefault.jpg)](https://youtu.be/UOAAMYj6PRg)
 </div>
