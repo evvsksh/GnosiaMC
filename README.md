@@ -16,5 +16,7 @@
 
 <div align="center">
     <h2>Gameplay Example</h2>
-    [![Watch the video](https://img.youtube.com/vi/UOAAMYj6PRg/maxresdefault.jpg)](https://youtu.be/UOAAMYj6PRg)
+    <a href="https://youtu.be/UOAAMYj6PRg">
+        <img src="https://img.youtube.com/vi/UOAAMYj6PRg/maxresdefault.jpg" alt="Watch the video">
+    </a>
 </div>
