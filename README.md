@@ -11,7 +11,7 @@
 
 <div align="center">
     GnosiaMC is a recreation of the video game and anime <b>Gnosia</b> inside Minecraft. <br>
-    The project runs using a datapack, resource pack, and dedicated world, with support for Simple Voice Chat and LuckPerms.
+    The project is meant for Fabric and runs using a datapack, resource pack, and dedicated world, with support for Simple Voice Chat and LuckPerms.
 </div>
 
 <div align="center">
